@@ -15,8 +15,13 @@ export default class Dungeon extends Component {
     }
     this.handleRoomSwitch = this.handleRoomSwitch.bind(this)
     this.handleInventory = this.handleInventory.bind(this)
+    this.useKey = this.useKey.bind(this)
   }
-
+  useKey() {
+    const inventory = this.state.inventory
+    inventory.key = inventory.key - 1
+    this.setState({inventory})
+  }
   handleInventory(item) {
     const inventory = this.state.inventory
     inventory[item] = inventory[item] ? inventory[item] + 1 : 1
@@ -42,14 +47,14 @@ export default class Dungeon extends Component {
       exit: 300
     }
     return (
-      <div>
+      <div style={{display: 'flex'}}>
         <Transition in={this.state.switchRoomState} timeout={duration} >
           {state => (
             <div style={{
               ...defaultDungeonStyle,
               ...transitionStyles[state]
             }}>
-              <Room onRoomSwitch={this.handleRoomSwitch} handleInventory={this.handleInventory} />
+              <Room onRoomSwitch={this.handleRoomSwitch} handleInventory={this.handleInventory} useKey={this.useKey} inventory={this.state.inventory} />
             </div>
           )}
         </Transition>

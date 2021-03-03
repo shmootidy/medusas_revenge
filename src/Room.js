@@ -77,20 +77,20 @@ export default class Room extends Component {
     return (
       <div style={this.state.roomStyle}>
         <div>{this.state.currentRoom}</div>
-        <UniqueItem />
+        <UniqueItem position="ceiling" item={this.state.rooms[this.state.currentRoom].uniqueItems} />
         <div style={threeDoorsStyle}>
           <Door door={doors.left} onDoorClick={this.handleDoorClick} />
-          <UniqueItem item={this.state.rooms[this.state.currentRoom].uniqueItems} />
+          <UniqueItem position="left-wall" item={this.state.rooms[this.state.currentRoom].uniqueItems} />
           <Door door={doors.forward} onDoorClick={this.handleDoorClick} />
-          <UniqueItem />
+          <UniqueItem position="right-wall" item={this.state.rooms[this.state.currentRoom].uniqueItems} />
           <Door door={doors.right} onDoorClick={this.handleDoorClick} />
         </div>
         <div style={floorStyle}>
-          <UniqueItem />
+          <UniqueItem position="left-door" item={this.state.rooms[this.state.currentRoom].uniqueItems} />
           <FloorItem item={floorItems.left.item} prize={floorItems.left.prize} position='left' onPickUp={this.handleFloorItems} />
-          <UniqueItem />
+          <UniqueItem position="forward-door" item={this.state.rooms[this.state.currentRoom].uniqueItems} />
           <FloorItem item={floorItems.right.item} prize={floorItems.right.prize} position='right' onPickUp={this.handleFloorItems} />
-          <UniqueItem />
+          <UniqueItem position="right-door" item={this.state.rooms[this.state.currentRoom].uniqueItems} />
         </div>
         <Player />
         <Door door={doors.back} onDoorClick={this.handleDoorClick} />

@@ -1,6 +1,6 @@
 export default function UniqueItem(props) {
   let output
-  if (props.item) {
+  if (props.item && props.position === props.item.position) {
     output = props.item.item
   }
   function handleClick() {

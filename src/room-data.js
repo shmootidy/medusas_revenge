@@ -181,7 +181,7 @@ const rooms = {
     uniqueItems: {
       item: 'sign',
       content: 'This is the last meaningful decision you will make. Enter?',
-      position: 'left wall'
+      position: 'left-wall'
     }
   },
   I: {

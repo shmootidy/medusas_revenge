@@ -178,10 +178,10 @@ const rooms = {
         position: 'right'
       },
     },
-    uniqueFeatures: {
+    uniqueItems: {
       item: 'sign',
-      position: 'left',
-      content: 'Before you is the last meaningful decision you\'ll make. Enter?'
+      content: 'This is the last meaningful decision you will make. Enter?',
+      position: 'left wall'
     }
   },
   I: {

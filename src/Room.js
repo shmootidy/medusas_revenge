@@ -2,9 +2,7 @@ import { Component } from 'react'
 import Door from './Door'
 import FloorItem from './FloorItem'
 import Player from './Player'
-import Ceiling from './Ceiling'
-import WallItem from './WallItem'
-import UnderDoorItem from './UnderDoorItem'
+import UniqueItem from './UniqueItem'
 
 import rooms from './room-data'
 
@@ -79,20 +77,20 @@ export default class Room extends Component {
     return (
       <div style={this.state.roomStyle}>
         <div>{this.state.currentRoom}</div>
-        <Ceiling />
+        <UniqueItem />
         <div style={threeDoorsStyle}>
           <Door door={doors.left} onDoorClick={this.handleDoorClick} />
-          <WallItem />
+          <UniqueItem item={this.state.rooms[this.state.currentRoom].uniqueItems} />
           <Door door={doors.forward} onDoorClick={this.handleDoorClick} />
-          <WallItem />
+          <UniqueItem />
           <Door door={doors.right} onDoorClick={this.handleDoorClick} />
         </div>
         <div style={floorStyle}>
-          <UnderDoorItem />
+          <UniqueItem />
           <FloorItem item={floorItems.left.item} prize={floorItems.left.prize} position='left' onPickUp={this.handleFloorItems} />
-          <UnderDoorItem />
+          <UniqueItem />
           <FloorItem item={floorItems.right.item} prize={floorItems.right.prize} position='right' onPickUp={this.handleFloorItems} />
-          <UnderDoorItem />
+          <UniqueItem />
         </div>
         <Player />
         <Door door={doors.back} onDoorClick={this.handleDoorClick} />

@@ -10,6 +10,7 @@ export default class Room extends Component {
     super(props)
     this.state = {
       currentRoom: 'R',
+      prevRoom: '',
       rooms: rooms,
       inventory: {
         'jar of wasps': 1,
@@ -19,18 +20,15 @@ export default class Room extends Component {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-around'
-      }
+      },
+      opacity: 0
     }
     this.handleInventory = this.handleInventory.bind(this)
     this.handleDoorClick = this.handleDoorClick.bind(this)
     this.changeRooms = this.changeRooms.bind(this)
   }
-  componentDidUpdate(prevProps, prevState) {
-    console.log(prevState.rooms[this.state.currentRoom].floorItems)
-    console.log(this.state.rooms[this.state.currentRoom].floorItems)
-  }
   changeRooms(roomTo) {
-    this.setState({ currentRoom: roomTo })
+    this.setState({currentRoom: roomTo})
   }
   handleInventory(item) {
     const inventory = this.state.inventory
@@ -74,9 +72,8 @@ export default class Room extends Component {
     }
     const doors = this.state.rooms[this.state.currentRoom].doors
     const floorItems = this.state.rooms[this.state.currentRoom].floorItems
-
     return (
-      <div className="Room" style={this.state.roomStyle}>
+      <div className='Room' style={this.state.roomStyle}>
         <div>{this.state.currentRoom}</div>
         <div style={threeDoorsStyle}>
           <Door door={doors.left} onDoorClick={this.handleDoorClick} />

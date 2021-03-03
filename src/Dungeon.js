@@ -12,7 +12,7 @@ export default class Dungeon extends Component {
   }
   render() {
     return (
-      <div>
+      <div style={{textAlign: 'center'}}>
         <Room room={this.state.playerPosition} />
         <Player />
       </div>

@@ -17,13 +17,15 @@ export default class Room extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{display: 'flex'}}>
         <Door status={this.state.left} />
         <Door status={this.state.forward} />
         <Door status={this.state.right} />
         <Door status={this.state.back} />
-        <FloorItem item={this.state.floorLeft} />
-        <FloorItem item={this.state.floorRight} />
+        <div class="floor">
+          <FloorItem item={this.state.floorLeft} />
+          <FloorItem item={this.state.floorRight} />
+        </div>
       </div>
     )
   }

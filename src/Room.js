@@ -1,5 +1,4 @@
 import { Component } from 'react'
-import {useSpring, animated} from 'react-spring'
 import Door from './Door'
 import FloorItem from './FloorItem'
 import Player from './Player'
@@ -21,8 +20,7 @@ export default class Room extends Component {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-around'
-      },
-      opacity: 0
+      }
     }
     this.handleInventory = this.handleInventory.bind(this)
     this.handleDoorClick = this.handleDoorClick.bind(this)
@@ -30,6 +28,7 @@ export default class Room extends Component {
   }
   changeRooms(roomTo) {
     this.setState({currentRoom: roomTo})
+    this.props.onRoomSwitch()
   }
   handleInventory(item) {
     const inventory = this.state.inventory

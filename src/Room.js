@@ -13,7 +13,8 @@ export default class Room extends Component {
       prevRoom: '',
       rooms: rooms,
       inventory: {
-        'jar of wasps': 1,
+        'coins': 0,
+        'jar of wasps': 1
       },
       roomStyle: {
         height: '300px',
@@ -70,23 +71,28 @@ export default class Room extends Component {
       alignItems: 'center',
       flexWrap: 'wrap',
     }
+    const containerStyle = {
+      display: 'flex'
+    }
     const doors = this.state.rooms[this.state.currentRoom].doors
     const floorItems = this.state.rooms[this.state.currentRoom].floorItems
 
     return (
-      <div className='Room' style={this.state.roomStyle}>
-        <div>{this.state.currentRoom}</div>
-        <div style={threeDoorsStyle}>
-          <Door door={doors.left} onDoorClick={this.handleDoorClick} />
-          <Door door={doors.forward} onDoorClick={this.handleDoorClick} />
-          <Door door={doors.right} onDoorClick={this.handleDoorClick} />
+      <div style={containerStyle}>
+        <div style={this.state.roomStyle}>
+          <div>{this.state.currentRoom}</div>
+          <div style={threeDoorsStyle}>
+            <Door door={doors.left} onDoorClick={this.handleDoorClick} />
+            <Door door={doors.forward} onDoorClick={this.handleDoorClick} />
+            <Door door={doors.right} onDoorClick={this.handleDoorClick} />
+          </div>
+          <div style={floorStyle}>
+            <FloorItem item={floorItems.left.item} prize={floorItems.left.prize} onPickUp={this.handleInventory} />
+            <FloorItem item={floorItems.right.item} prize={floorItems.right.prize} onPickUp={this.handleInventory} />
+          </div>
+          <Player />
+          <Door door={doors.back} onDoorClick={this.handleDoorClick} />
         </div>
-        <div style={floorStyle}>
-          <FloorItem item={floorItems.left.item} prize={floorItems.left.prize} onPickUp={this.handleInventory} />
-          <FloorItem item={floorItems.right.item} prize={floorItems.right.prize} onPickUp={this.handleInventory} />
-        </div>
-        <Player />
-        <Door door={doors.back} onDoorClick={this.handleDoorClick} />
         <Inventory inventory={this.state.inventory} />
       </div>
     )

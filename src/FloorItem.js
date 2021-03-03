@@ -12,6 +12,9 @@ export default class FloorItem extends Component {
   }
   handleClick() {
     if (this.state.opened) {
+      if (this.state.item) {
+        this.props.onPickUp(this.state.item)
+      }
       this.setState({
         pickedUp: true,
         item: null

@@ -11,6 +11,10 @@ export default class Room extends Component {
       currentRoom: 'R',
       rooms: rooms
     }
+    this.handleInventory = this.handleInventory.bind(this)
+  }
+  handleInventory(beep) {
+    console.log(beep)
   }
   render() {
     const roomStyle = {
@@ -40,8 +44,8 @@ export default class Room extends Component {
           <Door door={doors.right} />
         </div>
         <div style={floorStyle}>
-          <FloorItem item={floorItems.left.item} prize={floorItems.left.prize} />
-          <FloorItem item={floorItems.right.item} prize={floorItems.right.prize} />
+          <FloorItem item={floorItems.left.item} prize={floorItems.left.prize} onPickUp={this.handleInventory} />
+          <FloorItem item={floorItems.right.item} prize={floorItems.right.prize} onPickUp={this.handleInventory} />
         </div>
         <Player />
         <Door door={doors.back} />

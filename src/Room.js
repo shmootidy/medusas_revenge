@@ -8,7 +8,8 @@ export default class Room extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentRoom: 'R'
+      currentRoom: 'R',
+      rooms: rooms
     }
   }
   render() {
@@ -28,21 +29,22 @@ export default class Room extends Component {
       alignItems: 'center',
       flexWrap: 'wrap',
     }
-    const doors = rooms[this.state.currentRoom]
+    const doors = this.state.rooms[this.state.currentRoom].doors
+    const floorItems = this.state.rooms[this.state.currentRoom].floorItems
 
     return (
       <div style={roomStyle}>
         <div style={threeDoorsStyle}>
-          <Door door={doors.doors.left} />
-          <Door door={doors.doors.forward} />
-          <Door door={doors.doors.right} />
+          <Door door={doors.left} />
+          <Door door={doors.forward} />
+          <Door door={doors.right} />
         </div>
         <div style={floorStyle}>
-          {/* <FloorItem item={this.state.floorLeft} />
-          <FloorItem item={this.state.floorRight} /> */}
+          <FloorItem item={floorItems.left.item} prize={floorItems.left.prize} />
+          <FloorItem item={floorItems.right.item} prize={floorItems.right.prize} />
         </div>
         <Player />
-        <Door door={doors.doors.back} />
+        <Door door={doors.back} />
       </div>
     )
   }

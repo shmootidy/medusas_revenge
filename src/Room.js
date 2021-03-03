@@ -2,44 +2,47 @@ import { Component } from 'react'
 import Door from './Door'
 import FloorItem from './FloorItem'
 import Player from './Player'
+import rooms from './room-data'
 
 export default class Room extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      left: 'nodoor',
-      forward: 'open',
-      right: 'nodoor',
-      back: 'open',
-      floorLeft: 'jar',
-      floorRight: 'nothing'
+      currentRoom: 'R'
     }
   }
-
   render() {
     const roomStyle = {
+      height: '300px',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-around'
+    }
+    const floorStyle = {
+      display: 'flex',
+      justifyContent: 'space-evenly'
+    }
+    const threeDoorsStyle = {
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
       flexWrap: 'wrap',
-      height: '300px'
     }
-    const floorStyle = {
-      flexBasis: '100%',
-      display: 'flex',
-      justifyContent: 'space-evenly'
-    }
+    const doors = rooms[this.state.currentRoom]
+
     return (
       <div style={roomStyle}>
-        <Door status={this.state.left} />
-        <Door status={this.state.forward} />
-        <Door status={this.state.right} />
+        <div style={threeDoorsStyle}>
+          <Door door={doors.doors.left} />
+          <Door door={doors.doors.forward} />
+          <Door door={doors.doors.right} />
+        </div>
         <div style={floorStyle}>
-          <FloorItem item={this.state.floorLeft} />
-          <FloorItem item={this.state.floorRight} />
+          {/* <FloorItem item={this.state.floorLeft} />
+          <FloorItem item={this.state.floorRight} /> */}
         </div>
         <Player />
-        <Door status={this.state.back} />
+        <Door door={doors.doors.back} />
       </div>
     )
   }

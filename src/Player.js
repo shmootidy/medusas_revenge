@@ -9,8 +9,7 @@ export default class Player extends Component {
   // }
   render() {
     const playerStyle = {
-      backgroundColor: 'white',
-      flexBasis: '100%'
+      backgroundColor: 'white'
     }
     return (
       <div style={playerStyle}>

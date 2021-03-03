@@ -1,10 +1,10 @@
 import { Component } from 'react'
+import {useSpring, animated} from 'react-spring'
 import Door from './Door'
 import FloorItem from './FloorItem'
 import Player from './Player'
 import Inventory from './Inventory'
 import rooms from './room-data'
-// import { CSSTransitionGroup } from 'react-transition-group'
 
 export default class Room extends Component {
   constructor(props) {

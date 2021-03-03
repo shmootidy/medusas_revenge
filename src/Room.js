@@ -2,6 +2,10 @@ import { Component } from 'react'
 import Door from './Door'
 import FloorItem from './FloorItem'
 import Player from './Player'
+import Ceiling from './Ceiling'
+import WallItem from './WallItem'
+import UnderDoorItem from './UnderDoorItem'
+
 import rooms from './room-data'
 
 export default class Room extends Component {
@@ -61,7 +65,7 @@ export default class Room extends Component {
   render() {
     const floorStyle = {
       display: 'flex',
-      justifyContent: 'space-evenly'
+      justifyContent: 'space-between'
     }
     const threeDoorsStyle = {
       display: 'flex',
@@ -75,14 +79,20 @@ export default class Room extends Component {
     return (
       <div style={this.state.roomStyle}>
         <div>{this.state.currentRoom}</div>
+        <Ceiling />
         <div style={threeDoorsStyle}>
           <Door door={doors.left} onDoorClick={this.handleDoorClick} />
+          <WallItem />
           <Door door={doors.forward} onDoorClick={this.handleDoorClick} />
+          <WallItem />
           <Door door={doors.right} onDoorClick={this.handleDoorClick} />
         </div>
         <div style={floorStyle}>
+          <UnderDoorItem />
           <FloorItem item={floorItems.left.item} prize={floorItems.left.prize} position='left' onPickUp={this.handleFloorItems} />
+          <UnderDoorItem />
           <FloorItem item={floorItems.right.item} prize={floorItems.right.prize} position='right' onPickUp={this.handleFloorItems} />
+          <UnderDoorItem />
         </div>
         <Player />
         <Door door={doors.back} onDoorClick={this.handleDoorClick} />

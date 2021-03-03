@@ -14,23 +14,37 @@ export default class Room extends Component {
       inventory: {
         'jar of wasps': 1,
       },
+      roomStyle: {
+        height: '300px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-around'
+      }
     }
     this.handleInventory = this.handleInventory.bind(this)
-    this.handleRoomChange = this.handleRoomChange.bind(this)
+    this.handleDoorClick = this.handleDoorClick.bind(this)
     this.changeRooms = this.changeRooms.bind(this)
   }
+  componentDidUpdate(prevProps, prevState) {
+    console.log(prevState.rooms[this.state.currentRoom].floorItems)
+    console.log(this.state.rooms[this.state.currentRoom].floorItems)
+  }
   changeRooms(roomTo) {
-    this.setState({currentRoom: roomTo})
+    this.setState({ currentRoom: roomTo })
   }
   handleInventory(item) {
     const inventory = this.state.inventory
     inventory[item] = inventory[item] ? inventory[item] + 1 : 1
     this.setState({inventory})
   }
-  handleRoomChange(door) {
+  handleDoorClick(door) {
     const doorStatus = door.status
     if (doorStatus === 'open') {
-      this.changeRooms(door.roomTo)
+      // if (door.position === 'forward' && this.state.currentRoom === 'R') {
+        // console.log('are you sure?')
+      // } else {
+        this.changeRooms(door.roomTo)
+      // }
     } else if (doorStatus === 'locked') {
       if (this.state.inventory.key) {
         const inventory = this.state.inventory
@@ -48,12 +62,6 @@ export default class Room extends Component {
     }
   }
   render() {
-    const roomStyle = {
-      height: '300px',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'space-around'
-    }
     const floorStyle = {
       display: 'flex',
       justifyContent: 'space-evenly'
@@ -68,19 +76,19 @@ export default class Room extends Component {
     const floorItems = this.state.rooms[this.state.currentRoom].floorItems
 
     return (
-      <div style={roomStyle}>
+      <div className="Room" style={this.state.roomStyle}>
         <div>{this.state.currentRoom}</div>
         <div style={threeDoorsStyle}>
-          <Door door={doors.left} onDoorClick={this.handleRoomChange} />
-          <Door door={doors.forward} onDoorClick={this.handleRoomChange} />
-          <Door door={doors.right} onDoorClick={this.handleRoomChange} />
+          <Door door={doors.left} onDoorClick={this.handleDoorClick} />
+          <Door door={doors.forward} onDoorClick={this.handleDoorClick} />
+          <Door door={doors.right} onDoorClick={this.handleDoorClick} />
         </div>
         <div style={floorStyle}>
           <FloorItem item={floorItems.left.item} prize={floorItems.left.prize} onPickUp={this.handleInventory} />
           <FloorItem item={floorItems.right.item} prize={floorItems.right.prize} onPickUp={this.handleInventory} />
         </div>
         <Player />
-        <Door door={doors.back} onDoorClick={this.handleRoomChange} />
+        <Door door={doors.back} onDoorClick={this.handleDoorClick} />
         <Inventory inventory={this.state.inventory} />
       </div>
     )

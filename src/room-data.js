@@ -2,22 +2,22 @@ const rooms = {
   L: {
     doors: {
       left: {
-        status: '',
+        status: 'no door',
         keyNeeded: null,
         roomTo: ''
       },
       forward: {
-        status: '',
+        status: 'no door',
         keyNeeded: null,
         roomTo: ''
       },
       right: {
-        status: '',
+        status: 'open',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'B'
       },
       back: {
-        status: '',
+        status: 'no door',
         keyNeeded: null,
         roomTo: ''
       }
@@ -36,24 +36,24 @@ const rooms = {
   A: {
     doors: {
       left: {
-        status: '',
+        status: 'no door',
         keyNeeded: null,
         roomTo: ''
       },
       forward: {
-        status: '',
+        status: 'open',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'B'
       },
       right: {
-        status: '',
+        status: 'no door',
         keyNeeded: null,
         roomTo: ''
       },
       back: {
-        status: '',
+        status: 'no door',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'R'
       }
     },
     floorItems: {
@@ -70,24 +70,24 @@ const rooms = {
   B: {
     doors: {
       left: {
-        status: '',
+        status: 'open',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'L'
       },
       forward: {
-        status: '',
+        status: 'one-way',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'Y'
       },
       right: {
-        status: '',
+        status: 'open',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'I'
       },
       back: {
-        status: '',
+        status: 'open',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'A'
       }
     },
     floorItems: {
@@ -104,24 +104,24 @@ const rooms = {
   Y: {
     doors: {
       left: {
-        status: '',
+        status: 'no door',
         keyNeeded: null,
         roomTo: ''
       },
       forward: {
-        status: '',
+        status: 'no door',
         keyNeeded: null,
         roomTo: ''
       },
       right: {
-        status: '',
+        status: 'open',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'N'
       },
       back: {
-        status: '',
+        status: 'open',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'B'
       }
     },
     floorItems: {
@@ -172,24 +172,24 @@ const rooms = {
   I: {
     doors: {
       left: {
-        status: '',
+        status: 'open',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'B'
       },
       forward: {
-        status: '',
+        status: 'open',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'N'
       },
       right: {
-        status: '',
+        status: 'open',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'H'
       },
       back: {
-        status: '',
+        status: 'one-way',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'R'
       }
     },
     floorItems: {
@@ -206,24 +206,24 @@ const rooms = {
   N: {
     doors: {
       left: {
-        status: '',
+        status: 'open',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'Y'
       },
       forward: {
-        status: '',
+        status: 'no door',
         keyNeeded: null,
         roomTo: ''
       },
       right: {
-        status: '',
+        status: 'no door',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'S'
       },
       back: {
-        status: '',
+        status: 'open',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'I'
       }
     },
     floorItems: {
@@ -240,24 +240,24 @@ const rooms = {
   T: {
     doors: {
       left: {
-        status: '',
+        status: 'open',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'R'
       },
       forward: {
-        status: '',
+        status: 'open',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'H'
       },
       right: {
-        status: '',
+        status: 'no door',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'outside'
       },
       back: {
-        status: '',
+        status: 'no door',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'outside'
       }
     },
     floorItems: {
@@ -274,24 +274,58 @@ const rooms = {
   H: {
     doors: {
       left: {
-        status: '',
+        status: 'open',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'I'
       },
       forward: {
-        status: '',
+        status: 'open',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'S'
       },
       right: {
-        status: '',
+        status: 'open',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'R'
       },
       back: {
-        status: '',
+        status: 'open',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'T'
+      }
+    },
+    floorItems: {
+      left: {
+        item: null,
+        prize: null
+      },
+      right: {
+        item: null,
+        prize: null
+      },
+    }
+  },
+  S: {
+    doors: {
+      left: {
+        status: 'no door',
+        keyNeeded: null,
+        roomTo: 'N'
+      },
+      forward: {
+        status: 'locked',
+        keyNeeded: null,
+        roomTo: 'OUT'
+      },
+      right: {
+        status: 'no door',
+        keyNeeded: null,
+        roomTo: 'outside'
+      },
+      back: {
+        status: 'open',
+        keyNeeded: null,
+        roomTo: 'H'
       }
     },
     floorItems: {

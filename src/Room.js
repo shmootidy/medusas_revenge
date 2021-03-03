@@ -23,7 +23,6 @@ export default class Room extends Component {
     console.log('change rooms')
   }
   handleInventory(item) {
-    console.log(this)
     const inventory = this.state.inventory
     inventory[item] = inventory[item] ? inventory[item] + 1 : 1
     this.setState({inventory})
@@ -36,7 +35,10 @@ export default class Room extends Component {
     } else if (doorStatus === 'locked') {
       if (this.state.inventory.key) {
         this.changeRooms()
-        this.setState({currentRoom: 'I'})
+        const inventory = this.state.inventory
+        inventory.key = inventory.key - 1
+        inventory.currentRoom = door.roomTo
+        this.setState(inventory)
       } else {
         console.log('you need a key')
       }
@@ -66,6 +68,7 @@ export default class Room extends Component {
 
     return (
       <div style={roomStyle}>
+        <div>{this.state.currentRoom}</div>
         <div style={threeDoorsStyle}>
           <Door door={doors.left} onDoorClick={this.handleRoomChange} />
           <Door door={doors.forward} onDoorClick={this.handleRoomChange} />

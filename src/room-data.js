@@ -177,6 +177,11 @@ const rooms = {
         prize: 'coins',
         position: 'right'
       },
+    },
+    uniqueFeatures: {
+      item: 'sign',
+      position: 'left',
+      content: 'Before you is the last meaningful decision you\'ll make. Enter?'
     }
   },
   I: {

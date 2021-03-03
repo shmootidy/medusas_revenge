@@ -22,7 +22,8 @@ export default class Room extends Component {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-around',
-        flexBasis: '90%'
+        flexBasis: '90%',
+        position: 'relative'
       }
     }
     this.handleDoorClick = this.handleDoorClick.bind(this)

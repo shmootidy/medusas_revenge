@@ -1,5 +1,9 @@
-export default function Door(props) {
-  return (
-    <div>door -- {props.status} </div>
-  )
+import { Component } from 'react'
+
+export default class Door extends Component {
+  render() {
+    return (
+      <div>door -- {this.props.status} </div>
+    )
+  }
 }

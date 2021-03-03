@@ -24,18 +24,12 @@ export default class Room extends Component {
         flexBasis: '90%'
       }
     }
-    this.handleInventory = this.handleInventory.bind(this)
     this.handleDoorClick = this.handleDoorClick.bind(this)
     this.changeRooms = this.changeRooms.bind(this)
   }
   changeRooms(roomTo) {
     this.setState({currentRoom: roomTo})
     this.props.onRoomSwitch()
-  }
-  handleInventory(item) {
-    const inventory = this.state.inventory
-    inventory[item] = inventory[item] ? inventory[item] + 1 : 1
-    this.setState({inventory})
   }
   handleDoorClick(door) {
     const doorStatus = door.status
@@ -88,8 +82,8 @@ export default class Room extends Component {
             <Door door={doors.right} onDoorClick={this.handleDoorClick} />
           </div>
           <div style={floorStyle}>
-            <FloorItem item={floorItems.left.item} prize={floorItems.left.prize} onPickUp={this.handleInventory} />
-            <FloorItem item={floorItems.right.item} prize={floorItems.right.prize} onPickUp={this.handleInventory} />
+            <FloorItem item={floorItems.left.item} prize={floorItems.left.prize} onPickUp={this.props.handleInventory} />
+            <FloorItem item={floorItems.right.item} prize={floorItems.right.prize} onPickUp={this.props.handleInventory} />
           </div>
           <Player />
           <Door door={doors.back} onDoorClick={this.handleDoorClick} />

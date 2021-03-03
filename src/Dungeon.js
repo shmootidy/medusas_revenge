@@ -1,18 +1,28 @@
 import { Component } from 'react'
 import Room from './Room'
 import { Transition } from 'react-transition-group'
-
+import Inventory from './Inventory'
 
 export default class Dungeon extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      switchRoomState: true
+      switchRoomState: true,
+      inventory: {
+        coins: 0,
+        'jar of bats': 1
+      }
     }
-    this.handleSwitchRoom = this.handleSwitchRoom.bind(this)
+    this.handleRoomSwitch = this.handleRoomSwitch.bind(this)
+    this.handleInventory = this.handleInventory.bind(this)
   }
-  handleSwitchRoom() {
-    console.log('hi')
+
+  handleInventory(item) {
+    const inventory = this.state.inventory
+    inventory[item] = inventory[item] ? inventory[item] + 1 : 1
+    this.setState({inventory})
+  }
+  handleRoomSwitch() {
     this.setState({switchRoomState: !this.state.switchRoomState})
   }
   render() {
@@ -32,16 +42,19 @@ export default class Dungeon extends Component {
       exit: 300
     }
     return (
-      <Transition in={this.state.switchRoomState} timeout={duration} >
-        {state => (
-          <div style={{
-            ...defaultDungeonStyle,
-            ...transitionStyles[state]
-          }}>
-            <Room onRoomSwitch={this.handleSwitchRoom} />
-          </div>
-        )}
-      </Transition>
+      <div>
+        <Transition in={this.state.switchRoomState} timeout={duration} >
+          {state => (
+            <div style={{
+              ...defaultDungeonStyle,
+              ...transitionStyles[state]
+            }}>
+              <Room onRoomSwitch={this.handleRoomSwitch} handleInventory={this.handleInventory} />
+            </div>
+          )}
+        </Transition>
+        <Inventory inventory={this.state.inventory} />
+      </div>
     )
   }
 }

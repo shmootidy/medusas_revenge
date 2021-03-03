@@ -3,17 +3,16 @@ import { Component } from 'react'
 export default class Inventory extends Component {
   render() {
     const inventory = Object.keys(this.props.inventory).map((item, i) => {
-      console.log(item)
-      if (this.props.inventory[item] && item != 'key' || item === 'coins') {
-        return (
+      let output
+      if ((this.props.inventory[item] && item !== 'key') || item === 'coins') {
+        output = (
           <tr key={i}>
             <td>{item}</td>
             <td>{this.props.inventory[item]}</td>
           </tr>
         )
-      } else {
-        return
       }
+      return output
     })
     const key = this.props.inventory.key ? <div>key</div> : ''
     return (
@@ -21,7 +20,7 @@ export default class Inventory extends Component {
         <table>
           <tbody>{inventory}</tbody>
         </table>
-        <div>{this.props.inventory.key ? 'key' : ''}</div>
+        <div>{key}</div>
       </div>
     )
   }

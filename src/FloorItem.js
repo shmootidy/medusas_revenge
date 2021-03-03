@@ -12,10 +12,14 @@ export default class FloorItem extends Component {
   handleClick() {
     if (this.state.opened) {
       if (this.props.prize) {
-        this.props.onPickUp(this.props.prize)
+        this.props.onPickUp(this.props.prize, this.props.position)
       }
       this.setState({
         pickedUp: true,
+      })
+      this.setState({
+        pickedUp: false,
+        opened: false
       })
     } else {
       this.setState({

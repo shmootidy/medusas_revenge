@@ -25,6 +25,13 @@ export default class Room extends Component {
     }
     this.handleDoorClick = this.handleDoorClick.bind(this)
     this.changeRooms = this.changeRooms.bind(this)
+    this.handleFloorItems = this.handleFloorItems.bind(this)
+  }
+  handleFloorItems(item, position) {
+    const _rooms = this.state.rooms
+    _rooms[this.state.currentRoom].floorItems[position] = {item: null, prize: null}
+    this.setState({rooms: _rooms})
+    this.props.handleInventory(item)
   }
   changeRooms(roomTo) {
     this.setState({currentRoom: roomTo})
@@ -74,8 +81,8 @@ export default class Room extends Component {
           <Door door={doors.right} onDoorClick={this.handleDoorClick} />
         </div>
         <div style={floorStyle}>
-          <FloorItem item={floorItems.left.item} prize={floorItems.left.prize} onPickUp={this.props.handleInventory} />
-          <FloorItem item={floorItems.right.item} prize={floorItems.right.prize} onPickUp={this.props.handleInventory} />
+          <FloorItem item={floorItems.left.item} prize={floorItems.left.prize} position='left' onPickUp={this.handleFloorItems} />
+          <FloorItem item={floorItems.right.item} prize={floorItems.right.prize} position='right' onPickUp={this.handleFloorItems} />
         </div>
         <Player />
         <Door door={doors.back} onDoorClick={this.handleDoorClick} />

@@ -218,6 +218,11 @@ const rooms = {
         prize: 'key',
         position: 'right'
       },
+    },
+    uniqueItems: {
+      item: 'berries',
+      content: 'red berries',
+      position: 'forward-door'
     }
   },
   N: {

@@ -20,7 +20,7 @@ export default function UniqueItem(props) {
   }
   const uniqueItemContent = (
     <div style={uniqueItemContentStyle}>
-      <div>hi</div>
+      <div>{props.item.content}</div>
     </div>
   )
   return(

@@ -67,6 +67,7 @@ export default class Room extends Component {
     }
     const doors = this.state.rooms[this.state.currentRoom].doors
     const floorItems = this.state.rooms[this.state.currentRoom].floorItems
+    console.log(floorItems)
 
     return (
       <div style={roomStyle}>

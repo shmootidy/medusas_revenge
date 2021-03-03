@@ -204,13 +204,13 @@ const rooms = {
     },
     floorItems: {
       left: {
-        item: null,
+        item: 'jar',
         prize: null,
         position: 'left'
       },
       right: {
-        item: null,
-        prize: null,
+        item: 'jar',
+        prize: 'key',
         position: 'right'
       },
     }

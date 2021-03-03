@@ -20,7 +20,8 @@ export default class Room extends Component {
         height: '300px',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-around'
+        justifyContent: 'space-around',
+        flexBasis: '90%'
       }
     }
     this.handleInventory = this.handleInventory.bind(this)

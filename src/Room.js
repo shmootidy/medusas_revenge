@@ -40,10 +40,6 @@ export default class Room extends Component {
       // }
     } else if (doorStatus === 'locked') {
       if (this.props.inventory.key) {
-        // const inventory = this.props.inventory
-        // inventory.key = inventory.key - 1
-        // this.setState(inventory)
-        // change the status of the door from 'locked' to 'open'
         const _rooms = this.state.rooms
         _rooms[this.state.currentRoom].doors[door.position].status = 'open'
         this.setState({rooms: _rooms})

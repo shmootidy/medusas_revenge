@@ -40,7 +40,6 @@ export default class Room extends Component {
         const _rooms = this.state.rooms
         _rooms[this.state.currentRoom].doors[door.position].status = 'open'
         this.setState({rooms: _rooms})
-        this.changeRooms(door.roomTo)
       } else {
         console.log('you need a key')
       }

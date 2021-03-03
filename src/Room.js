@@ -2,6 +2,7 @@ import { Component } from 'react'
 import Door from './Door'
 import FloorItem from './FloorItem'
 import Player from './Player'
+import Inventory from './Inventory'
 import rooms from './room-data'
 
 export default class Room extends Component {
@@ -9,12 +10,17 @@ export default class Room extends Component {
     super(props)
     this.state = {
       currentRoom: 'R',
-      rooms: rooms
+      rooms: rooms,
+      inventory: {
+        'jar of wasps': 1,
+      },
     }
     this.handleInventory = this.handleInventory.bind(this)
   }
-  handleInventory(beep) {
-    console.log(beep)
+  handleInventory(item) {
+    const inventory = this.state.inventory
+    inventory[item] = inventory[item] ? inventory[item] + 1 : 1
+    this.setState({inventory})
   }
   render() {
     const roomStyle = {
@@ -49,6 +55,7 @@ export default class Room extends Component {
         </div>
         <Player />
         <Door door={doors.back} />
+        <Inventory inventory={this.state.inventory} />
       </div>
     )
   }

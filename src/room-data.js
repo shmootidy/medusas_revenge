@@ -4,32 +4,38 @@ const rooms = {
       left: {
         status: 'no door',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'outside',
+        position: 'left'
       },
       forward: {
         status: 'no door',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'outside',
+        position: 'forward'
       },
       right: {
         status: 'open',
         keyNeeded: null,
-        roomTo: 'B'
+        roomTo: 'B',
+        position: 'right'
       },
       back: {
         status: 'no door',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'outside',
+        position: 'back'
       }
     },
     floorItems: {
       left: {
         item: null,
-        prize: null
+        prize: null,
+        position: 'left'
       },
       right: {
         item: null,
-        prize: null
+        prize: null,
+        position: 'right'
       },
     }
   },
@@ -38,32 +44,38 @@ const rooms = {
       left: {
         status: 'no door',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'outside',
+        position: 'left'
       },
       forward: {
         status: 'open',
         keyNeeded: null,
-        roomTo: 'B'
+        roomTo: 'B',
+        position: 'forward'
       },
       right: {
         status: 'no door',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: 'R',
+        position: 'right'
       },
       back: {
-        status: 'no door',
+        status: 'open',
         keyNeeded: null,
-        roomTo: 'R'
+        roomTo: 'R',
+        position: 'back'
       }
     },
     floorItems: {
       left: {
         item: null,
-        prize: null
+        prize: null,
+        position: 'left'
       },
       right: {
         item: null,
-        prize: null
+        prize: null,
+        position: 'right'
       },
     }
   },
@@ -72,32 +84,38 @@ const rooms = {
       left: {
         status: 'open',
         keyNeeded: null,
-        roomTo: 'L'
+        roomTo: 'L',
+        position: 'left'
       },
       forward: {
         status: 'one-way',
         keyNeeded: null,
-        roomTo: 'Y'
+        roomTo: 'Y',
+        position: 'forward'
       },
       right: {
         status: 'open',
         keyNeeded: null,
-        roomTo: 'I'
+        roomTo: 'I',
+        position: 'right'
       },
       back: {
         status: 'open',
         keyNeeded: null,
-        roomTo: 'A'
+        roomTo: 'A',
+        position: 'back'
       }
     },
     floorItems: {
       left: {
         item: null,
-        prize: null
+        prize: null,
+        position: 'left'
       },
       right: {
         item: null,
-        prize: null
+        prize: null,
+        position: 'right'
       },
     }
   },
@@ -106,32 +124,38 @@ const rooms = {
       left: {
         status: 'no door',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: '',
+        position: 'left'
       },
       forward: {
         status: 'no door',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: '',
+        position: 'forward'
       },
       right: {
         status: 'open',
         keyNeeded: null,
-        roomTo: 'N'
+        roomTo: 'N',
+        position: 'right'
       },
       back: {
         status: 'open',
         keyNeeded: null,
-        roomTo: 'B'
+        roomTo: 'B',
+        position: 'back'
       }
     },
     floorItems: {
       left: {
         item: null,
-        prize: null
+        prize: null,
+        position: 'left'
       },
       right: {
         item: null,
-        prize: null
+        prize: null,
+        position: 'right'
       },
     }
   },
@@ -140,32 +164,38 @@ const rooms = {
       left: {
         status: 'no door',
         keyNeeded: null,
-        roomTo: 'A'
+        roomTo: 'A',
+        position: 'left'
       },
       forward: {
         status: 'locked',
         keyNeeded: null,
-        roomTo: 'I'
+        roomTo: 'I',
+        position: 'forward'
       },
       right: {
         status: 'one-way',
         keyNeeded: null,
-        roomTo: 'T'
+        roomTo: 'T',
+        position: 'right'
       },
       back: {
         status: 'open',
         keyNeeded: null,
-        roomTo: 'outside'
+        roomTo: 'outside',
+        position: 'back'
       }
     },
     floorItems: {
       left: {
         item: 'jar',
-        prize: 'key'
+        prize: 'key',
+        position: 'left'
       },
       right: {
         item: 'jar',
-        prize: 'coins'
+        prize: 'coins',
+        position: 'right'
       },
     }
   },
@@ -174,32 +204,38 @@ const rooms = {
       left: {
         status: 'open',
         keyNeeded: null,
-        roomTo: 'B'
+        roomTo: 'B',
+        position: 'left'
       },
       forward: {
         status: 'open',
         keyNeeded: null,
-        roomTo: 'N'
+        roomTo: 'N',
+        position: 'forward'
       },
       right: {
         status: 'open',
         keyNeeded: null,
-        roomTo: 'H'
+        roomTo: 'H',
+        position: 'right'
       },
       back: {
         status: 'one-way',
         keyNeeded: null,
-        roomTo: 'R'
+        roomTo: 'R',
+        position: 'back'
       }
     },
     floorItems: {
       left: {
         item: null,
-        prize: null
+        prize: null,
+        position: 'left'
       },
       right: {
         item: null,
-        prize: null
+        prize: null,
+        position: 'right'
       },
     }
   },
@@ -208,32 +244,38 @@ const rooms = {
       left: {
         status: 'open',
         keyNeeded: null,
-        roomTo: 'Y'
+        roomTo: 'Y',
+        position: 'left'
       },
       forward: {
         status: 'no door',
         keyNeeded: null,
-        roomTo: ''
+        roomTo: '',
+        position: 'forward'
       },
       right: {
         status: 'no door',
         keyNeeded: null,
-        roomTo: 'S'
+        roomTo: 'S',
+        position: 'right'
       },
       back: {
         status: 'open',
         keyNeeded: null,
-        roomTo: 'I'
+        roomTo: 'I',
+        position: 'back'
       }
     },
     floorItems: {
       left: {
         item: null,
-        prize: null
+        prize: null,
+        position: 'left'
       },
       right: {
         item: null,
-        prize: null
+        prize: null,
+        position: 'right'
       },
     }
   },
@@ -242,32 +284,38 @@ const rooms = {
       left: {
         status: 'open',
         keyNeeded: null,
-        roomTo: 'R'
+        roomTo: 'R',
+        position: 'left'
       },
       forward: {
         status: 'open',
         keyNeeded: null,
-        roomTo: 'H'
+        roomTo: 'H',
+        position: 'forward'
       },
       right: {
         status: 'no door',
         keyNeeded: null,
-        roomTo: 'outside'
+        roomTo: 'outside',
+        position: 'right'
       },
       back: {
         status: 'no door',
         keyNeeded: null,
-        roomTo: 'outside'
+        roomTo: 'outside',
+        position: 'back'
       }
     },
     floorItems: {
       left: {
         item: null,
-        prize: null
+        prize: null,
+        position: 'left'
       },
       right: {
         item: null,
-        prize: null
+        prize: null,
+        position: 'right'
       },
     }
   },
@@ -276,32 +324,38 @@ const rooms = {
       left: {
         status: 'open',
         keyNeeded: null,
-        roomTo: 'I'
+        roomTo: 'I',
+        position: 'left'
       },
       forward: {
         status: 'open',
         keyNeeded: null,
-        roomTo: 'S'
+        roomTo: 'S',
+        position: 'forward'
       },
       right: {
         status: 'open',
         keyNeeded: null,
-        roomTo: 'R'
+        roomTo: 'R',
+        position: 'right'
       },
       back: {
         status: 'open',
         keyNeeded: null,
-        roomTo: 'T'
+        roomTo: 'T',
+        position: 'back'
       }
     },
     floorItems: {
       left: {
         item: null,
-        prize: null
+        prize: null,
+        position: 'left'
       },
       right: {
         item: null,
-        prize: null
+        prize: null,
+        position: 'right'
       },
     }
   },
@@ -310,34 +364,40 @@ const rooms = {
       left: {
         status: 'no door',
         keyNeeded: null,
-        roomTo: 'N'
+        roomTo: 'N',
+        position: 'left'
       },
       forward: {
         status: 'locked',
         keyNeeded: null,
-        roomTo: 'OUT'
+        roomTo: 'OUT',
+        position: 'forward'
       },
       right: {
         status: 'no door',
         keyNeeded: null,
-        roomTo: 'outside'
+        roomTo: 'outside',
+        position: 'right'
       },
       back: {
         status: 'open',
         keyNeeded: null,
-        roomTo: 'H'
+        roomTo: 'H',
+        position: 'back'
       }
     },
     floorItems: {
       left: {
         item: null,
-        prize: null
+        prize: null,
+        position: 'left'
       },
       right: {
         item: null,
-        prize: null
+        prize: null,
+        position: 'right'
       },
     }
-  }
+  },
 }
 export default rooms

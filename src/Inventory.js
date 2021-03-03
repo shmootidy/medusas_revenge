@@ -6,7 +6,7 @@ export default class Inventory extends Component {
       if (this.props.inventory[key]) {
         return <li>{key + ' X ' + this.props.inventory[key]}</li>
       } else {
-        return
+        return false
       }
     })
     return (

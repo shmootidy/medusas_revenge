@@ -6,30 +6,37 @@ export default class FloorItem extends Component {
     this.state = {
       opened: false,
       pickedUp: false,
-      item: this.props.item
     }
     this.handleClick = this.handleClick.bind(this)
   }
   handleClick() {
     if (this.state.opened) {
-      if (this.state.item) {
-        this.props.onPickUp(this.state.item)
+      if (this.props.prize) {
+        this.props.onPickUp(this.props.prize)
       }
       this.setState({
         pickedUp: true,
-        item: null
       })
     } else {
       this.setState({
         opened: true,
-        item: this.props.prize
       })
     }
   }
   render() {
+    let item
+    if (this.props.item && !this.state.opened) {
+      item = this.props.item
+    }
+    if (this.props.prize && this.state.opened) {
+      item = this.props.prize
+    }
+    if (this.state.pickedUp) {
+      item = '' 
+    }
     return (
       <div onClick={this.handleClick}>
-        <div>{this.state.item}</div>
+        <div>{item}</div>
       </div>
     )
   }

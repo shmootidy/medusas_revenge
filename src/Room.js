@@ -16,11 +16,33 @@ export default class Room extends Component {
       },
     }
     this.handleInventory = this.handleInventory.bind(this)
+    this.handleRoomChange = this.handleRoomChange.bind(this)
+    this.changeRooms = this.changeRooms.bind(this)
+  }
+  changeRooms() {
+    console.log('change rooms')
   }
   handleInventory(item) {
+    console.log(this)
     const inventory = this.state.inventory
     inventory[item] = inventory[item] ? inventory[item] + 1 : 1
     this.setState({inventory})
+  }
+  handleRoomChange(door) {
+    const doorStatus = door.status
+    console.log(doorStatus)
+    if (doorStatus === 'open') {
+      this.changeRooms()
+    } else if (doorStatus === 'locked') {
+      if (this.state.inventory.key) {
+        this.changeRooms()
+        this.setState({currentRoom: 'I'})
+      } else {
+        console.log('you need a key')
+      }
+    } else {
+      console.log('not yet handled')
+    }
   }
   render() {
     const roomStyle = {
@@ -45,16 +67,16 @@ export default class Room extends Component {
     return (
       <div style={roomStyle}>
         <div style={threeDoorsStyle}>
-          <Door door={doors.left} />
-          <Door door={doors.forward} />
-          <Door door={doors.right} />
+          <Door door={doors.left} onDoorClick={this.handleRoomChange} />
+          <Door door={doors.forward} onDoorClick={this.handleRoomChange} />
+          <Door door={doors.right} onDoorClick={this.handleRoomChange} />
         </div>
         <div style={floorStyle}>
           <FloorItem item={floorItems.left.item} prize={floorItems.left.prize} onPickUp={this.handleInventory} />
           <FloorItem item={floorItems.right.item} prize={floorItems.right.prize} onPickUp={this.handleInventory} />
         </div>
         <Player />
-        <Door door={doors.back} />
+        <Door door={doors.back} onDoorClick={this.handleRoomChange} />
         <Inventory inventory={this.state.inventory} />
       </div>
     )

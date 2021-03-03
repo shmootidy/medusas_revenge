@@ -6,6 +6,7 @@ export default class Door extends Component {
     this.handleClick = this.handleClick.bind(this)
   }
   handleClick() {
+    this.props.onDoorClick(this.props.door)
     const status = this.props.door.status
     if (status === 'no door') {
       return

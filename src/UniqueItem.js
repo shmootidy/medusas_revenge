@@ -3,7 +3,7 @@ import { useState } from 'react'
 export default function UniqueItem(props) {
   const [ openItem, setOpenItem ] = useState(false)
 
-  let output = (props.item && props.position === props.item.position) ? props.item.item : null
+  let uniqueItem = (props.item && props.position === props.item.position) ? props.item.item : null
   function handleClick() {
     setOpenItem(!openItem)
   }
@@ -18,14 +18,15 @@ export default function UniqueItem(props) {
     alignItems: 'center',
     background: 'white'
   }
+  let content = (props.item && props.position === props.item.position) ? props.item.content : null
   const uniqueItemContent = (
     <div style={uniqueItemContentStyle}>
-      <div>{props.item.content}</div>
+      <div>{content}</div>
     </div>
   )
   return(
     <div onClick={handleClick}>
-      <div>{output}</div>
+      <div>{uniqueItem}</div>
       {openItem ? uniqueItemContent : null}
     </div>
   )

@@ -35,6 +35,7 @@ export default class Room extends Component {
     const _rooms = this.state.rooms
     _rooms[this.state.currentRoom].uniqueItems.item = _rooms[this.state.currentRoom].uniqueItems.options[option].item
     _rooms[this.state.currentRoom].uniqueItems.content = _rooms[this.state.currentRoom].uniqueItems.options[option].message
+    _rooms[this.state.currentRoom].uniqueItems.options = _rooms[this.state.currentRoom].uniqueItems.options[option]._options ? _rooms[this.state.currentRoom].uniqueItems.options[option]._options : null
     this.setState({rooms: _rooms})
   }
   handleFloorItems(item, position) {

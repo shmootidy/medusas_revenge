@@ -148,12 +148,17 @@ const rooms = {
         return (
           <div>
             <div>What will you do?</div>
-            <button>[kill spider]</button>
-            <button>[talk to spider]'</button>
+            <button onClick={() => this.kill()}>kill spider</button>
+            <button>talk to spider</button>
           </div>
         )
       },
-      position: 'ceiling'
+      position: 'ceiling',
+      kill: function() {
+        return (
+          <div>caw</div>
+        )
+      }
     }
   },
   R: {

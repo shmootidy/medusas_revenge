@@ -13,14 +13,7 @@ export default class Room extends Component {
       currentRoom: 'R',
       prevRoom: '',
       rooms: rooms,
-      roomStyle: {
-        height: '300px',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-around',
-        flexBasis: '90%',
-        position: 'relative'
-      }
+      
     }
     this.handleDoorClick = this.handleDoorClick.bind(this)
     this.changeRooms = this.changeRooms.bind(this)
@@ -94,12 +87,20 @@ export default class Room extends Component {
       alignItems: 'center',
       flexWrap: 'wrap',
     }
+    const roomStyle = {
+      height: '300px',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-around',
+      flexBasis: '90%',
+      position: 'relative'
+    }
     if (this.state.rooms[this.state.currentRoom]) {
       const doors = this.state.rooms[this.state.currentRoom].doors
       const floorItems = this.state.rooms[this.state.currentRoom].floorItems
   
       return (
-        <div style={this.state.roomStyle}>
+        <div style={roomStyle}>
           <div>{this.state.currentRoom}</div>
           <UniqueItem room={this.state.currentRoom} position="ceiling" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} inventory={this.props.inventory} />
           <div style={threeDoorsStyle}>

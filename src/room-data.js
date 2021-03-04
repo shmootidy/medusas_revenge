@@ -260,8 +260,9 @@ const rooms = {
       options: {
         option1: {
           option: 'smash skull',
-          message: 'the old skull is brittle and crushed under your heel',
-          leftover: 'skull fragments'
+          message: 'the old skull crumbles like chalk under your heel',
+          _prize: 'chalky skull fragments',
+          leftover: 'skull dust'
         }
       }
     }

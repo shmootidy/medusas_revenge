@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import items from './items-data'
+// import items from './items-data'
 
 export default function UniqueItem(props) {
   const [ openItem, setOpenItem ] = useState(false)

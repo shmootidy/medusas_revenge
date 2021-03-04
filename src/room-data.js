@@ -149,7 +149,10 @@ const rooms = {
         option1: 'kill spider',
         option2: 'talk to spider',
       },
-      position: 'ceiling'
+      position: 'ceiling',
+      option1Content: 'dead spider',
+      option1Message: 'this spider is dead',
+      option2Message: 'the spider says: "I\'m hungry!"'
     }
   },
   R: {

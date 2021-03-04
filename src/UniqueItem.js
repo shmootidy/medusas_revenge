@@ -12,6 +12,9 @@ export default class UniqueItem extends Component {
   }
   handleSelect(option) {
     this.props.onSelect(option)
+    if (option === 'option1') {
+      this.handleClose()
+    }
   }
   handleClick() {
     this.setState({openItem: true})

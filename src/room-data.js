@@ -43,7 +43,7 @@ const rooms = {
         _prize: 'levelKey',
         _option1: {
           option: 'send spider',
-          message: 'your spider settles into her new home, knocking the key down as thanks',
+          message: 'your spider settles into her new home, tossing you the key as thanks',
           leftover: 'happy spider'
         }
       }

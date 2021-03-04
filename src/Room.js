@@ -33,7 +33,6 @@ export default class Room extends Component {
   }
   selectItemOption(option) {
     const _rooms = this.state.rooms
-    console.log(_rooms[this.state.currentRoom].uniqueItems.options[option])
     _rooms[this.state.currentRoom].uniqueItems.content = _rooms[this.state.currentRoom].uniqueItems.options[option]
     this.setState({rooms: _rooms})
   }

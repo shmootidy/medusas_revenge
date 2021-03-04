@@ -25,9 +25,6 @@ export default class UniqueItem extends Component {
   }
   render() {
     const validOption = this.props.item && this.props.position === this.props.item.position ? true : false
-    // let options = validOption && this.props.item.options ? Object.keys(this.props.item.options).map((key, i) => {
-    //   return <button key={i} onClick={() => this.handleOptionSelect(key)}>{this.props.item.options[key].option}</button>
-    // }) : null
     return(
       <div>
         <div onClick={this.handleOpen}>{validOption ? this.props.item.item : null}</div>

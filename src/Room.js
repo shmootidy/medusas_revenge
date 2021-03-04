@@ -78,20 +78,20 @@ export default class Room extends Component {
     return (
       <div style={this.state.roomStyle}>
         <div>{this.state.currentRoom}</div>
-        <UniqueItem position="ceiling" item={this.state.rooms[this.state.currentRoom].uniqueItems} />
+        <UniqueItem room={this.state.currentRoom} position="ceiling" item={this.state.rooms[this.state.currentRoom].uniqueItems} caw={this.state.rooms[this.state.currentRoom]} />
         <div style={threeDoorsStyle}>
           <Door door={doors.left} onDoorClick={this.handleDoorClick} />
-          <UniqueItem position="left-wall" item={this.state.rooms[this.state.currentRoom].uniqueItems} />
+          <UniqueItem room={this.state.currentRoom} position="left-wall" item={this.state.rooms[this.state.currentRoom].uniqueItems} caw={this.state.rooms[this.state.currentRoom]} />
           <Door door={doors.forward} onDoorClick={this.handleDoorClick} />
-          <UniqueItem position="right-wall" item={this.state.rooms[this.state.currentRoom].uniqueItems} />
+          <UniqueItem room={this.state.currentRoom} position="right-wall" item={this.state.rooms[this.state.currentRoom].uniqueItems} caw={this.state.rooms[this.state.currentRoom]} />
           <Door door={doors.right} onDoorClick={this.handleDoorClick} />
         </div>
         <div style={floorStyle}>
-          <UniqueItem position="left-door" item={this.state.rooms[this.state.currentRoom].uniqueItems} />
+          <UniqueItem room={this.state.currentRoom} position="left-door" item={this.state.rooms[this.state.currentRoom].uniqueItems} caw={this.state.rooms[this.state.currentRoom]} />
           <FloorItem item={floorItems.left.item} prize={floorItems.left.prize} position='left' onPickUp={this.handleFloorItems} />
-          <UniqueItem position="forward-door" item={this.state.rooms[this.state.currentRoom].uniqueItems} />
+          <UniqueItem room={this.state.currentRoom} position="forward-door" item={this.state.rooms[this.state.currentRoom].uniqueItems} caw={this.state.rooms[this.state.currentRoom]} />
           <FloorItem item={floorItems.right.item} prize={floorItems.right.prize} position='right' onPickUp={this.handleFloorItems} />
-          <UniqueItem position="right-door" item={this.state.rooms[this.state.currentRoom].uniqueItems} />
+          <UniqueItem room={this.state.currentRoom} position="right-door" item={this.state.rooms[this.state.currentRoom].uniqueItems} caw={this.state.rooms[this.state.currentRoom]} />
         </div>
         <Player />
         <Door door={doors.back} onDoorClick={this.handleDoorClick} />

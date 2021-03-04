@@ -141,6 +141,11 @@ const rooms = {
         prize: null,
         position: 'right'
       },
+    },
+    uniqueItems: {
+      item: 'spider',
+      content: 'What will you do? [kill spider][talk to spider]',
+      position: 'ceiling'
     }
   },
   R: {
@@ -251,7 +256,7 @@ const rooms = {
     floorItems: {
       left: {
         item: null,
-        prize: null,
+        prize: 'dead fly',
         position: 'left'
       },
       right: {

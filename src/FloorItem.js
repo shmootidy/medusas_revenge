@@ -31,7 +31,7 @@ export default class FloorItem extends Component {
     let item
     if (this.props.item && !this.state.opened) {
       item = this.props.item
-    } else if (this.props.prize && this.state.opened) {
+    } else if ((this.props.prize && this.state.opened) || (!this.props.item && this.props.prize)) {
       item = this.props.prize
     }
     if (this.state.pickedUp) {

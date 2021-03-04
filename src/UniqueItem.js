@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import items from './items-data'
 
 export default function UniqueItem(props) {
   const [ openItem, setOpenItem ] = useState(false)
@@ -24,6 +25,10 @@ export default function UniqueItem(props) {
       <div>{content}</div>
     </div>
   )
+  console.log(items.spider)
+  // console.log(props.room)
+  // console.log(props.item)
+  // console.log(props.caw.uniqueItems)
   return(
     <div onClick={handleClick}>
       <div>{uniqueItem}</div>

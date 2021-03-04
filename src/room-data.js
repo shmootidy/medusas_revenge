@@ -24,8 +24,8 @@ const rooms = {
     },
     floorItems: {
       left: {
-        item: null,
-        prize: 'levelKey',
+        item: 'jar',
+        prize: null,
         position: 'left'
       },
       right: {
@@ -33,6 +33,20 @@ const rooms = {
         prize: 'coins',
         position: 'right'
       },
+    },
+    uniqueItems: {
+      item: 'levelKey',
+      content: 'you can\'t reach it',
+      position: 'ceiling',
+      options: {
+        _key: 'happy spider',
+        _prize: 'levelKey',
+        _option1: {
+          option: 'send spider',
+          message: 'your spider settles into her new home, knocking the key down as thanks',
+          leftover: 'happy spider'
+        }
+      }
     }
   },
   A: {

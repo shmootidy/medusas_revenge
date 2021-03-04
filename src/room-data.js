@@ -38,8 +38,8 @@ const rooms = {
       item: 'levelKey',
       content: 'you can\'t reach it',
       position: 'ceiling',
+      _key: 'happy spider',
       options: {
-        _key: 'happy spider',
         _prize: 'levelKey',
         _option1: {
           option: 'send spider',

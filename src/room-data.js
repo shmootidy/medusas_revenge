@@ -145,14 +145,19 @@ const rooms = {
     uniqueItems: {
       item: 'spider',
       content: 'what do?',
-      options: {
-        option1: 'kill spider',
-        option2: 'talk to spider',
-      },
       position: 'ceiling',
-      option1Content: 'dead spider',
-      option1Message: 'this spider is dead',
-      option2Message: 'the spider says: "I\'m hungry!"'
+      _options: {
+        option1: {
+          option: 'kill spider',
+          item: 'dead spider',
+          message: 'the spider is dead'
+        },
+        option2: {
+          option: 'talk to spider',
+          item: 'hungry spider',
+          message: '"I\'m hungry!"'
+        }
+      }
     }
   },
   R: {

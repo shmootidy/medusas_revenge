@@ -33,8 +33,8 @@ export default class Room extends Component {
   }
   selectItemOption(option) {
     const _rooms = this.state.rooms
-    _rooms[this.state.currentRoom].uniqueItems.item = _rooms[this.state.currentRoom].uniqueItems._options[option].item
-    _rooms[this.state.currentRoom].uniqueItems.content = _rooms[this.state.currentRoom].uniqueItems._options[option].message
+    _rooms[this.state.currentRoom].uniqueItems.item = _rooms[this.state.currentRoom].uniqueItems.options[option].item
+    _rooms[this.state.currentRoom].uniqueItems.content = _rooms[this.state.currentRoom].uniqueItems.options[option].message
     this.setState({rooms: _rooms})
   }
   handleFloorItems(item, position) {

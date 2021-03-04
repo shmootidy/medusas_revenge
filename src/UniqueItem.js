@@ -37,8 +37,8 @@ export default class UniqueItem extends Component {
       background: 'white'
     }
     let content = validOption ? this.props.item.content : null
-    let options = validOption && this.props.item._options ? Object.keys(this.props.item._options).map((key, i) => {
-      return <button key={i} onClick={() => this.handleSelect(key)}>{this.props.item._options[key].option}</button>
+    let options = validOption && this.props.item.options ? Object.keys(this.props.item.options).map((key, i) => {
+      return <button key={i} onClick={() => this.handleSelect(key)}>{this.props.item.options[key].option}</button>
     }) : null
     const uniqueItemContent = (
       <div style={uniqueItemContentStyle}>

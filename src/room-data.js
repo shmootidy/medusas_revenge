@@ -146,7 +146,7 @@ const rooms = {
       item: 'spider',
       content: 'what do?',
       position: 'ceiling',
-      _options: {
+      options: {
         option1: {
           option: 'kill spider',
           item: 'dead spider',

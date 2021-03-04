@@ -144,7 +144,9 @@ const rooms = {
     },
     uniqueItems: {
       item: 'spider',
-      content: 'What will you do? [kill spider][talk to spider]',
+      content: function() {
+        return 'What will you do? [kill spider][talk to spider]'
+      },
       position: 'ceiling'
     }
   },
@@ -185,7 +187,9 @@ const rooms = {
     },
     uniqueItems: {
       item: 'sign',
-      content: 'This is the last meaningful decision you will make. Enter?',
+      content: function() {
+        return 'This is the last meaningful decision you will make. Enter?'
+      },
       position: 'left-wall'
     }
   },

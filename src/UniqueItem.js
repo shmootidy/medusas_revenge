@@ -19,16 +19,13 @@ export default function UniqueItem(props) {
     alignItems: 'center',
     background: 'white'
   }
-  let content = (props.item && props.position === props.item.position) ? props.item.content : null
+  let content = (props.item && props.position === props.item.position) ? props.item.content() : null
   const uniqueItemContent = (
     <div style={uniqueItemContentStyle}>
       <div>{content}</div>
     </div>
   )
-  console.log(items.spider)
-  // console.log(props.room)
-  // console.log(props.item)
-  // console.log(props.caw.uniqueItems)
+  console.log(props.item.item)
   return(
     <div onClick={handleClick}>
       <div>{uniqueItem}</div>

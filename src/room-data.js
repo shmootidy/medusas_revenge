@@ -155,9 +155,7 @@ const rooms = {
       },
       position: 'ceiling',
       kill: function() {
-        return (
-          <div>caw</div>
-        )
+        console.log('meow')
       }
     }
   },

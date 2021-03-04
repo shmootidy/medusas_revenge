@@ -1,38 +1,46 @@
-import { useState } from 'react'
-// import items from './items-data'
+import { Component, useState } from 'react'
 
-export default function UniqueItem(props) {
-  const [ openItem, setOpenItem ] = useState(false)
+export default class UniqueItem extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      openItem: false
+    }
+    this.handleClick = this.handleClick.bind(this)
+    this.handleClose = this.handleClose.bind(this)
+  }
 
-  let uniqueItem = (props.item && props.position === props.item.position) ? props.item.item : null
-  function handleClick() {
-    setOpenItem(true)
+  handleClick() {
+    this.setState({openItem: true})
   }
-  function handleClose() {
-    setOpenItem(false)
+  handleClose() {
+    this.setState({openItem: false})
   }
-  const uniqueItemContentStyle = {
-    position: 'absolute',
-    top: '5%',
-    left: '5%',
-    width: '90%',
-    height: '90%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    background: 'white'
+  render() {
+    let uniqueItem = (this.props.item && this.props.position === this.props.item.position) ? this.props.item.item : null
+    const uniqueItemContentStyle = {
+      position: 'absolute',
+      top: '5%',
+      left: '5%',
+      width: '90%',
+      height: '90%',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      background: 'white'
+    }
+    let content = (this.props.item && this.props.position === this.props.item.position) ? this.props.item.content() : null
+    const uniqueItemContent = (
+      <div style={uniqueItemContentStyle}>
+        {content}
+        <button onClick={this.handleClose}>Close</button>
+      </div>
+    )
+    return(
+      <div>
+        <div onClick={this.handleClick}>{uniqueItem}</div>
+        {this.state.openItem ? uniqueItemContent : null}
+      </div>
+    )
   }
-  let content = (props.item && props.position === props.item.position) ? props.item.content() : null
-  const uniqueItemContent = (
-    <div style={uniqueItemContentStyle}>
-      {content}
-      <button onClick={handleClose}>Close</button>
-    </div>
-  )
-  return(
-    <div>
-      <div onClick={handleClick}>{uniqueItem}</div>
-      {openItem ? uniqueItemContent : null}
-    </div>
-  )
 }

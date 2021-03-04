@@ -10,16 +10,20 @@ export default function UniqueItemContent(props) {
     alignItems: 'center',
     background: 'white'
   }
-
+  
+  const options = props.options ? 
+    Object.keys(props.options).map((option, i) => {
+      if (props.options[option].option) {
+        return <button key={i} onClick={()=>props.selectOption(option)}>{props.options[option].option}</button>
+      } else { 
+        return false 
+      }
+    }) : null
   return (
     <div style={uniqueItemContentStyle}>
       <div>{props.content}</div>
       <div>
-        {props.options ? 
-          Object.keys(props.options).map((option, i) => {
-            return <button key={i} onClick={()=>props.selectOption(option)}>{props.options[option].option}</button>
-          })
-        : null }
+        {options}
       </div>
       <button onClick={props.onClick}>Close</button>
     </div>

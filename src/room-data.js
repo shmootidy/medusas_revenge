@@ -153,8 +153,11 @@ const rooms = {
           message: 'the spider is dead',
           _options: {
             _prize: 'dead spider',
-            _option1: 'pick up spider',
-            _message: 'you added "dead spider" to your inventory'
+            _option1: {
+              option: 'pick up spider',
+              message: 'you added "dead spider" to your inventory',
+              leftover: 'spider webs'
+            }
           }
         },
         option2: {
@@ -164,8 +167,11 @@ const rooms = {
           _options: {
             _key: 'dead fly',
             _prize: 'happy spider',
-            _option1: 'feed spider',
-            _message: 'you made a new friend'
+            _option1: {
+              option: 'feed spider',
+              message: 'you made a new friend',
+              leftover: 'spider webs'
+            }
           }
         }
       }

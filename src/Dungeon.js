@@ -23,6 +23,7 @@ export default class Dungeon extends Component {
     this.setState({inventory})
   }
   handleInventory(item) {
+    console.log(item)
     const inventory = this.state.inventory
     inventory[item] = inventory[item] ? inventory[item] + 1 : 1
     this.setState({inventory})

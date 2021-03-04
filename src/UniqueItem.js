@@ -17,7 +17,8 @@ export default class UniqueItem extends Component {
     this.setState({openItem: false})
   }
   render() {
-    let uniqueItem = (this.props.item && this.props.position === this.props.item.position) ? this.props.item.item : null
+    const validOption = this.props.item && this.props.position === this.props.item.position ? true : false
+    let uniqueItem = validOption ? this.props.item.item : null
     const uniqueItemContentStyle = {
       position: 'absolute',
       top: '5%',
@@ -29,7 +30,7 @@ export default class UniqueItem extends Component {
       alignItems: 'center',
       background: 'white'
     }
-    let content = (this.props.item && this.props.position === this.props.item.position) ? this.props.item.content : null
+    let content = validOption ? this.props.item.content : null
     const uniqueItemContent = (
       <div style={uniqueItemContentStyle}>
         {content}

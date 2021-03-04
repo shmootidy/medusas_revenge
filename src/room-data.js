@@ -145,6 +145,8 @@ const rooms = {
     uniqueItems: {
       item: 'spider',
       content: 'what do?',
+      option1: 'kill spider',
+      option2: 'talk to spider',
       position: 'ceiling'
     }
   },

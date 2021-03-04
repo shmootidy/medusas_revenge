@@ -37,8 +37,6 @@ export default class Room extends Component {
     _rooms[this.state.currentRoom].uniqueItems._key = ( _rooms[this.state.currentRoom].uniqueItems.options[option]._options && _rooms[this.state.currentRoom].uniqueItems.options[option]._options._key ) ? _rooms[this.state.currentRoom].uniqueItems.options[option]._options._key : null
     /* update options with suboptions, if applicable */
     _rooms[this.state.currentRoom].uniqueItems.options = _rooms[this.state.currentRoom].uniqueItems.options[option]._options ? _rooms[this.state.currentRoom].uniqueItems.options[option]._options : null
-    /* update uniqueItem options, if available */
-    // _rooms[this.state.currentRoom].uniqueItems.options = _rooms[this.state.currentRoom].uniqueItems.options[option]._options ? _rooms[this.state.currentRoom].uniqueItems.options[option]._options : null
     this.setState({rooms: _rooms})
   }
   

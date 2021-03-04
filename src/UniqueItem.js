@@ -1,4 +1,4 @@
-import { Component, useState } from 'react'
+import { Component } from 'react'
 
 export default class UniqueItem extends Component {
   constructor(props) {
@@ -29,7 +29,7 @@ export default class UniqueItem extends Component {
       alignItems: 'center',
       background: 'white'
     }
-    let content = (this.props.item && this.props.position === this.props.item.position) ? this.props.item.content() : null
+    let content = (this.props.item && this.props.position === this.props.item.position) ? this.props.item.content : null
     const uniqueItemContent = (
       <div style={uniqueItemContentStyle}>
         {content}

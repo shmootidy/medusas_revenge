@@ -25,12 +25,12 @@ const rooms = {
     floorItems: {
       left: {
         item: null,
-        prize: null,
+        prize: 'levelKey',
         position: 'left'
       },
       right: {
-        item: null,
-        prize: null,
+        item: 'jar',
+        prize: 'coins',
         position: 'right'
       },
     }
@@ -66,7 +66,7 @@ const rooms = {
       },
       right: {
         item: null,
-        prize: null,
+        prize: 'coins',
         position: 'right'
       },
     }
@@ -392,7 +392,8 @@ const rooms = {
       forward: {
         status: 'locked',
         roomTo: 'OUT',
-        position: 'forward'
+        position: 'forward',
+        levelLock: true
       },
       right: {
         status: 'no door',

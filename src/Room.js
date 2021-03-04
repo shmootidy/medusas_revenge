@@ -48,8 +48,10 @@ export default class Room extends Component {
   
   handleFloorItems(item, position) {
     const _rooms = this.state.rooms
+    /* remove items from room when picked up */
     _rooms[this.state.currentRoom].floorItems[position] = {item: null, prize: null}
     this.setState({rooms: _rooms})
+    /* add items to inventory */
     this.props.handleInventory(item)
   }
   changeRooms(roomTo) {
@@ -65,11 +67,12 @@ export default class Room extends Component {
         this.changeRooms(door.roomTo)
       // }
     } else if (doorStatus === 'locked') {
-      if (this.props.inventory.key) {
+      const keyNeeded = door.levelLock ? 'levelKey' : 'key'
+      if (this.props.inventory[keyNeeded]) {
         const _rooms = this.state.rooms
         _rooms[this.state.currentRoom].doors[door.position].status = 'open'
         this.setState({rooms: _rooms})
-        this.props.useKey()
+        this.props.useKey(keyNeeded)
       } else {
         console.log('you need a key')
       }

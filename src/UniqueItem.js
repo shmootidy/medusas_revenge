@@ -20,8 +20,10 @@ export default class UniqueItem extends Component {
   handleClose() {
     this.setState({openItem: false})
   }
+  // check for key needed and key in inventory before displaying options
   render() {
     const uniqueItemHere = this.props.item && this.props.position === this.props.item.position ? true : false
+    // const showOptions = (uniqueItemHere && this.props.item.options) && (!this.props._key || this.props._key && 
     return(
       <div>
         <div onClick={this.handleOpen}>{uniqueItemHere ? this.props.item.item : null}</div>

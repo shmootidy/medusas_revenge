@@ -25,7 +25,6 @@ export default class Room extends Component {
     this.handleDoorClick = this.handleDoorClick.bind(this)
     this.changeRooms = this.changeRooms.bind(this)
     this.handleFloorItems = this.handleFloorItems.bind(this)
-    this.handleUniqueItems = this.handleUniqueItems.bind(this)
     this.selectItemOption = this.selectItemOption.bind(this)
   }
   selectItemOption(option) {
@@ -42,19 +41,7 @@ export default class Room extends Component {
     // _rooms[this.state.currentRoom].uniqueItems.options = _rooms[this.state.currentRoom].uniqueItems.options[option]._options ? _rooms[this.state.currentRoom].uniqueItems.options[option]._options : null
     this.setState({rooms: _rooms})
   }
-  handleUniqueItems(item) {
-    const _rooms = this.state.rooms
-    if (item.options._key !== _rooms[this.state.currentRoom].uniqueItems.options._key) {
-      console.log('uh oh, this shouldn\'t have happened. something went wrong.')
-    }
-    if (this.props.inventory[item.options._key]) {
-      // add uniqueItem to inventory and remove from room
-      // console.log(_rooms[this.state.currentRoom].uniqueItems)
-      // this.props.handleInventory(item)
-      // console.log(item)
-    }
-    console.log(this.state.rooms[this.state.currentRoom].uniqueItems)
-  }
+  
   handleFloorItems(item, position) {
     const _rooms = this.state.rooms
     _rooms[this.state.currentRoom].floorItems[position] = {item: null, prize: null}
@@ -106,20 +93,20 @@ export default class Room extends Component {
     return (
       <div style={this.state.roomStyle}>
         <div>{this.state.currentRoom}</div>
-        <UniqueItem room={this.state.currentRoom} position="ceiling" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} onUniqueKeyClick={this.handleUniqueItems} />
+        <UniqueItem room={this.state.currentRoom} position="ceiling" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} />
         <div style={threeDoorsStyle}>
           <Door door={doors.left} onDoorClick={this.handleDoorClick} />
-          <UniqueItem room={this.state.currentRoom} position="left-wall" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} onUniqueKeyClick={this.handleUniqueItems} />
+          <UniqueItem room={this.state.currentRoom} position="left-wall" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} />
           <Door door={doors.forward} onDoorClick={this.handleDoorClick} />
-          <UniqueItem room={this.state.currentRoom} position="right-wall" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} onUniqueKeyClick={this.handleUniqueItems} />
+          <UniqueItem room={this.state.currentRoom} position="right-wall" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} />
           <Door door={doors.right} onDoorClick={this.handleDoorClick} />
         </div>
         <div style={floorStyle}>
-          <UniqueItem room={this.state.currentRoom} position="left-door" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} onUniqueKeyClick={this.handleUniqueItems} />
+          <UniqueItem room={this.state.currentRoom} position="left-door" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} />
           <FloorItem item={floorItems.left.item} prize={floorItems.left.prize} position='left' onPickUp={this.handleFloorItems} />
-          <UniqueItem room={this.state.currentRoom} position="forward-door" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} onUniqueKeyClick={this.handleUniqueItems} />
+          <UniqueItem room={this.state.currentRoom} position="forward-door" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} />
           <FloorItem item={floorItems.right.item} prize={floorItems.right.prize} position='right' onPickUp={this.handleFloorItems} />
-          <UniqueItem room={this.state.currentRoom} position="right-door" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} onUniqueKeyClick={this.handleUniqueItems} />
+          <UniqueItem room={this.state.currentRoom} position="right-door" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} />
         </div>
         <Player />
         <Door door={doors.back} onDoorClick={this.handleDoorClick} />

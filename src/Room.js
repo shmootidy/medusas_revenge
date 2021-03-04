@@ -27,7 +27,7 @@ export default class Room extends Component {
     this.handleFloorItems = this.handleFloorItems.bind(this)
     this.selectItemOption = this.selectItemOption.bind(this)
   }
-  selectItemOption(option) {
+  selectItemOption(option, keyUsed) {
     const _rooms = this.state.rooms
     /* update uniqueItem to selected option */
     _rooms[this.state.currentRoom].uniqueItems.item = _rooms[this.state.currentRoom].uniqueItems.options[option].item
@@ -38,6 +38,8 @@ export default class Room extends Component {
     /* update options with suboptions, if applicable */
     _rooms[this.state.currentRoom].uniqueItems.options = _rooms[this.state.currentRoom].uniqueItems.options[option]._options ? _rooms[this.state.currentRoom].uniqueItems.options[option]._options : null
     this.setState({rooms: _rooms})
+    /* update inventory, if applicable */
+    if (keyUsed) this.props.useKey(keyUsed)
   }
   
   handleFloorItems(item, position) {

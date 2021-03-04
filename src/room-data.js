@@ -166,7 +166,7 @@ const rooms = {
           message: '"I\'m hungry!"',
           _options: {
             _key: 'dead fly',
-            _prize: 'happy spider',
+            item: 'happy spider',
             _option1: {
               option: 'feed spider',
               message: 'you made a new friend',

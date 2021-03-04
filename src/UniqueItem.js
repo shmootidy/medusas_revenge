@@ -15,6 +15,7 @@ export default class UniqueItem extends Component {
     this.props.onSelect(option)
   }
   handleOpen(key) {
+    // if there's a key, update content (need to write content) and options.
     if (key) console.log(key)
     this.setState({openItem: true})
   }
@@ -25,7 +26,7 @@ export default class UniqueItem extends Component {
     const uniqueItemHere = this.props.item && this.props.position === this.props.item.position ? true : false
     return(
       <div>
-        <div onClick={() => this.handleOpen(this.props.key)}>{uniqueItemHere ? this.props.item.item : null}</div>
+        <div onClick={() => this.handleOpen(this.props.item._key)}>{uniqueItemHere ? this.props.item.item : null}</div>
         {this.state.openItem ? 
           <UniqueItemContent 
             content={uniqueItemHere ? this.props.item.content : null} 

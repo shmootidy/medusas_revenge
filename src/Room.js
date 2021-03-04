@@ -38,9 +38,9 @@ export default class Room extends Component {
     /* change uniqueItemContent to display updated message */
     _rooms[this.state.currentRoom].uniqueItems.content = _rooms[this.state.currentRoom].uniqueItems.options[option].message
     /* assign a key to the uniqueItem, if applicable */
-    _rooms[this.state.currentRoom].uniqueItems._key = _rooms[this.state.currentRoom].uniqueItems.options[option]._key ? _rooms[this.state.currentRoom].uniqueItems.options[option]._key : null
+    _rooms[this.state.currentRoom].uniqueItems._key = ( _rooms[this.state.currentRoom].uniqueItems.options[option]._options && _rooms[this.state.currentRoom].uniqueItems.options[option]._options._key ) ? _rooms[this.state.currentRoom].uniqueItems.options[option]._options._key : null
     /* update uniqueItem options, if available */
-    _rooms[this.state.currentRoom].uniqueItems.options = _rooms[this.state.currentRoom].uniqueItems.options[option]._options ? _rooms[this.state.currentRoom].uniqueItems.options[option]._options : null
+    _rooms[this.state.currentRoom].uniqueItems.options = _rooms[this.state.currentRoom].uniqueItems.options[option].options ? _rooms[this.state.currentRoom].uniqueItems.options[option].options : null
     this.setState({rooms: _rooms})
   }
   handleFloorItems(item, position) {
@@ -90,7 +90,7 @@ export default class Room extends Component {
     }
     const doors = this.state.rooms[this.state.currentRoom].doors
     const floorItems = this.state.rooms[this.state.currentRoom].floorItems
-
+ 
     return (
       <div style={this.state.roomStyle}>
         <div>{this.state.currentRoom}</div>

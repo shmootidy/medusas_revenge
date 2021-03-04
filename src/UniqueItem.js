@@ -16,7 +16,7 @@ export default class UniqueItem extends Component {
     this.props.onSelect(option, this.props.item.options && this.props.item.options._key ? this.props.item.options._key : null, this.props.item.options && this.props.item.options._prize ? this.props.item.options._prize : null)
   }
   handleOpen() {
-    this.setState({openItem: true})
+    if (this.props.item && this.props.position === this.props.item.position && !this.props.item.end) this.setState({openItem: true})
   }
   handleClose() {
     this.setState({openItem: false})

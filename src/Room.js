@@ -31,6 +31,9 @@ export default class Room extends Component {
     const _rooms = this.state.rooms
     /* update uniqueItem to selected option */
     _rooms[this.state.currentRoom].uniqueItems.item = _rooms[this.state.currentRoom].uniqueItems.options[option].item ? _rooms[this.state.currentRoom].uniqueItems.options[option].item : _rooms[this.state.currentRoom].uniqueItems.options[option].leftover ? _rooms[this.state.currentRoom].uniqueItems.options[option].leftover : null
+    if (_rooms[this.state.currentRoom].uniqueItems.options[option].leftover) {
+      _rooms[this.state.currentRoom].uniqueItems.end = true
+    }
     /* change uniqueItemContent to display updated message */
     _rooms[this.state.currentRoom].uniqueItems.content = _rooms[this.state.currentRoom].uniqueItems.options[option].message
     /* assign a key to the uniqueItem, if applicable */

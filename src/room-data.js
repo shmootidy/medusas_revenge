@@ -145,7 +145,13 @@ const rooms = {
     uniqueItems: {
       item: 'spider',
       content: function() {
-        return 'What will you do? [kill spider][talk to spider]'
+        return (
+          <div>
+            <div>What will you do?</div>
+            <button>[kill spider]</button>
+            <button>[talk to spider]'</button>
+          </div>
+        )
       },
       position: 'ceiling'
     }
@@ -188,7 +194,9 @@ const rooms = {
     uniqueItems: {
       item: 'sign',
       content: function() {
-        return 'This is the last meaningful decision you will make. Enter?'
+        return (
+          <div>Entering this dungeon will be the last meaningful decision you will make.</div>
+        )
       },
       position: 'left-wall'
     }
@@ -230,7 +238,9 @@ const rooms = {
     },
     uniqueItems: {
       item: 'skull',
-      content: 'a spooky old skull',
+      content: function() {
+        return 'a spooky old skull'
+      },
       position: 'forward-door'
     }
   },

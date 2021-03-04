@@ -6,7 +6,10 @@ export default function UniqueItem(props) {
 
   let uniqueItem = (props.item && props.position === props.item.position) ? props.item.item : null
   function handleClick() {
-    setOpenItem(!openItem)
+    setOpenItem(true)
+  }
+  function handleClose() {
+    setOpenItem(false)
   }
   const uniqueItemContentStyle = {
     position: 'absolute',
@@ -22,13 +25,13 @@ export default function UniqueItem(props) {
   let content = (props.item && props.position === props.item.position) ? props.item.content() : null
   const uniqueItemContent = (
     <div style={uniqueItemContentStyle}>
-      <div>{content}</div>
+      {content}
+      <button onClick={handleClose}>Close</button>
     </div>
   )
-  console.log(props.item.item)
   return(
-    <div onClick={handleClick}>
-      <div>{uniqueItem}</div>
+    <div>
+      <div onClick={handleClick}>{uniqueItem}</div>
       {openItem ? uniqueItemContent : null}
     </div>
   )

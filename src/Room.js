@@ -33,8 +33,13 @@ export default class Room extends Component {
   }
   selectItemOption(option) {
     const _rooms = this.state.rooms
+    /* update uniqueItem to selected option */
     _rooms[this.state.currentRoom].uniqueItems.item = _rooms[this.state.currentRoom].uniqueItems.options[option].item
+    /* change uniqueItemContent to display updated message */
     _rooms[this.state.currentRoom].uniqueItems.content = _rooms[this.state.currentRoom].uniqueItems.options[option].message
+    /* assign a key to the uniqueItem, if applicable */
+    _rooms[this.state.currentRoom].uniqueItems._key = _rooms[this.state.currentRoom].uniqueItems.options[option]._key ? _rooms[this.state.currentRoom].uniqueItems.options[option]._key : null
+    /* update uniqueItem options, if available */
     _rooms[this.state.currentRoom].uniqueItems.options = _rooms[this.state.currentRoom].uniqueItems.options[option]._options ? _rooms[this.state.currentRoom].uniqueItems.options[option]._options : null
     this.setState({rooms: _rooms})
   }
@@ -68,6 +73,9 @@ export default class Room extends Component {
     } else {
       console.log('not yet handled')
     }
+  }
+  componentDidUpdate() {
+    console.log(this.state.rooms[this.state.currentRoom].uniqueItems)
   }
   render() {
     const floorStyle = {

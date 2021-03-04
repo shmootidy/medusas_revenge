@@ -13,11 +13,9 @@ export default class UniqueItem extends Component {
   }
   handleOptionSelect(option) {
     this.props.onSelect(option)
-    if (option === 'option1') {
-      this.handleClose()
-    }
   }
-  handleOpen() {
+  handleOpen(key) {
+    if (key) console.log(key)
     this.setState({openItem: true})
   }
   handleClose() {
@@ -27,7 +25,7 @@ export default class UniqueItem extends Component {
     const uniqueItemHere = this.props.item && this.props.position === this.props.item.position ? true : false
     return(
       <div>
-        <div onClick={this.handleOpen}>{uniqueItemHere ? this.props.item.item : null}</div>
+        <div onClick={() => this.handleOpen(this.props.key)}>{uniqueItemHere ? this.props.item.item : null}</div>
         {this.state.openItem ? 
           <UniqueItemContent 
             content={uniqueItemHere ? this.props.item.content : null} 

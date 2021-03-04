@@ -256,7 +256,14 @@ const rooms = {
     uniqueItems: {
       item: 'skull',
       content:'a spooky old skull',
-      position: 'forward-door'
+      position: 'forward-door',
+      options: {
+        option1: {
+          option: 'smash skull',
+          message: 'the old skull is brittle and crushed under your heel',
+          leftover: 'skull fragments'
+        }
+      }
     }
   },
   N: {

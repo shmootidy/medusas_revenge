@@ -41,7 +41,7 @@ export default class Room extends Component {
     this.setState({rooms: _rooms})
     /* update inventory, if applicable */
     if (keyUsed) this.props.useKey(keyUsed)
-    if(prizeEarned) this.props.handleInventory(prizeEarned)
+    if (prizeEarned) this.props.handleInventory(prizeEarned)
   }
   
   handleFloorItems(item, position) {

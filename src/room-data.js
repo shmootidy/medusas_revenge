@@ -49,12 +49,12 @@ const rooms = {
       },
       right: {
         status: 'no door',
-        roomTo: 'R',
+        roomTo: 'I',
         position: 'right'
       },
       back: {
         status: 'open',
-        roomTo: 'R',
+        roomTo: 'I',
         position: 'back'
       }
     },
@@ -203,7 +203,7 @@ const rooms = {
       },
       back: {
         status: 'one-way',
-        roomTo: 'R',
+        roomTo: 'I',
         position: 'back'
       }
     },
@@ -220,8 +220,8 @@ const rooms = {
       },
     },
     uniqueItems: {
-      item: 'berries',
-      content: 'red berries',
+      item: 'skull',
+      content: 'a spooky old skull',
       position: 'forward-door'
     }
   },
@@ -265,7 +265,7 @@ const rooms = {
     doors: {
       left: {
         status: 'open',
-        roomTo: 'R',
+        roomTo: 'I',
         position: 'left'
       },
       forward: {
@@ -311,7 +311,7 @@ const rooms = {
       },
       right: {
         status: 'open',
-        roomTo: 'R',
+        roomTo: 'I',
         position: 'right'
       },
       back: {

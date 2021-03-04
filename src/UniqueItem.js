@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import UniqueItemContent from './UniqueItemContent'
 
 export default class UniqueItem extends Component {
   constructor(props) {
@@ -25,32 +26,33 @@ export default class UniqueItem extends Component {
   render() {
     const validOption = this.props.item && this.props.position === this.props.item.position ? true : false
     let uniqueItem = validOption ? this.props.item.item : null
-    const uniqueItemContentStyle = {
-      position: 'absolute',
-      top: '5%',
-      left: '5%',
-      width: '90%',
-      height: '90%',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      background: 'white'
-    }
+    // const uniqueItemContentStyle = {
+    //   position: 'absolute',
+    //   top: '5%',
+    //   left: '5%',
+    //   width: '90%',
+    //   height: '90%',
+    //   display: 'flex',
+    //   justifyContent: 'center',
+    //   alignItems: 'center',
+    //   background: 'white'
+    // }
     let content = validOption ? this.props.item.content : null
     let options = validOption && this.props.item.options ? Object.keys(this.props.item.options).map((key, i) => {
       return <button key={i} onClick={() => this.handleSelect(key)}>{this.props.item.options[key].option}</button>
     }) : null
-    const uniqueItemContent = (
-      <div style={uniqueItemContentStyle}>
-        {content}
-        {options}
-        <button onClick={this.handleClose}>Close</button>
-      </div>
-    )
+    // const uniqueItemContent = (
+    //   <div style={uniqueItemContentStyle}>
+    //     {content}
+    //     {options}
+    //     <button onClick={this.handleClose}>Close</button>
+    //   </div>
+    // )
     return(
       <div>
         <div onClick={this.handleClick}>{uniqueItem}</div>
-        {this.state.openItem ? uniqueItemContent : null}
+        {this.state.openItem ? <UniqueItemContent content={content} options={options} onClick={this.handleClose} /> : null }
+        {/* {this.state.openItem ? uniqueItemContent : null} */}
       </div>
     )
   }

@@ -260,9 +260,16 @@ const rooms = {
       options: {
         option1: {
           option: 'smash skull',
+          item: 'chalky skull fragments',
           message: 'the old skull crumbles like chalk under your heel',
-          _prize: 'chalky skull fragments',
-          leftover: 'skull dust'
+          _options: {
+            _prize: 'chalky skull fragments',
+            option1: {
+              option: 'collect chalky skull fragments',
+              leftover: 'skull dust',
+              message: 'you fill your pockets with bits of old skull'
+            }
+          }
         }
       }
     }

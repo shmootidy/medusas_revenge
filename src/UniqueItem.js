@@ -8,8 +8,12 @@ export default class UniqueItem extends Component {
     }
     this.handleClick = this.handleClick.bind(this)
     this.handleClose = this.handleClose.bind(this)
+    this.handleSelect = this.handleSelect.bind(this)
   }
-
+  handleSelect(option) {
+    this.props.onSelect(option)
+    // console.log(this.props.item.options[option])
+  }
   handleClick() {
     this.setState({openItem: true})
   }
@@ -31,9 +35,13 @@ export default class UniqueItem extends Component {
       background: 'white'
     }
     let content = validOption ? this.props.item.content : null
+    let options = validOption && this.props.item.options ? Object.keys(this.props.item.options).map((key, i) => {
+      return <button key={i} onClick={() => this.handleSelect(key)}>{this.props.item.options[key]}</button>
+    }) : null
     const uniqueItemContent = (
       <div style={uniqueItemContentStyle}>
         {content}
+        {options}
         <button onClick={this.handleClose}>Close</button>
       </div>
     )

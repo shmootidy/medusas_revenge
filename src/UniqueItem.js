@@ -13,7 +13,7 @@ export default class UniqueItem extends Component {
   }
   handleOptionSelect(option) {
     /* send option and key used, if applicable */
-    this.props.onSelect(option, this.props.item.options && this.props.item.options._key ? this.props.item.options._key : null)
+    this.props.onSelect(option, this.props.item.options && this.props.item.options._key ? this.props.item.options._key : null, this.props.item.options && this.props.item.options._prize ? this.props.item.options._prize : null)
   }
   handleOpen() {
     this.setState({openItem: true})

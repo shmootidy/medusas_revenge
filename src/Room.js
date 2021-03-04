@@ -27,8 +27,9 @@ export default class Room extends Component {
     this.handleFloorItems = this.handleFloorItems.bind(this)
     this.selectItemOption = this.selectItemOption.bind(this)
   }
-  selectItemOption(option, keyUsed) {
+  selectItemOption(option, keyUsed, prizeEarned) {
     const _rooms = this.state.rooms
+    console.log(_rooms[this.state.currentRoom].uniqueItems.options[option])
     /* update uniqueItem to selected option */
     _rooms[this.state.currentRoom].uniqueItems.item = _rooms[this.state.currentRoom].uniqueItems.options[option].item
     /* change uniqueItemContent to display updated message */
@@ -40,6 +41,7 @@ export default class Room extends Component {
     this.setState({rooms: _rooms})
     /* update inventory, if applicable */
     if (keyUsed) this.props.useKey(keyUsed)
+    if(prizeEarned) this.props.handleInventory(prizeEarned)
   }
   
   handleFloorItems(item, position) {

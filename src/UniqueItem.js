@@ -14,7 +14,6 @@ export default class UniqueItem extends Component {
   handleOptionSelect(option) {
     /* send option and key used, if applicable */
     let keyUsed = (this.props.inventory && this.props.inventory[this.props.item._key]) ? this.props.item._key : null
-    
     this.props.onSelect(option, keyUsed, this.props.item.options && this.props.item.options._prize ? this.props.item.options._prize : null)
   }
   handleOpen() {

@@ -17,7 +17,8 @@ const icons = {
   'dead spider': '💀🕷',
   'levelKey': '🗝',
   'levelLock': '🔒🚪🔒',
-  'player': '👩🏼‍🦱'
+  'player': '👩🏼‍🦱',
+  'wall writing': '📝'
 }
 
 export default icons

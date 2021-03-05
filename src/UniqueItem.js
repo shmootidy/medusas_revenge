@@ -11,6 +11,10 @@ export default class UniqueItem extends Component {
     this.handleOpen = this.handleOpen.bind(this)
     this.handleClose = this.handleClose.bind(this)
     this.handleOptionSelect = this.handleOptionSelect.bind(this)
+    this.handleWriting = this.handleWriting.bind(this)
+  }
+  handleWriting(input) {
+    this.props.handleWriting(input, this.props.position)
   }
   handleOptionSelect(option) {
     /* send option and key used, if applicable */
@@ -40,7 +44,8 @@ export default class UniqueItem extends Component {
             content={uniqueItemHere ? this.props.item[this.props.position].content : null} 
             options={(uniqueItemHere && this.props.item[this.props.position].options) && (!this.props.item[this.props.position]._key || this.props.inventory[this.props.item[this.props.position]._key]) ? this.props.item[this.props.position].options : null} 
             onClick={this.handleClose}
-            selectOption={this.handleOptionSelect} /> 
+            selectOption={this.handleOptionSelect}
+            handleWriting={this.handleWriting} /> 
           : null }
       </div>
     )

@@ -17,7 +17,6 @@ export default function UniqueItemContent(props) {
     setInput(event.target.value)
   }
   function handleSubmit(event) {
-    // console.log(input)
     props.handleWriting(input)
     event.preventDefault()
   }

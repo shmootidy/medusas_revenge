@@ -39,13 +39,13 @@ export default class Room extends Component {
     if (prizeEarned) this.props.handleInventory(prizeEarned)
   }
   handleWriting(content, position) {
-    // const _rooms = this.state.rooms
-    // _rooms[this.state.currentRoom].uniqueItems[position] = {
-    //   item: 'user wuz here',
-    //   content: 'your message is scribbled on the wall',
-    // }
-    // this.setState({rooms: _rooms})
-    // NOTE::: this isn't working because I'm not using the uniqueItemssss as a group object, but to refer to a single object. Currently, rooms can have one unique item apiece, and so I'll need to change that before I can create the wall writing feature.
+    console.log(content, position)
+    const _rooms = this.state.rooms
+    _rooms[this.state.currentRoom].uniqueItems[position] = {
+      item: 'wall writing',
+      content: 'there is writing scribbled here: "' + content + '"'
+    }
+    this.setState({rooms: _rooms})
   }
   handleFloorItems(item, position) {
     const _rooms = this.state.rooms

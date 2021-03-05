@@ -18,13 +18,6 @@ export default class UniqueItem extends Component {
     this.props.onSelect(option, keyUsed, this.props.item.options && this.props.item.options._prize ? this.props.item.options._prize : null)
   }
   handleOpen() {
-    // if it's a blank wall and user does have a writing tool, open special Content that enables user input
-    // if (!this.props.item.end) this.setState({openItem: true})
-    // if (this.props.inventory['chalky skull fragments']) {
-    //   console.log('hi')
-    // }
-    // if it's a regular item, open
-    // if it's an item at its end, do not open
     if (this.props.item && this.props.position === this.props.item.position && !this.props.item.end) {
       this.setState({openItem: true})
     } else if (this.props.inventory['chalky skull fragments']) {

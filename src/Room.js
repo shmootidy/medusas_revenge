@@ -38,7 +38,7 @@ export default class Room extends Component {
     if (keyUsed) this.props.useKey(keyUsed)
     if (prizeEarned) this.props.handleInventory(prizeEarned)
   }
-  handleWriting(position) {
+  handleWriting(content, position) {
     // const _rooms = this.state.rooms
     // _rooms[this.state.currentRoom].uniqueItems[position] = {
     //   item: 'user wuz here',

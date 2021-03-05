@@ -10,7 +10,7 @@ export default function UniqueItemContent(props) {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    background: 'white'
+    background: 'white',
   }
   const [ input, setInput ] = useState('')
   function handleChange(event) {

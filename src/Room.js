@@ -21,18 +21,18 @@ export default class Room extends Component {
     this.handleFloorItems = this.handleFloorItems.bind(this)
     this.selectItemOption = this.selectItemOption.bind(this)
   }
-  selectItemOption(option, keyUsed, prizeEarned) {
+  selectItemOption(option, keyUsed, prizeEarned, itemPosition) {
     const _rooms = this.state.rooms
     /* update uniqueItem to selected option */
-    _rooms[this.state.currentRoom].uniqueItems.item = _rooms[this.state.currentRoom].uniqueItems.options[option].item ? _rooms[this.state.currentRoom].uniqueItems.options[option].item : _rooms[this.state.currentRoom].uniqueItems.options[option].leftover ? _rooms[this.state.currentRoom].uniqueItems.options[option].leftover : null
+    _rooms[this.state.currentRoom].uniqueItems[itemPosition].item = _rooms[this.state.currentRoom].uniqueItems[itemPosition].options[option].item ? _rooms[this.state.currentRoom].uniqueItems[itemPosition].options[option].item : _rooms[this.state.currentRoom].uniqueItems[itemPosition].options[option].leftover ? _rooms[this.state.currentRoom].uniqueItems[itemPosition].options[option].leftover : null
     /* set end marker when end of interaction is reached */
-    _rooms[this.state.currentRoom].uniqueItems.end = _rooms[this.state.currentRoom].uniqueItems.options[option].leftover ? true : false
+    _rooms[this.state.currentRoom].uniqueItems[itemPosition].end = _rooms[this.state.currentRoom].uniqueItems[itemPosition].options[option].leftover ? true : false
     /* change uniqueItemContent to display updated message */
-    _rooms[this.state.currentRoom].uniqueItems.content = _rooms[this.state.currentRoom].uniqueItems.options[option].message
+    _rooms[this.state.currentRoom].uniqueItems[itemPosition].content = _rooms[this.state.currentRoom].uniqueItems[itemPosition].options[option].message
     /* assign a key to the uniqueItem, if applicable */
-    _rooms[this.state.currentRoom].uniqueItems._key = ( _rooms[this.state.currentRoom].uniqueItems.options[option]._options && _rooms[this.state.currentRoom].uniqueItems.options[option]._options._key ) ? _rooms[this.state.currentRoom].uniqueItems.options[option]._options._key : null
+    _rooms[this.state.currentRoom].uniqueItems[itemPosition]._key = ( _rooms[this.state.currentRoom].uniqueItems[itemPosition].options[option]._options && _rooms[this.state.currentRoom].uniqueItems[itemPosition].options[option]._options._key ) ? _rooms[this.state.currentRoom].uniqueItems[itemPosition].options[option]._options._key : null
     /* update options with suboptions, if applicable */
-    _rooms[this.state.currentRoom].uniqueItems.options = _rooms[this.state.currentRoom].uniqueItems.options[option]._options ? _rooms[this.state.currentRoom].uniqueItems.options[option]._options : null
+    _rooms[this.state.currentRoom].uniqueItems[itemPosition].options = _rooms[this.state.currentRoom].uniqueItems[itemPosition].options[option]._options ? _rooms[this.state.currentRoom].uniqueItems[itemPosition].options[option]._options : null
     this.setState({rooms: _rooms})
     /* update inventory, if applicable */
     if (keyUsed) this.props.useKey(keyUsed)

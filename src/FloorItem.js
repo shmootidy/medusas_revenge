@@ -30,7 +30,7 @@ export default class FloorItem extends Component {
   render() {
     let item
     if (this.props.item && !this.state.opened) {
-      item = icons[this.props.item] ? icons[this.props.item] : this.prop.item
+      item = icons[this.props.item] ? icons[this.props.item] : this.props.item
     } else if ((this.props.prize && this.state.opened) || (!this.props.item && this.props.prize)) {
       item = icons[this.props.prize] ? icons[this.props.prize] : this.props.prize
     }

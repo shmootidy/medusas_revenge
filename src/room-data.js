@@ -172,7 +172,7 @@ const rooms = {
     uniqueItems: {
       'ceiling': {
         item: 'spider',
-        content: 'what do?',
+        content: 'what doo?',
         options: {
           option1: {
             option: 'kill spider',

@@ -14,11 +14,13 @@ export default class UniqueItem extends Component {
   }
   handleOptionSelect(option) {
     /* send option and key used, if applicable */
-    let keyUsed = (this.props.inventory && this.props.inventory[this.props.item._key]) ? this.props.item._key : null
-    this.props.onSelect(option, keyUsed, this.props.item.options && this.props.item.options._prize ? this.props.item.options._prize : null)
+    let keyUsed = (this.props.inventory && this.props.inventory[this.props.item._key]) ? this.props.item[this.props.position]._key : null
+    let prizeEarned = this.props.item[this.props.position].options && this.props.item[this.props.position].options._prize ? this.props.item[this.props.position].options._prize : null
+    let itemPosition = this.props.position
+    this.props.onSelect(option, keyUsed, prizeEarned, itemPosition)
   }
   handleOpen() {
-    if (this.props.item && this.props.position === this.props.item.position && !this.props.item.end) {
+    if (this.props.item && this.props.item[this.props.position] && !this.props.item.end) {
       this.setState({openItem: true})
     } else if (this.props.inventory['chalky skull fragments']) {
       // this.props.handleWriting(this.props.position)
@@ -29,14 +31,14 @@ export default class UniqueItem extends Component {
     this.setState({openItem: false})
   }
   render() {
-    const uniqueItemHere = this.props.item && this.props.position === this.props.item.position ? true : false
+    const uniqueItemHere = this.props.item && this.props.item[this.props.position]
     return(
       <div>
-        <div style={{minHeight: '25px', minWidth: '25px', backgroundColor: 'yellow'}} onClick={this.handleOpen}>{uniqueItemHere ? icons[this.props.item.item] ? icons[this.props.item.item] : this.props.item.item : null }</div>
+        <div style={{minHeight: '25px', minWidth: '25px', backgroundColor: 'yellow'}} onClick={this.handleOpen}>{uniqueItemHere ? icons[this.props.item[this.props.position].item] ? icons[this.props.item[this.props.position].item] : this.props.item[this.props.position].item : null }</div>
         {this.state.openItem ? 
           <UniqueItemContent 
-            content={uniqueItemHere ? this.props.item.content : null} 
-            options={(uniqueItemHere && this.props.item.options) && (!this.props.item._key || this.props.inventory[this.props.item._key]) ? this.props.item.options : null} 
+            content={uniqueItemHere ? this.props.item[this.props.position].content : null} 
+            options={(uniqueItemHere && this.props.item[this.props.position].options) && (!this.props.item[this.props.position]._key || this.props.inventory[this.props.item[this.props.position]._key]) ? this.props.item[this.props.position].options : null} 
             onClick={this.handleClose}
             selectOption={this.handleOptionSelect} /> 
           : null }

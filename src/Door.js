@@ -15,7 +15,6 @@ export default class Door extends Component {
     const doorStyle = {
       height: '50px',
       width: '50px',
-      // backgroundColor: (status === 'no door') ? '' : 'darkgreen'
     }
     return (
       <div style={doorStyle} onClick={this.handleClick}>

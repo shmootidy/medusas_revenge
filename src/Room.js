@@ -43,6 +43,7 @@ export default class Room extends Component {
     const _rooms = this.state.rooms
     _rooms[this.state.currentRoom].uniqueItems[position] = {
       item: 'wall writing',
+      content: 'there is writing scribbled here: "' + content + '"'
     }
     this.setState({rooms: _rooms})
   }

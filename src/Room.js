@@ -44,6 +44,7 @@ export default class Room extends Component {
       item: 'wall writing',
       content: 'there is writing scribbled here: "' + content + '"'
     }
+    this.props.useKey('chalky skull fragments')
     this.setState({rooms: _rooms})
   }
   handleFloorItems(item, position) {

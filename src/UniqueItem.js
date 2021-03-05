@@ -26,8 +26,7 @@ export default class UniqueItem extends Component {
   handleOpen() {
     if (this.props.item && this.props.item[this.props.position] && !this.props.item.end) {
       this.setState({openItem: true})
-    } else if (this.props.inventory['chalky skull fragments']) {
-      // this.props.handleWriting(this.props.position)
+    } else if (this.props.inventory['chalky skull fragments'] && this.props.position !== 'ceiling') {
       this.setState({openItem: true})
     }
   }

@@ -39,7 +39,6 @@ export default class Room extends Component {
     if (prizeEarned) this.props.handleInventory(prizeEarned)
   }
   handleWriting(content, position) {
-    console.log(content, position)
     const _rooms = this.state.rooms
     _rooms[this.state.currentRoom].uniqueItems[position] = {
       item: 'wall writing',

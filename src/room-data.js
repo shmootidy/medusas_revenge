@@ -35,6 +35,19 @@ const rooms = {
       },
     },
     uniqueItems: {
+      'ceiling': {
+        item: 'levelKey',
+        content: 'you can\'t reach it',
+        _key: 'happy spider',
+        options: {
+          _prize: 'levelKey',
+          _option1: {
+            option: 'send spider',
+            message: 'your spider settles into her new home, tossing you the key as thanks',
+            leftover: 'happy spider'
+          }
+        }
+      },
       item: 'levelKey',
       content: 'you can\'t reach it',
       position: 'ceiling',
@@ -157,6 +170,39 @@ const rooms = {
       },
     },
     uniqueItems: {
+      'ceiling': {
+        item: 'spider',
+        content: 'what do?',
+        options: {
+          option1: {
+            option: 'kill spider',
+            item: 'dead spider',
+            message: 'the spider is dead',
+            _options: {
+              _prize: 'dead spider',
+              _option1: {
+                option: 'pick up spider',
+                message: 'you added "dead spider" to your inventory',
+                leftover: 'spider webs'
+              }
+            }
+          },
+          option2: {
+            option: 'talk to spider',
+            item: 'hungry spider',
+            message: '"I\'m hungry!"',
+            _options: {
+              _key: 'dead fly',
+              _prize: 'happy spider',
+              _option1: {
+                option: 'feed spider',
+                message: 'you made a new friend',
+                leftover: 'spider webs'
+              }
+            }
+          }
+        }
+      },
       item: 'spider',
       content: 'what do?',
       position: 'ceiling',
@@ -227,6 +273,10 @@ const rooms = {
       },
     },
     uniqueItems: {
+      'left-wall': {
+        item: 'sign',
+        content: 'Entering this dungeon will be the last meaningful decision you will make.',
+      },
       item: 'sign',
       // content: 'Entering this dungeon will be the last meaningful decision you will make.',
       content: 'Adventurer Beware',
@@ -269,6 +319,25 @@ const rooms = {
       },
     },
     uniqueItems: {
+      'forward-door': {
+        item: 'skull',
+        content:'a spooky old skull',
+        options: {
+          option1: {
+            option: 'smash skull',
+            item: 'chalky skull fragments',
+            message: 'the old skull crumbles like chalk under your heel',
+            _options: {
+              _prize: 'chalky skull fragments',
+              option1: {
+                option: 'collect chalky skull fragments',
+                leftover: 'skull dust',
+                message: 'you fill your pockets with bits of old skull'
+              }
+            }
+          }
+        }
+      },
       item: 'skull',
       content:'a spooky old skull',
       position: 'forward-door',

@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import icons from './icon-map'
 
 export default class Inventory extends Component {
   render() {
@@ -7,14 +8,14 @@ export default class Inventory extends Component {
       if ((this.props.inventory[item] && item !== 'key') || item === 'coins') {
         output = (
           <tr key={i}>
-            <td>{item}</td>
+            <td>{icons[item] ? icons[item] : item }</td>
             <td>{this.props.inventory[item]}</td>
           </tr>
         )
       }
       return output
     })
-    const key = this.props.inventory.key ? <div>key</div> : ''
+    const key = this.props.inventory.key ? <div>{icons.key}</div> : ''
     return (
       <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
         <table>

@@ -62,11 +62,7 @@ export default class Room extends Component {
   handleDoorClick(door) {
     const doorStatus = door.status
     if (doorStatus === 'open') {
-      // if (door.position === 'forward' && this.state.currentRoom === 'R') {
-        // console.log('are you sure?')
-      // } else {
-        this.changeRooms(door.roomTo)
-      // }
+      this.changeRooms(door.roomTo)
     } else if (doorStatus === 'locked') {
       const keyNeeded = door.levelLock ? 'levelKey' : 'key'
       if (this.props.inventory[keyNeeded]) {

@@ -228,7 +228,8 @@ const rooms = {
     },
     uniqueItems: {
       item: 'sign',
-      content: 'Entering this dungeon will be the last meaningful decision you will make.',
+      // content: 'Entering this dungeon will be the last meaningful decision you will make.',
+      content: 'Adventurer Beware',
       position: 'left-wall'
     }
   },

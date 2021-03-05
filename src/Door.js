@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import icons from './icon-map'
 
 export default class Door extends Component {
   constructor(props) {
@@ -10,11 +11,11 @@ export default class Door extends Component {
   }
   render() {
     const door = this.props.door
-    const status = door.status
+    const status = icons[door.status] ? icons[door.status] : ''
     const doorStyle = {
       height: '50px',
       width: '50px',
-      backgroundColor: (status === 'no door') ? '' : 'darkgreen'
+      // backgroundColor: (status === 'no door') ? '' : 'darkgreen'
     }
     return (
       <div style={doorStyle} onClick={this.handleClick}>

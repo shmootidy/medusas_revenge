@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import UniqueItemContent from './UniqueItemContent'
+import icons from './icon-map'
 
 export default class UniqueItem extends Component {
   constructor(props) {
@@ -39,7 +40,7 @@ export default class UniqueItem extends Component {
     const uniqueItemHere = this.props.item && this.props.position === this.props.item.position ? true : false
     return(
       <div>
-        <div onClick={this.handleOpen}>{uniqueItemHere ? this.props.item.item : 'empty space'}</div>
+        <div onClick={this.handleOpen}>{uniqueItemHere ? icons[this.props.item.item] ? icons[this.props.item.item] : this.props.item.item : null }</div>
         {this.state.openItem ? 
           <UniqueItemContent 
             content={uniqueItemHere ? this.props.item.content : null} 

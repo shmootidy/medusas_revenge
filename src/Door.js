@@ -11,7 +11,7 @@ export default class Door extends Component {
   }
   render() {
     const door = this.props.door
-    const status = icons[door.status] ? icons[door.status] : ''
+    const status = icons[door.status] ? this.props.door.levelLock ? door.status === 'open' ? icons[door.status] : icons.levelLock : icons[door.status] : ''
     const doorStyle = {
       height: '50px',
       width: '50px',

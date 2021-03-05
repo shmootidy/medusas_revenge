@@ -11,11 +11,13 @@ const icons = {
   'chalky skull fragments': '🦴',
   'dead fly': '🦟',
   'spider': '🕷',
-  'spider web': '🕸',
+  'spider webs': '🕸',
   'happy spider': '😊🕷',
   'hungry spider': '☹️🕷',
   'dead spider': '💀🕷',
-  'levelKey': '🗝'
+  'levelKey': '🗝',
+  'levelLock': '🔒🚪🔒',
+  'player': '👩🏼‍🦱'
 }
 
 export default icons

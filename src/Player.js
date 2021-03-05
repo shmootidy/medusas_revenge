@@ -1,5 +1,5 @@
 import { Component } from 'react'
-
+import icons from './icon-map'
 export default class Player extends Component {
   render() {
     const playerStyle = {
@@ -7,7 +7,7 @@ export default class Player extends Component {
     }
     return (
       <div style={playerStyle}>
-        <div>player</div>
+        <div>{icons.player ? icons.player : 'player'}</div>
       </div>
     )
   }

@@ -296,7 +296,7 @@ const rooms = {
               option1: {
                 option: 'collect chalky skull fragments',
                 leftover: 'skull dust',
-                message: 'you fill your pockets with bits of old skull'
+                message: 'you fill your pocket with bits of old skull'
               }
             }
           }
@@ -338,6 +338,33 @@ const rooms = {
         prize: null,
         position: 'right'
       },
+    },
+    uniqueItems: {
+      'left-door': {
+        item: 'juicy red berries',
+        content: 'what do?',
+        options: {
+          option1: {
+            option: 'collect berries',
+            item: 'berry stains',
+            leftover: 'stains are left from the berries you took',
+            prize: ['juicy red berries', 10],
+          },
+          option2: {
+            option: 'squish berries',
+            item: 'squished berries',
+            message: 'the soft, ripe berries squish easily',
+            _options: {
+              _prize: ['berry goo', 5],
+              option1: {
+                option: 'collect berry goo',
+                leftover: 'stains are left from the berries you took',
+                message: 'you put the squished berries in your berry pouch'
+              }
+            }
+          }
+        }
+      }
     }
   },
   T: {

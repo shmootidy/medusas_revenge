@@ -25,7 +25,7 @@ export default class Dungeon extends Component {
   }
   handleInventory(item) {
     const inventory = this.state.inventory
-    inventory[item] = inventory[item] ? inventory[item] + 1 : 1
+    inventory[item[0]] = inventory[item[0]] ? inventory[item[0]] + item[1] : item[1]
     this.setState({inventory})
   }
   handleRoomSwitch() {

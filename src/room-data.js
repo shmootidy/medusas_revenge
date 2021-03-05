@@ -30,7 +30,7 @@ const rooms = {
       },
       right: {
         item: 'jar',
-        prize: 'coins',
+        prize: ['coins', 3],
         position: 'right'
       },
     },
@@ -40,7 +40,7 @@ const rooms = {
         content: 'you can\'t reach it',
         _key: 'happy spider',
         options: {
-          _prize: 'levelKey',
+          _prize: ['levelKey', 1],
           _option1: {
             option: 'send spider',
             message: 'your spider settles into her new home, tossing you the key as thanks',
@@ -53,7 +53,7 @@ const rooms = {
       position: 'ceiling',
       _key: 'happy spider',
       options: {
-        _prize: 'levelKey',
+        _prize: ['levelKey', 1],
         _option1: {
           option: 'send spider',
           message: 'your spider settles into her new home, tossing you the key as thanks',
@@ -93,7 +93,7 @@ const rooms = {
       },
       right: {
         item: null,
-        prize: 'coins',
+        prize: ['coins', 5],
         position: 'right'
       },
     }
@@ -179,7 +179,7 @@ const rooms = {
             item: 'dead spider',
             message: 'the spider is dead',
             _options: {
-              _prize: 'dead spider',
+              _prize: ['dead spider', 1],
               _option1: {
                 option: 'pick up spider',
                 message: 'you added "dead spider" to your inventory',
@@ -193,7 +193,7 @@ const rooms = {
             message: '"I\'m hungry!"',
             _options: {
               _key: 'dead fly',
-              _prize: 'happy spider',
+              _prize: ['happy spider', 1],
               _option1: {
                 option: 'feed spider',
                 message: 'you made a new friend',
@@ -231,12 +231,12 @@ const rooms = {
     floorItems: {
       left: {
         item: 'jar',
-        prize: 'key',
+        prize: ['key', 1],
         position: 'left'
       },
       right: {
         item: 'jar',
-        prize: 'coins',
+        prize: ['coins', 2],
         position: 'right'
       },
     },
@@ -278,7 +278,7 @@ const rooms = {
       },
       right: {
         item: 'jar',
-        prize: 'key',
+        prize: ['key', 1],
         position: 'right'
       },
     },
@@ -292,7 +292,7 @@ const rooms = {
             item: 'chalky skull fragments',
             message: 'the old skull crumbles like chalk under your heel',
             _options: {
-              _prize: 'chalky skull fragments',
+              _prize: ['chalky skull fragments', 5],
               option1: {
                 option: 'collect chalky skull fragments',
                 leftover: 'skull dust',
@@ -330,7 +330,7 @@ const rooms = {
     floorItems: {
       left: {
         item: null,
-        prize: 'dead fly',
+        prize: ['dead fly', 1],
         position: 'left'
       },
       right: {

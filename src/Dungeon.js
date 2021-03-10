@@ -2,6 +2,7 @@ import { Component } from 'react'
 import Room from './Room'
 import { Transition } from 'react-transition-group'
 import Inventory from './Inventory'
+import background from '/background.jpg'
 
 export default class Dungeon extends Component {
   constructor(props) {
@@ -55,6 +56,7 @@ export default class Dungeon extends Component {
               ...defaultDungeonStyle,
               ...transitionStyles[state]
             }}>
+              <img src={background} alt="background" />
               <Room onRoomSwitch={this.handleRoomSwitch} handleInventory={this.handleInventory} useKey={this.useKey} inventory={this.state.inventory} />
             </div>
           )}

@@ -2,7 +2,7 @@ import { Component } from 'react'
 import Room from './Room'
 import { Transition } from 'react-transition-group'
 import Inventory from './Inventory'
-import background from '/background.jpg'
+import background from './background.JPG'
 
 export default class Dungeon extends Component {
   constructor(props) {

@@ -2,7 +2,7 @@ import { Component } from 'react'
 import Room from './Room'
 import { Transition } from 'react-transition-group'
 import Inventory from './Inventory'
-import background from './background.JPG'
+// import background from './background.JPG'
 
 export default class Dungeon extends Component {
   constructor(props) {
@@ -48,13 +48,13 @@ export default class Dungeon extends Component {
       enter: 300,
       exit: 300
     }
-    const backgroundImgStyle = {
-      position: 'absolute',
-      top: '0',
-      left: '0',
-      height: '100vh',
-      maxWidth: '80%'
-    }
+    // const backgroundImgStyle = {
+    //   position: 'absolute',
+    //   top: '0',
+    //   left: '0',
+    //   height: '100vh',
+    //   maxWidth: '80%'
+    // }
     return (
       <div style={{display: 'flex'}}>
         <Transition in={this.state.switchRoomState} timeout={duration} >
@@ -63,7 +63,7 @@ export default class Dungeon extends Component {
               ...defaultDungeonStyle,
               ...transitionStyles[state]
             }}>
-              <img style={backgroundImgStyle} src={background} alt="background" />
+              {/* <img style={backgroundImgStyle} src={background} alt="background" /> */}
               <Room onRoomSwitch={this.handleRoomSwitch} handleInventory={this.handleInventory} useKey={this.useKey} inventory={this.state.inventory} />
             </div>
           )}

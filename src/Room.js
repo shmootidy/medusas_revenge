@@ -4,6 +4,7 @@ import FloorItem from './FloorItem'
 import Player from './Player'
 import UniqueItem from './UniqueItem'
 
+import background from './background.JPG'
 import rooms from './room-data'
 
 export default class Room extends Component {
@@ -92,19 +93,27 @@ export default class Room extends Component {
       flexWrap: 'wrap',
     }
     const roomStyle = {
-      height: '300px',
+      height: '100vh',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-around',
       flexBasis: '90%',
       position: 'relative'
     }
+    const backgroundImgStyle = {
+      position: 'absolute',
+      top: '0',
+      left: '0',
+      height: '100vh',
+      maxWidth: '80%'
+    }
     if (this.state.rooms[this.state.currentRoom]) {
       const doors = this.state.rooms[this.state.currentRoom].doors
       const floorItems = this.state.rooms[this.state.currentRoom].floorItems
   
       return (
-        <div style={roomStyle}>
+        <div className="Room" style={roomStyle}>
+          {/* <img src={background} alt="background" style={backgroundImgStyle} /> */}
           <UniqueItem room={this.state.currentRoom} position="ceiling" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} inventory={this.props.inventory} handleWriting={this.handleWriting} />
           <div style={threeDoorsStyle}>
             <Door door={doors.left} onDoorClick={this.handleDoorClick} />

@@ -105,7 +105,6 @@ export default class Room extends Component {
   
       return (
         <div style={roomStyle}>
-          <div>{this.state.currentRoom}</div>
           <UniqueItem room={this.state.currentRoom} position="ceiling" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} inventory={this.props.inventory} handleWriting={this.handleWriting} />
           <div style={threeDoorsStyle}>
             <Door door={doors.left} onDoorClick={this.handleDoorClick} />

@@ -18,7 +18,8 @@ const icons = {
   'levelKey': '🗝',
   'levelLock': '🔒🚪🔒',
   'player': '👩🏼‍🦱',
-  'wall writing': '📝'
+  'wall writing': '📝',
+  'glass jar': ''
 }
 
 export default icons

@@ -6,6 +6,6 @@
   align-items: center;
 }
 .Room {
-  background: url('background.JPG') center center no-repeat;
-  background-size: contain;
+  /* background: url('background.JPG') center center no-repeat;
+  background-size: contain; */
 }

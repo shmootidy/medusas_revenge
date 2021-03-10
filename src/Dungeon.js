@@ -34,8 +34,8 @@ export default class Dungeon extends Component {
   }
   render() {
     const defaultDungeonStyle = {
-      textAlign: 'center',
-      width: '500px'
+      // textAlign: 'center',
+      // width: '500px'
     }
     const transitionStyles = {
       entering: { opacity: 0 },

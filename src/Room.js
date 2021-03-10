@@ -139,7 +139,7 @@ export default class Room extends Component {
               <FloorItem item={floorItems.right.item} prize={floorItems.right.prize} position='right' onPickUp={this.handleFloorItems} />
               <UniqueItem room={this.state.currentRoom} position="right-door" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} inventory={this.props.inventory} handleWriting={this.handleWriting} />
             </div>
-            {/* <Player /> */}
+            <Player />
             <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}><Door door={doors.back} onDoorClick={this.handleDoorClick} /></div>
           </div>
         </div>

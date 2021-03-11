@@ -11,6 +11,7 @@ export default function UniqueItemContent(props) {
     justifyContent: 'center',
     alignItems: 'center',
     background: 'white',
+    zIndex: 10,
   }
   const [ input, setInput ] = useState('')
   function handleChange(event) {

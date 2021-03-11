@@ -20,7 +20,7 @@ export default class Door extends Component {
     let _door
     if (door.position === 'forward') {
       _door = forward_doorway
-      doorStyle.width = '38%'
+      doorStyle.width = '27%'
       doorStyle.height = '104%'
       doorStyle.display = 'flex'
       doorStyle.alignItems = 'flex-end'

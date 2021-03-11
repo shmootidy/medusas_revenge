@@ -40,7 +40,7 @@ export default class UniqueItem extends Component {
       positionStyle.minHeight = '22%'
     } else if (this.props.position === 'left-wall' || this.props.position === 'right-wall') {
       // positionStyle.height = '108%'
-      positionStyle.width = '5%'
+      positionStyle.width = '10%'
     }
     return(
       <div className="UniqueItem" style={positionStyle}>

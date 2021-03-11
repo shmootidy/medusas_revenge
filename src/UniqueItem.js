@@ -44,7 +44,7 @@ export default class UniqueItem extends Component {
     }
     return(
       <div style={positionStyle}>
-        <div style={{minHeight: '25px', minWidth: '25px', backgroundColor: 'yellow'}} onClick={this.handleOpen}>{uniqueItemHere ? icons[this.props.item[this.props.position].item] ? icons[this.props.item[this.props.position].item] : this.props.item[this.props.position].item : null }</div>
+        <div onClick={this.handleOpen}>{uniqueItemHere ? icons[this.props.item[this.props.position].item] ? icons[this.props.item[this.props.position].item] : this.props.item[this.props.position].item : null }</div>
         {this.state.openItem ? 
           <UniqueItemContent 
             content={uniqueItemHere ? this.props.item[this.props.position].content : null} 

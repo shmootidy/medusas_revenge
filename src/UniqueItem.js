@@ -35,8 +35,12 @@ export default class UniqueItem extends Component {
   }
   render() {
     const uniqueItemHere = this.props.item && this.props.item[this.props.position]
+    const positionStyle = {}
+    if (this.props.position === 'ceiling') {
+      positionStyle.minHeight = '22%'
+    } else if (this.props.position === 'ceiling') {}
     return(
-      <div>
+      <div style={positionStyle}>
         <div style={{minHeight: '25px', minWidth: '25px', backgroundColor: 'yellow'}} onClick={this.handleOpen}>{uniqueItemHere ? icons[this.props.item[this.props.position].item] ? icons[this.props.item[this.props.position].item] : this.props.item[this.props.position].item : null }</div>
         {this.state.openItem ? 
           <UniqueItemContent 

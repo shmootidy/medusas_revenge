@@ -40,7 +40,7 @@ export default class FloorItem extends Component {
     }
     return (
       <div className="FloorItem" onClick={this.handleClick}>
-        <div>{item}</div>
+        {item}
       </div>
     )
   }

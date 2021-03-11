@@ -91,6 +91,7 @@ export default class Room extends Component {
       justifyContent: 'space-between',
       alignItems: 'center',
       flexWrap: 'wrap',
+      height: '48%'
     }
     const roomStyle = {
       height: '100vh',
@@ -114,7 +115,7 @@ export default class Room extends Component {
       width: '100%',
       display: 'flex',
       flexDirection: 'column',
-      justifyContent: 'space-between'
+      // justifyContent: 'space-between',
     }
     if (this.state.rooms[this.state.currentRoom]) {
       const doors = this.state.rooms[this.state.currentRoom].doors

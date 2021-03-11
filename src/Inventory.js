@@ -8,7 +8,7 @@ export default class Inventory extends Component {
       if ((this.props.inventory[item] && item !== 'key') || item === 'coins') {
         output = (
           <tr key={i}>
-            <td>{icons[item] ? icons[item] : item }</td>
+            <td>{icons[item] ? <img src={icons[item]} alt={item} /> : item }</td>
             <td>{this.props.inventory[item]}</td>
           </tr>
         )

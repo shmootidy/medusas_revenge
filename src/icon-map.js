@@ -4,6 +4,9 @@ import coin from './assets/coin.png'
 import key from './assets/key.png'
 import sign from './assets/sign.png'
 import skull from './assets/skull.png'
+import forward_doorway from './assets/forward_doorway.png'
+import left_doorway from './assets/left_doorway.png'
+import right_doorway from './assets/right_doorway.png'
 
 const icons = {
   'no door': null,
@@ -26,7 +29,10 @@ const icons = {
   'levelLock': '🔒🚪🔒',
   'player': medusa,
   'wall writing': '📝',
-  'glass jar': ''
+  'glass jar': '',
+  left_doorway,
+  right_doorway,
+  forward_doorway
 }
 
 export default icons

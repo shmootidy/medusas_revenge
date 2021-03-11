@@ -17,11 +17,11 @@
   transform: rotate(180deg);
 }
 .left-door img {
-  transform: rotate(91deg);
   position: absolute;
-  left: -71px;
-  top: 46px;
-  height: 40%;
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .right-door img {
   transform: rotate(180deg);

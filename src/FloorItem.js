@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import icons from './icon-map'
+
 export default class FloorItem extends Component {
   constructor(props) {
     super(props)
@@ -30,7 +31,7 @@ export default class FloorItem extends Component {
   render() {
     let item
     if (this.props.item && !this.state.opened) {
-      item = icons[this.props.item] ? icons[this.props.item] : this.props.item
+      item = icons[this.props.item] ? <img src={icons[this.props.item]} alt="floor item" /> : this.props.item
     } else if ((this.props.prize && this.state.opened) || (!this.props.item && this.props.prize)) {
       item = icons[this.props.prize[0]] ? icons[this.props.prize[0]] : this.props.prize[0]
     }
@@ -38,7 +39,7 @@ export default class FloorItem extends Component {
       item = '' 
     }
     return (
-      <div onClick={this.handleClick}>
+      <div className="FloorItem" onClick={this.handleClick}>
         <div>{item}</div>
       </div>
     )

@@ -1,10 +1,11 @@
 import medusa from './assets/medusa.png'
+import jar from './assets/jar.png'
 
 const icons = {
   'no door': null,
   'open': '🚪',
   'locked': '🚪🔒',
-  'jar': '📦',
+  'jar': jar,
   'coins': '💰',
   'key': '🔑',
   'sign': '📜',

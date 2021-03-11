@@ -43,7 +43,7 @@ export default class UniqueItem extends Component {
       positionStyle.width = '5%'
     }
     return(
-      <div style={positionStyle}>
+      <div className="UniqueItem" style={positionStyle}>
         <div onClick={this.handleOpen}>{uniqueItemHere ? icons[this.props.item[this.props.position].item] ? icons[this.props.item[this.props.position].item] : this.props.item[this.props.position].item : null }</div>
         {this.state.openItem ? 
           <UniqueItemContent 

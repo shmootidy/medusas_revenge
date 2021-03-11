@@ -7,6 +7,8 @@ import skull from './assets/skull.png'
 import forward_doorway from './assets/forward_doorway.png'
 import left_doorway from './assets/left_doorway.png'
 import right_doorway from './assets/right_doorway.png'
+import right_door from './assets/right_door.png'
+import forward_door from './assets/forward_door.png'
 
 const icons = {
   'no door': null,
@@ -32,7 +34,9 @@ const icons = {
   'glass jar': '',
   left_doorway,
   right_doorway,
-  forward_doorway
+  forward_doorway,
+  right_door,
+  forward_door
 }
 
 export default icons

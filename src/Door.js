@@ -32,6 +32,7 @@ export default class Door extends Component {
     return (
       <div className={_className} style={doorStyle} onClick={this.handleClick}>
         { icons[door.position + '_doorway'] ? <img src={icons[door.position + '_doorway']} alt={door.position + '_doorway'} /> : door.position + ' doorway' }
+        { door.status === 'locked' ? <img style={{position: 'absolute', height: '64%'}} src={icons[door.position + '_door']} /> : null }
       </div>
     )
   }

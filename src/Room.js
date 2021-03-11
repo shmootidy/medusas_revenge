@@ -89,23 +89,14 @@ export default class Room extends Component {
     }
     const threeDoorsStyle = {
       display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
       flexWrap: 'wrap',
       height: '48%'
     }
     const roomStyle = {
       height: '100vh',
-      // display: 'flex',
-      // flexDirection: 'column',
-      // justifyContent: 'space-around',
-      // flexBasis: '90%',
       position: 'relative'
     }
     const backgroundImgStyle = {
-      // position: 'absolute',
-      // top: '0',
-      // left: '0',
       maxHeight: '100vh',
     }
     const roomItemsStyle = {

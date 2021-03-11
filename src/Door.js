@@ -16,23 +16,23 @@ export default class Door extends Component {
   render() {
     const door = this.props.door
     const status = icons[door.status] ? this.props.door.levelLock ? door.status === 'open' ? icons[door.status] : icons.levelLock : icons[door.status] : ''
-    const doorStyle = {
-      // height: '50px',
-      // width: '50px',
-      position: 'relative'
-    }
+    const doorStyle = { position: 'relative' }
     console.log(doors_data.frames[door.position + '_doorway.png'])
     let _door
     if (door.position === 'forward') {
       _door = forward_doorway
+      doorStyle.width = '35%'
+      doorStyle.height = '104%'
+      doorStyle.display = 'flex'
+      doorStyle.alignItems = 'flex-end'
+      doorStyle.justifyContent = 'center'
+
+
+      
     } else if (door.position === 'left') {
       _door = left_doorway
       doorStyle.width = '25%'
-      doorStyle.height = '170%'
-      // imageStyle.height = '40%'
-      // imageStyle.position = 'absolute'
-      // imageStyle.top = '46px'
-      // imageStyle.left = '-71px'
+      doorStyle.height = '152%'
     } else if (door.position === 'right') {
       _door = right_doorway
     }

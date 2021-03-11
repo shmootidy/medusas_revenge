@@ -14,7 +14,7 @@
   max-width: 100%; */
 }
 .forward-door img {
-  transform: rotate(180deg);
+  height: 80%;
 }
 .left-door img {
   position: absolute;
@@ -24,5 +24,4 @@
   left: 0;
 }
 .right-door img {
-  transform: rotate(180deg);
 }

@@ -10,14 +10,18 @@
   background-size: contain; */
 }
 .door img {
-  max-height: 100%;
-  max-width: 100%;
+  /* max-height: 100%;
+  max-width: 100%; */
 }
 .forward-door img {
   transform: rotate(180deg);
 }
 .left-door img {
-  transform: rotate(90deg); 
+  transform: rotate(91deg);
+  position: absolute;
+  left: -71px;
+  top: 46px;
+  height: 40%;
 }
 .right-door img {
   transform: rotate(180deg);

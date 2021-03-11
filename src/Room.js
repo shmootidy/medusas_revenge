@@ -84,7 +84,8 @@ export default class Room extends Component {
   render() {
     const floorStyle = {
       display: 'flex',
-      justifyContent: 'space-between'
+      justifyContent: 'space-between',
+      height: '30%'
     }
     const threeDoorsStyle = {
       display: 'flex',

@@ -1,3 +1,5 @@
+import medusa from './assets/medusa.png'
+
 const icons = {
   'no door': null,
   'open': '🚪',
@@ -17,7 +19,7 @@ const icons = {
   'dead spider': '💀🕷',
   'levelKey': '🗝',
   'levelLock': '🔒🚪🔒',
-  'player': '👩🏼‍🦱',
+  'player': medusa,
   'wall writing': '📝',
   'glass jar': ''
 }

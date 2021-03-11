@@ -4,7 +4,7 @@ import FloorItem from './FloorItem'
 import Player from './Player'
 import UniqueItem from './UniqueItem'
 
-import background from './background.JPG'
+import _background from './assets/dungeon_background.png'
 import rooms from './room-data'
 
 export default class Room extends Component {
@@ -122,7 +122,7 @@ export default class Room extends Component {
   
       return (
         <div className="Room" style={roomStyle}>
-          <img src={background} alt="background" style={backgroundImgStyle} />
+          <img src={_background} alt="background" style={backgroundImgStyle} />
           <div style={roomItemsStyle}>
             <UniqueItem room={this.state.currentRoom} position="ceiling" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} inventory={this.props.inventory} handleWriting={this.handleWriting} />
             <div style={threeDoorsStyle}>

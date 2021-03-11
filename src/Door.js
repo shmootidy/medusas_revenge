@@ -17,7 +17,6 @@ export default class Door extends Component {
     const door = this.props.door
     const status = icons[door.status] ? this.props.door.levelLock ? door.status === 'open' ? icons[door.status] : icons.levelLock : icons[door.status] : ''
     const doorStyle = { position: 'relative' }
-    console.log(doors_data.frames[door.position + '_doorway.png'])
     let _door
     if (door.position === 'forward') {
       _door = forward_doorway

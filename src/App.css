@@ -33,3 +33,15 @@
 .Player img {
   max-height: 100%;
 }
+.FloorItem {
+  z-index: 1;
+  width: 50%;
+  text-align: center;
+  position: relative;
+}
+.FloorItem img {
+  position: absolute;
+  width: 15%;
+  top: -25%;
+  left: 38%;
+}

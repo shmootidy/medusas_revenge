@@ -89,7 +89,7 @@ export default class Room extends Component {
     }
     const threeDoorsStyle = {
       display: 'flex',
-      flexWrap: 'wrap',
+      // flexWrap: 'wrap',
       height: '48%'
     }
     const roomStyle = {

@@ -21,20 +21,19 @@ export default class Door extends Component {
     let _door
     if (door.position === 'forward') {
       _door = forward_doorway
-      doorStyle.width = '35%'
+      doorStyle.width = '38%'
       doorStyle.height = '104%'
       doorStyle.display = 'flex'
       doorStyle.alignItems = 'flex-end'
       doorStyle.justifyContent = 'center'
-
-
-      
     } else if (door.position === 'left') {
       _door = left_doorway
-      doorStyle.width = '25%'
+      doorStyle.width = '28%'
       doorStyle.height = '152%'
     } else if (door.position === 'right') {
       _door = right_doorway
+      doorStyle.width = '33%'
+      doorStyle.height = '160%'
     }
     const _className = door.position + '-door door'
     return (

@@ -38,7 +38,7 @@ export default class UniqueItem extends Component {
     const positionStyle = {}
     if (this.props.position === 'ceiling') {
       positionStyle.minHeight = '22%'
-    } else if (this.props.position === 'left-wall') {
+    } else if (this.props.position === 'left-wall' || this.props.position === 'right-wall') {
       // positionStyle.height = '108%'
       positionStyle.width = '5%'
     }

@@ -48,18 +48,6 @@ const rooms = {
           }
         }
       },
-      item: 'levelKey',
-      content: 'you can\'t reach it',
-      position: 'ceiling',
-      _key: 'happy spider',
-      options: {
-        _prize: ['levelKey', 1],
-        _option1: {
-          option: 'send spider',
-          message: 'your spider settles into her new home, tossing you the key as thanks',
-          leftover: 'happy spider'
-        }
-      }
     }
   },
   A: {

@@ -9,6 +9,7 @@ import left_doorway from './assets/left_doorway.png'
 import right_doorway from './assets/right_doorway.png'
 import right_door from './assets/right_door.png'
 import forward_door from './assets/forward_door.png'
+import left_door from './assets/left_door.png'
 
 const icons = {
   'no door': null,
@@ -36,7 +37,8 @@ const icons = {
   right_doorway,
   forward_doorway,
   right_door,
-  forward_door
+  forward_door,
+  left_door
 }
 
 export default icons

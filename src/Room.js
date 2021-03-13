@@ -207,9 +207,9 @@ export default class Room extends Component {
               />
             </div>
             <Player />
-            {/* <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
+            <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
               <Door door={doors.back} onDoorClick={this.handleDoorClick} />
-            </div> */}
+            </div>
           </div>
         </div>
       )

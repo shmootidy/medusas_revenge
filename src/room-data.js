@@ -152,7 +152,8 @@ const rooms = {
             item: 'dead spider',
             prize: ['dead spider', 1],
             message: 'the spider is dead',
-            leftover: 'spider webs'
+            leftover: 'spider webs',
+            end: true
           },
           option2: {
             option: 'talk to spider',

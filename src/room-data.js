@@ -22,7 +22,20 @@ const rooms = {
         position: 'back'
       }
     },
-    interactableItems : {},
+    interactableItems : {
+      'left-floor': {
+        item: 'jar'
+      },
+      'right-floor': {
+        item: 'jar',
+        prize: ['coins', 3]
+      },
+      'ceiling': {
+        item: 'levelKey',
+        content: 'you can\'t reach it',
+        _key: 'happy spider'
+      }
+    },
     floorItems: {
       left: {
         item: 'jar',

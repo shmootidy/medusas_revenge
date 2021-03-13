@@ -44,21 +44,6 @@ const rooms = {
         }
       }
     },
-    uniqueItems: {
-      'ceiling': {
-        item: 'levelKey',
-        content: 'you can\'t reach it',
-        _key: 'happy spider',
-        options: {
-          _prize: ['levelKey', 1],
-          _option1: {
-            option: 'send spider',
-            message: 'your spider settles into her new home, tossing you the key as thanks',
-            leftover: 'happy spider'
-          }
-        }
-      },
-    }
   },
   A: {
     doors: {
@@ -157,20 +142,7 @@ const rooms = {
         position: 'back'
       }
     },
-    interactableItems : {},
-    floorItems: {
-      left: {
-        item: null,
-        prize: null,
-        position: 'left'
-      },
-      right: {
-        item: null,
-        prize: null,
-        position: 'right'
-      },
-    },
-    uniqueItems: {
+    interactableItems : {
       'ceiling': {
         item: 'spider',
         content: 'what doo?',
@@ -311,18 +283,12 @@ const rooms = {
         position: 'back'
       }
     },
-    interactableItems : {},
-    floorItems: {
-      left: {
-        item: null,
-        prize: ['dead fly', 1],
-        position: 'left'
-      },
-      right: {
-        item: null,
-        prize: null,
-        position: 'right'
-      },
+    interactableItems : {
+      'left-floor': {
+        item: 'fly',
+        content: 'you smack the fly dead',
+        prize: ['dead fly', 1]
+      }
     },
     uniqueItems: {
       'left-door': {

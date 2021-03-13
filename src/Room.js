@@ -119,27 +119,31 @@ export default class Room extends Component {
           <img src={_background} alt="background" style={backgroundImgStyle} />
           <div style={roomItemsStyle}>
             {/* <UniqueItem room={this.state.currentRoom} position="ceiling" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} inventory={this.props.inventory} handleWriting={this.handleWriting} /> */}
-            <InteractableItem 
-              room={this.state.currentRoom}
-              item={this.state.rooms[this.state.currentRoom].interactableItems['ceiling']}
-            />
-            <div style={threeDoorsStyle}>
+            <div className="ceiling">
+              <InteractableItem 
+                room={this.state.currentRoom}
+                position="ceiling"
+                item={this.state.rooms[this.state.currentRoom].interactableItems}
+              />
+            </div>
+            <div className="walls" style={threeDoorsStyle}>
               <Door door={doors.left} onDoorClick={this.handleDoorClick} />
               <InteractableItem 
                 room={this.state.currentRoom}
-                item={this.state.rooms[this.state.currentRoom].interactableItems['left-wall']}
+                position="left-wall"
+                item={this.state.rooms[this.state.currentRoom].interactableItems}
               />
               {/* <UniqueItem room={this.state.currentRoom} position="left-wall" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} inventory={this.props.inventory} handleWriting={this.handleWriting} /> */}
               <Door door={doors.forward} onDoorClick={this.handleDoorClick} />
               <InteractableItem 
                 room={this.state.currentRoom}
-                item={this.state.rooms[this.state.currentRoom].interactableItems['right-wall']}
+                position="right-wall"
+                item={this.state.rooms[this.state.currentRoom].interactableItems}
               />
-              <InteractableItem />
               {/* <UniqueItem room={this.state.currentRoom} position="right-wall" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} inventory={this.props.inventory} handleWriting={this.handleWriting} /> */}
               <Door door={doors.right} onDoorClick={this.handleDoorClick} />
             </div>
-            <div style={floorStyle}>
+            <div className="floor" style={floorStyle}>
               {/* <UniqueItem room={this.state.currentRoom} position="left-floor" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} inventory={this.props.inventory} handleWriting={this.handleWriting} /> */}
               {/* <FloorItem item={floorItems.left.item} prize={floorItems.left.prize} position='left' onPickUp={this.handleFloorItems} /> */}
               {/* <UniqueItem room={this.state.currentRoom} position="forward-door" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} inventory={this.props.inventory} handleWriting={this.handleWriting} /> */}
@@ -147,14 +151,14 @@ export default class Room extends Component {
               {/* <UniqueItem room={this.state.currentRoom} position="right-floor" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} inventory={this.props.inventory} handleWriting={this.handleWriting} /> */}
               <InteractableItem 
                 room={this.state.currentRoom}
-                item={this.state.rooms[this.state.currentRoom].interactableItems['left-floor']}
+                position="left-floor"
+                item={this.state.rooms[this.state.currentRoom].interactableItems}
               />
               <InteractableItem 
                 room={this.state.currentRoom}
-                item={this.state.rooms[this.state.currentRoom].interactableItems['right-floor']}
+                position="right-floor"
+                item={this.state.rooms[this.state.currentRoom].interactableItems}
               />
-              <InteractableItem />
-              <InteractableItem />
             </div>
             <Player />
             {/* <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>

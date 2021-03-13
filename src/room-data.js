@@ -217,11 +217,18 @@ const rooms = {
       }
     },
     interactableItems: {
-      'ceiling': {},
-      'left-wall': {},
-      'right-wall': {},
-      'left-floor': {},
-      'right-floor': {}
+      'left-wall': {
+        item: 'sign',
+        content: 'This will be the last meaningful decision you make. Adventurer beware.'
+      },
+      'left-floor': {
+        item: 'jar',
+        prize: ['key', 1]
+      },
+      'right-floor': {
+        item: 'jar',
+        prize: ['coins', 2]
+      }
     },
     floorItems: {
       left: {

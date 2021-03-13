@@ -10,14 +10,14 @@ export default class InteractableItem extends Component {
   }
   render() {
     // does the room have an item in this position?
-    // let item
-    if (this.props.item) {
-      console.log('yes')
+    let item
+    if (this.props.item[this.props.position]) {
+      item = this.props.item[this.props.position].item
     } else {
-      console.log('no')
+      item = ''
     }
     return (
-      <div>interactable item</div>
+      <div>{item}</div>
     )
   }
 }

@@ -55,6 +55,10 @@ export default class Room extends Component {
   }
   handleOptionSelect(position, option) {
     const _rooms = this.state.rooms
+    /* use inventory key, if applicable */
+    if (_rooms[this.state.currentRoom].interactableItems[position]._key) {
+      this.props.useKey(_rooms[this.state.currentRoom].interactableItems[position]._key)
+    }
     /* update item with selected option, if applicable */
     _rooms[this.state.currentRoom].interactableItems[position] = _rooms[this.state.currentRoom].interactableItems[position].options[option]
     this.setState({rooms: _rooms})

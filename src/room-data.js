@@ -293,10 +293,8 @@ const rooms = {
             option: 'smash skull',
             item: 'chalky skull fragments',
             message: 'the old skull crumbles like chalk under your heel',
-            _options: {
-              _prize: ['chalky skull fragments', 5],
-              leftover: 'skull dust'
-            }
+            prize: ['chalky skull fragments', 5],
+            leftover: 'skull dust'
           }
         }
       },
@@ -305,39 +303,39 @@ const rooms = {
         prize: ['key', 1]
       }
     },
-    floorItems: {
-      left: {
-        item: 'jar',
-        prize: null,
-        position: 'left'
-      },
-      right: {
-        item: 'jar',
-        prize: ['key', 1],
-        position: 'right'
-      },
-    },
-    uniqueItems: {
-      'forward-door': {
-        item: 'skull',
-        content:'a spooky old skull',
-        options: {
-          option1: {
-            option: 'smash skull',
-            item: 'chalky skull fragments',
-            message: 'the old skull crumbles like chalk under your heel',
-            _options: {
-              _prize: ['chalky skull fragments', 5],
-              option1: {
-                option: 'collect chalky skull fragments',
-                leftover: 'skull dust',
-                message: 'you fill your pocket with bits of old skull'
-              }
-            }
-          }
-        }
-      },
-    }
+    // floorItems: {
+    //   left: {
+    //     item: 'jar',
+    //     prize: null,
+    //     position: 'left'
+    //   },
+    //   right: {
+    //     item: 'jar',
+    //     prize: ['key', 1],
+    //     position: 'right'
+    //   },
+    // },
+    // uniqueItems: {
+    //   'forward-door': {
+    //     item: 'skull',
+    //     content:'a spooky old skull',
+    //     options: {
+    //       option1: {
+    //         option: 'smash skull',
+    //         item: 'chalky skull fragments',
+    //         message: 'the old skull crumbles like chalk under your heel',
+    //         _options: {
+    //           _prize: ['chalky skull fragments', 5],
+    //           option1: {
+    //             option: 'collect chalky skull fragments',
+    //             leftover: 'skull dust',
+    //             message: 'you fill your pocket with bits of old skull'
+    //           }
+    //         }
+          // }
+        // }
+      // },
+    // }
   },
   N: {
     doors: {

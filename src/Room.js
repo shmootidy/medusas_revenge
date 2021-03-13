@@ -41,11 +41,18 @@ export default class Room extends Component {
     _rooms[this.state.currentRoom].interactableItems[position].prize = ''
     /* set item to 'end' state */
     _rooms[this.state.currentRoom].interactableItems[position].end = true
+    this.setState({rooms: _rooms})
   }
   handleOptionSelect(position, option) {
     const _rooms = this.state.rooms
-    _rooms[this.state.currentRoom].interactableItems[position].item = _rooms[this.state.currentRoom].interactableItems[position].options[option].item 
-    console.log(_rooms[this.state.currentRoom].interactableItems[position].options[option])
+    /* create 'message' value in item object to be displayed instead of original content and options, if available */
+    _rooms[this.state.currentRoom].interactableItems[position].message = _rooms[this.state.currentRoom].interactableItems[position].options[option].message ? _rooms[this.state.currentRoom].interactableItems[position].options[option].message : null
+    this.setState({rooms: _rooms})
+      // change the item if appropriate
+    /* replace item object with selected option */
+    // _rooms[this.state.currentRoom].interactableItems[position] = _rooms[this.state.currentRoom].interactableItems[position].options[option]
+    /* if item has a 'leftover' key, set item to 'end' */
+    // _rooms[this.state.currentRoom].interactableItems[position].end = _rooms[this.state.currentRoom].interactableItems[position].leftover ? true : false
   }
   selectItemOption(option, keyUsed, prizeEarned, itemPosition) {
     const _rooms = this.state.rooms

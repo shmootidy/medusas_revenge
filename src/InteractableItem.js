@@ -26,8 +26,7 @@ export default class InteractableItem extends Component {
     this.setState({opened: false})
   }
   handleOptionSelect(option) {
-    // when user selects an option, close the window and make appropriate changes
-    this.setState({opened: false})
+    // when user selects an option, send position and option to be handled by parent
     this.props.handleOptionSelect(this.props.position, option)
   }
   render() {
@@ -43,13 +42,12 @@ export default class InteractableItem extends Component {
       item = ''
     }
     const uniqueItemHere = this.props.item && this.props.item[this.props.position]
-
     return (
-      <div className="InteractableItem">
+      <div className="InteractableItem" style={{zIndex: 5}}>
         <div onClick={this.handleClick}>{item}</div>
         { uniqueItemHere && this.state.opened && this.props.item[this.props.position].content ? 
           <UniqueItemContent 
-            content={uniqueItemHere ? this.props.item[this.props.position].content : null} 
+            content={uniqueItemHere ? this.props.item[this.props.position].message ? this.props.item[this.props.position].message : this.props.item[this.props.position].content : null} 
             options={(uniqueItemHere && this.props.item[this.props.position].options) && (!this.props.item[this.props.position]._key || this.props.inventory[this.props.item[this.props.position]._key]) ? this.props.item[this.props.position].options : null} 
             onClick={this.handleClose}
             selectOption={this.handleOptionSelect}

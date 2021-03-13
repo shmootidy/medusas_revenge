@@ -33,20 +33,16 @@ const rooms = {
       'ceiling': {
         item: 'levelKey',
         content: 'you can\'t reach it',
-        _key: 'happy spider'
+        _key: 'happy spider',
+        options: {
+          prize: ['levelKey', 1],
+          option1: {
+            option: 'send spider',
+            message: 'as your spider settles into her new home, she knocks down a crowbar',
+            leftover: 'happy spider'
+          }
+        }
       }
-    },
-    floorItems: {
-      left: {
-        item: 'jar',
-        prize: null,
-        position: 'left'
-      },
-      right: {
-        item: 'jar',
-        prize: ['coins', 3],
-        position: 'right'
-      },
     },
     uniqueItems: {
       'ceiling': {

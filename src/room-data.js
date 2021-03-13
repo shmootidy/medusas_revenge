@@ -216,6 +216,13 @@ const rooms = {
         position: 'back'
       }
     },
+    interactableItems: {
+      'ceiling': {},
+      'left-wall': {},
+      'right-wall': {},
+      'left-floor': {},
+      'right-floor': {}
+    },
     floorItems: {
       left: {
         item: 'jar',

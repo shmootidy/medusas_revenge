@@ -44,7 +44,7 @@ export default class UniqueItem extends Component {
     }
     return(
       <div className="UniqueItem" style={positionStyle}>
-        <div onClick={this.handleOpen}>{uniqueItemHere ? icons[this.props.item[this.props.position].item] ? <img src={icons[this.props.item[this.props.position].item]} /> : <img src={this.props.item[this.props.position].item} /> : null }</div>
+        <div onClick={this.handleOpen}>{uniqueItemHere ? icons[this.props.item[this.props.position].item] ? <img src={icons[this.props.item[this.props.position].item]} alt="" /> : <img src={this.props.item[this.props.position].item} alt="" /> : null }</div>
         {this.state.openItem ? 
           <UniqueItemContent 
             content={uniqueItemHere ? this.props.item[this.props.position].content : null} 

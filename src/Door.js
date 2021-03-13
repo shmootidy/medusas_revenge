@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import icons from './icon-map'
-import doors_data from './assets/spritesheet.json'
+// import doors_data from './assets/spritesheet.json'
 
 export default class Door extends Component {
   constructor(props) {
@@ -12,9 +12,9 @@ export default class Door extends Component {
   }
   render() {
     const door = this.props.door
-    const status = icons[door.status] ? this.props.door.levelLock ? door.status === 'open' ? icons[door.status] : icons.levelLock : icons[door.status] : ''
+    // const status = icons[door.status] ? this.props.door.levelLock ? door.status === 'open' ? icons[door.status] : icons.levelLock : icons[door.status] : ''
     const doorStyle = { position: 'relative' }
-    let _door
+    // let _door
     if (door.position === 'forward') {
       doorStyle.width = '27%'
       doorStyle.height = '104%'
@@ -32,7 +32,7 @@ export default class Door extends Component {
     return (
       <div className={_className} style={doorStyle} onClick={this.handleClick}>
         { door.status === 'no door' || door.status === 'one-way' ? null : icons[door.position + '_doorway'] ? <img src={icons[door.position + '_doorway']} alt={door.position + '_doorway'} /> : door.position + ' doorway' }
-        { door.status === 'locked' ? <img style={{position: 'absolute', height: '64%'}} src={icons[door.position + '_door']} /> : null }
+        { door.status === 'locked' ? <img style={{position: 'absolute', height: '64%'}} src={icons[door.position + '_door']} alt={door.position + '_door' }/> : null }
       </div>
     )
   }

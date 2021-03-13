@@ -1,8 +1,9 @@
 import { Component } from 'react'
 import Door from './Door'
-import FloorItem from './FloorItem'
+// import FloorItem from './FloorItem'
 import Player from './Player'
-import UniqueItem from './UniqueItem'
+// import UniqueItem from './UniqueItem'
+import InteractableItem from './InteractableItem'
 
 import _background from './assets/dungeon_background.png'
 import rooms from './room-data'
@@ -111,26 +112,49 @@ export default class Room extends Component {
     }
     if (this.state.rooms[this.state.currentRoom]) {
       const doors = this.state.rooms[this.state.currentRoom].doors
-      const floorItems = this.state.rooms[this.state.currentRoom].floorItems
+      // const floorItems = this.state.rooms[this.state.currentRoom].floorItems
   
       return (
         <div className="Room" style={roomStyle}>
           <img src={_background} alt="background" style={backgroundImgStyle} />
           <div style={roomItemsStyle}>
-            <UniqueItem room={this.state.currentRoom} position="ceiling" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} inventory={this.props.inventory} handleWriting={this.handleWriting} />
+            {/* <UniqueItem room={this.state.currentRoom} position="ceiling" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} inventory={this.props.inventory} handleWriting={this.handleWriting} /> */}
+            <InteractableItem 
+              room={this.state.currentRoom}
+              item={this.state.rooms[this.state.currentRoom].interactableItems['ceiling']}
+            />
             <div style={threeDoorsStyle}>
               <Door door={doors.left} onDoorClick={this.handleDoorClick} />
-              <UniqueItem room={this.state.currentRoom} position="left-wall" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} inventory={this.props.inventory} handleWriting={this.handleWriting} />
+              <InteractableItem 
+                room={this.state.currentRoom}
+                item={this.state.rooms[this.state.currentRoom].interactableItems['left-wall']}
+              />
+              {/* <UniqueItem room={this.state.currentRoom} position="left-wall" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} inventory={this.props.inventory} handleWriting={this.handleWriting} /> */}
               <Door door={doors.forward} onDoorClick={this.handleDoorClick} />
-              <UniqueItem room={this.state.currentRoom} position="right-wall" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} inventory={this.props.inventory} handleWriting={this.handleWriting} />
+              <InteractableItem 
+                room={this.state.currentRoom}
+                item={this.state.rooms[this.state.currentRoom].interactableItems['right-wall']}
+              />
+              <InteractableItem />
+              {/* <UniqueItem room={this.state.currentRoom} position="right-wall" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} inventory={this.props.inventory} handleWriting={this.handleWriting} /> */}
               <Door door={doors.right} onDoorClick={this.handleDoorClick} />
             </div>
             <div style={floorStyle}>
-              <UniqueItem room={this.state.currentRoom} position="left-floor" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} inventory={this.props.inventory} handleWriting={this.handleWriting} />
+              {/* <UniqueItem room={this.state.currentRoom} position="left-floor" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} inventory={this.props.inventory} handleWriting={this.handleWriting} /> */}
               {/* <FloorItem item={floorItems.left.item} prize={floorItems.left.prize} position='left' onPickUp={this.handleFloorItems} /> */}
               {/* <UniqueItem room={this.state.currentRoom} position="forward-door" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} inventory={this.props.inventory} handleWriting={this.handleWriting} /> */}
               {/* <FloorItem item={floorItems.right.item} prize={floorItems.right.prize} position='right' onPickUp={this.handleFloorItems} /> */}
-              <UniqueItem room={this.state.currentRoom} position="right-floor" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} inventory={this.props.inventory} handleWriting={this.handleWriting} />
+              {/* <UniqueItem room={this.state.currentRoom} position="right-floor" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} inventory={this.props.inventory} handleWriting={this.handleWriting} /> */}
+              <InteractableItem 
+                room={this.state.currentRoom}
+                item={this.state.rooms[this.state.currentRoom].interactableItems['left-floor']}
+              />
+              <InteractableItem 
+                room={this.state.currentRoom}
+                item={this.state.rooms[this.state.currentRoom].interactableItems['right-floor']}
+              />
+              <InteractableItem />
+              <InteractableItem />
             </div>
             <Player />
             {/* <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>

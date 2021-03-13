@@ -161,11 +161,13 @@ const rooms = {
             content: '"I\'m hungry!"',
             _key: 'dead fly',
             options: {
-              prize: ['happy spider', 1],
               option1: {
                 option: 'feed spider',
+                item: 'happy spider',
                 message: 'you made a new friend',
-                leftover: 'spider webs'
+                leftover: 'spider webs',
+                prize: ['happy spider', 1],
+                end: true
               }
             }
           }

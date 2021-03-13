@@ -13,7 +13,7 @@ export default class InteractableItem extends Component {
     this.handleOptionSelect = this.handleOptionSelect.bind(this)
   }
   handleClick() {
-    if (!this.state.opened) {
+    if (!this.state.opened && !this.props.item[this.props.position].message) {
       this.setState({opened: true})
     }
     // if the item has no message, remove the item and replace it with its prize (if applicable)

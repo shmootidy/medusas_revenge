@@ -40,7 +40,7 @@ export default class InteractableItem extends Component {
     return (
       <div className="InteractableItem">
         <div onClick={this.handleClick}>{item}</div>
-        { this.state.opened && this.props.item[this.props.position].content ? 
+        { uniqueItemHere && this.state.opened && this.props.item[this.props.position].content ? 
           <UniqueItemContent 
             content={uniqueItemHere ? this.props.item[this.props.position].content : null} 
             options={(uniqueItemHere && this.props.item[this.props.position].options) && (!this.props.item[this.props.position]._key || this.props.inventory[this.props.item[this.props.position]._key]) ? this.props.item[this.props.position].options : null} 

@@ -26,12 +26,13 @@ export default class Door extends Component {
       doorStyle.width = '33%'
       doorStyle.height = '160%'
     }
-    const _className = door.position + '-door door'
+    let _className = door.position + '-door door'
     let _doorway = door.status === 'no door' || door.status === 'one-way' ? null : icons[door.position + '_doorway'] ? <img src={icons[door.position + '_doorway']} alt={door.position + '_doorway'} /> : door.position + ' doorway'
     let _lockedDoor = door.status === 'locked' ? <img style={{position: 'absolute', height: '64%'}} src={icons[door.position + '_door']} alt={door.position + '_door' }/> : null
     if (door.levelLock) {
       _doorway = icons.levelLock ? <img src={icons.levelLock} alt="levelLock" /> : 'levelLock'
       _lockedDoor = null
+      _className = _className + ' level-lock'
     }
     return (
       <div className={_className} style={doorStyle} onClick={this.handleClick}>

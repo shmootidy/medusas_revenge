@@ -234,32 +234,6 @@ const rooms = {
         prize: ['coins', 2]
       }
     },
-    // floorItems: {
-    //   left: {
-    //     item: 'jar',
-    //     prize: ['key', 1],
-    //     position: 'left'
-    //   },
-    //   right: {
-    //     item: 'jar',
-    //     prize: ['coins', 2],
-    //     position: 'right'
-    //   },
-    // },
-    // uniqueItems: {
-    //   'left-wall': {
-    //     item: 'sign',
-    //     content: 'Entering this dungeon will be the last meaningful decision you will make.',
-    //   },
-    //   'left-floor': {
-    //     item: 'jar',
-    //     prize: ['key', 1]
-    //   },
-    //   'right-floor': {
-    //     item: 'jar',
-    //     prize: ['coins', 2]
-    //   }
-    // }
   },
   I: {
     doors: {

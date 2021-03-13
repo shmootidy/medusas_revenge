@@ -6,7 +6,7 @@ export default class InteractableItem extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      opened: false
+      opened: false,
     }
     this.handleClick = this.handleClick.bind(this)
     this.handleClose = this.handleClose.bind(this)
@@ -16,8 +16,8 @@ export default class InteractableItem extends Component {
     if (!this.state.opened && !this.props.item[this.props.position].message) {
       this.setState({opened: true})
     }
-    // if the item has no message, remove the item and replace it with its prize (if applicable)
-    if (!this.props.item[this.props.position].content) {
+    // if the item has no content (or an option), remove the item and replace it with its prize (if applicable)
+    if (!this.props.item[this.props.position].content || this.props.item[this.props.position].message) {
       this.props.handleItem(this.props.position)
       this.setState({opened: false})
     }

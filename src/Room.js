@@ -30,12 +30,22 @@ export default class Room extends Component {
     const _rooms = this.state.rooms
     /* if item is at end state, move item to inventory */
     if (_rooms[this.state.currentRoom].interactableItems[position].end) {
-      const prizeEarned = [_rooms[this.state.currentRoom].interactableItems[position].item, _rooms[this.state.currentRoom].interactableItems[position].volume]
+      /* if prize volume is not yet set, find it in the prize object and set it */
+      let volume
+      if (_rooms[this.state.currentRoom].interactableItems[position].volume) {
+        volume = _rooms[this.state.currentRoom].interactableItems[position].volume
+      } else if (_rooms[this.state.currentRoom].interactableItems[position].prize) {
+        volume = _rooms[this.state.currentRoom].interactableItems[position].prize[1]
+        /* remove prize from object, since it is now in the item position */
+        _rooms[this.state.currentRoom].interactableItems[position].prize = ''
+        this.setState({rooms: _rooms})
+      }
+      const prizeEarned = [_rooms[this.state.currentRoom].interactableItems[position].item, volume]
       this.props.handleInventory(prizeEarned)
     }
     /* replace item with its prize */
     _rooms[this.state.currentRoom].interactableItems[position].item = _rooms[this.state.currentRoom].interactableItems[position].prize ? _rooms[this.state.currentRoom].interactableItems[position].prize[0] : ''
-    /* save values of prize's volume to object */
+    /* set value of prize's volume to object */
     _rooms[this.state.currentRoom].interactableItems[position].volume = _rooms[this.state.currentRoom].interactableItems[position].prize ? _rooms[this.state.currentRoom].interactableItems[position].prize[1] : ''
     /* remove prize from object, since it is now in the item position */
     _rooms[this.state.currentRoom].interactableItems[position].prize = ''
@@ -49,6 +59,8 @@ export default class Room extends Component {
     _rooms[this.state.currentRoom].interactableItems[position] = _rooms[this.state.currentRoom].interactableItems[position].options[option]
     this.setState({rooms: _rooms})
   }
+
+
   selectItemOption(option, keyUsed, prizeEarned, itemPosition) {
     const _rooms = this.state.rooms
     /* update uniqueItem to selected option */

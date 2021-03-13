@@ -35,11 +35,13 @@ const rooms = {
         content: 'you can\'t reach it',
         _key: 'happy spider',
         options: {
-          prize: ['levelKey', 1],
           option1: {
             option: 'send spider',
+            item: 'levelKey',
             message: 'as your spider settles into her new home, she knocks down a crowbar',
-            leftover: 'happy spider'
+            leftover: 'happy spider',
+            prize: ['levelKey', 1],
+            end: true
           }
         }
       }

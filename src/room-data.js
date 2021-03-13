@@ -358,7 +358,8 @@ const rooms = {
         status: 'locked',
         roomTo: 'OUT',
         position: 'forward',
-        levelLock: true
+        levelLock: true,
+        message: 'The grate jiggles slightly but needs leverage to budge.'
       },
       right: {
         status: 'no door',

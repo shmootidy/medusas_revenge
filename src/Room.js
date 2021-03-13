@@ -5,6 +5,7 @@ import InteractableItem from './InteractableItem'
 
 import _background from './assets/dungeon_background.png'
 import rooms from './room-data'
+import UniqueItemContent from './UniqueItemContent'
 
 export default class Room extends Component {
   constructor(props) {
@@ -13,16 +14,15 @@ export default class Room extends Component {
       currentRoom: 'R',
       prevRoom: '',
       rooms: rooms,
-      
     }
     this.handleDoorClick = this.handleDoorClick.bind(this)
     this.handleWriting = this.handleWriting.bind(this)
     this.changeRooms = this.changeRooms.bind(this)
     this.handleFloorItems = this.handleFloorItems.bind(this)
-    // this.selectItemOption = this.selectItemOption.bind(this)
 
     this.handleItem = this.handleItem.bind(this)
     this.handleOptionSelect = this.handleOptionSelect.bind(this)
+    this.handleDoorMessageClose = this.handleDoorMessageClose.bind(this)
   }
   handleItem(position) {
     const _rooms = this.state.rooms
@@ -92,11 +92,18 @@ export default class Room extends Component {
         this.setState({rooms: _rooms})
         this.props.useKey(keyNeeded)
       } else {
-        console.log('you need a key')
+        const doorMessage = door.levelLock ? door.message : 'You need a key for this door.'
+        this.setState({
+          showDoorMessage: true,
+          doorMessage
+        })
       }
     } else {
       console.log('not yet handled')
     }
+  }
+  handleDoorMessageClose() {
+    this.setState({showDoorMessage: false})
   }
   componentDidUpdate() {
     // console.log(this.state.rooms[this.state.currentRoom].uniqueItems)
@@ -185,6 +192,7 @@ export default class Room extends Component {
               />
             </div>
             <Player />
+            { this.state.showDoorMessage ? <UniqueItemContent content={this.state.doorMessage} onClick={this.handleDoorMessageClose} /> : null }
             <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
               <Door door={doors.back} onDoorClick={this.handleDoorClick} />
             </div>

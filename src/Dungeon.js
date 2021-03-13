@@ -19,6 +19,7 @@ export default class Dungeon extends Component {
     this.useKey = this.useKey.bind(this)
   }
   useKey(_key) {
+    // console.log(_key)
     const key = _key ? _key : 'key'
     const inventory = this.state.inventory
     inventory[key] = inventory[key] - 1

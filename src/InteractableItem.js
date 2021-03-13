@@ -42,7 +42,6 @@ export default class InteractableItem extends Component {
       item = '' 
     }
     const uniqueItemHere = this.props.item && this.props.item[this.props.position]
-    console.log(this.props.item[this.props.position])
     return (
       <div className="InteractableItem">
         <div onClick={this.handleClick}>{item}</div>

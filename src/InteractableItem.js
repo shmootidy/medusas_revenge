@@ -10,6 +10,7 @@ export default class InteractableItem extends Component {
     }
     this.handleClick = this.handleClick.bind(this)
     this.handleClose = this.handleClose.bind(this)
+    this.handleOptionSelect = this.handleOptionSelect.bind(this)
   }
   handleClick() {
     if (!this.state.opened) {
@@ -18,10 +19,16 @@ export default class InteractableItem extends Component {
     // if the item has no message, remove the item and replace it with its prize (if applicable)
     if (!this.props.item[this.props.position].content) {
       this.props.handleItem(this.props.position)
+      this.setState({opened: false})
     }
   }
   handleClose() {
     this.setState({opened: false})
+  }
+  handleOptionSelect(option) {
+    // console.log(option)
+    // this.props.handleItem(this.props.position, option)
+    console.log(this.props.item[this.props.position])
   }
   render() {
     let item

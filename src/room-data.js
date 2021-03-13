@@ -284,7 +284,27 @@ const rooms = {
         position: 'back'
       }
     },
-    interactableItems : {},
+    interactableItems : {
+      'left-floor': {
+        item: 'skull',
+        content: 'a spooky old skull',
+        options: {
+          option1: {
+            option: 'smash skull',
+            item: 'chalky skull fragments',
+            message: 'the old skull crumbles like chalk under your heel',
+            _options: {
+              _prize: ['chalky skull fragments', 5],
+              leftover: 'skull dust'
+            }
+          }
+        }
+      },
+      'right-floor': {
+        item: 'jar',
+        prize: ['key', 1]
+      }
+    },
     floorItems: {
       left: {
         item: 'jar',

@@ -9,7 +9,7 @@ export default class Dungeon extends Component {
     this.state = {
       switchRoomState: true,
       inventory: {
-        coins: 0,
+        // coins: 0,
       }
     }
     this.handleRoomSwitch = this.handleRoomSwitch.bind(this)

@@ -28,7 +28,7 @@ const rooms = {
       },
       'right-floor': {
         item: 'jar',
-        prize: ['coins', 3]
+        // prize: ['coins', 3]
       },
       'ceiling': {
         item: 'levelKey',
@@ -70,18 +70,11 @@ const rooms = {
         position: 'back'
       }
     },
-    interactableItems : {},
-    floorItems: {
-      left: {
-        item: null,
-        prize: null,
-        position: 'left'
-      },
-      right: {
-        item: null,
-        prize: ['coins', 5],
-        position: 'right'
-      },
+    interactableItems : {
+      // 'right-floor': {
+      //   prize: ['coins', 5],
+      //   position: 'right'
+      // },
     }
   },
   B: {
@@ -108,18 +101,6 @@ const rooms = {
       }
     },
     interactableItems : {},
-    floorItems: {
-      left: {
-        item: null,
-        prize: null,
-        position: 'left'
-      },
-      right: {
-        item: null,
-        prize: null,
-        position: 'right'
-      },
-    }
   },
   Y: {
     doors: {
@@ -210,10 +191,10 @@ const rooms = {
         item: 'jar',
         prize: ['key', 1]
       },
-      'right-floor': {
-        item: 'jar',
-        prize: ['coins', 2]
-      }
+      // 'right-floor': {
+      //   item: 'jar',
+      //   prize: ['coins', 2]
+      // }
     },
   },
   I: {
@@ -288,12 +269,11 @@ const rooms = {
         item: 'fly',
         prize: ['dead fly', 1]
       },
-      'right-floor': {
-        prize: ['juicy red berries', 10],
-        // message: 'the berries leave a stain on the stone floor',
-        leftover: 'berry stains',
-        end: true
-      }
+      // 'right-floor': {
+      //   prize: ['juicy red berries', 10],
+      //   leftover: 'berry stains',
+      //   end: true
+      // }
     }
   },
   T: {
@@ -319,8 +299,7 @@ const rooms = {
         position: 'back'
       }
     },
-    interactableItems : {
-    },
+    interactableItems : {},
   },
   H: {
     doors: {

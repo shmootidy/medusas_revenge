@@ -1,8 +1,6 @@
 import { Component } from 'react'
 import Door from './Door'
-// import FloorItem from './FloorItem'
 import Player from './Player'
-// import UniqueItem from './UniqueItem'
 import InteractableItem from './InteractableItem'
 
 import _background from './assets/dungeon_background.png'
@@ -131,7 +129,6 @@ export default class Room extends Component {
     }
     const threeDoorsStyle = {
       display: 'flex',
-      // flexWrap: 'wrap',
       height: '48%'
     }
     const roomStyle = {
@@ -149,11 +146,9 @@ export default class Room extends Component {
       width: '100%',
       display: 'flex',
       flexDirection: 'column',
-      // justifyContent: 'space-between',
     }
     if (this.state.rooms[this.state.currentRoom]) {
       const doors = this.state.rooms[this.state.currentRoom].doors
-      // const floorItems = this.state.rooms[this.state.currentRoom].floorItems
   
       return (
         <div className="Room" style={roomStyle}>

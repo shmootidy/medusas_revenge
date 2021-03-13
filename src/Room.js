@@ -22,6 +22,24 @@ export default class Room extends Component {
     this.changeRooms = this.changeRooms.bind(this)
     this.handleFloorItems = this.handleFloorItems.bind(this)
     this.selectItemOption = this.selectItemOption.bind(this)
+
+    this.handleItem = this.handleItem.bind(this)
+  }
+  handleItem(position) {
+    const _rooms = this.state.rooms
+    /* if item is at end state, move item to inventory */
+    if (_rooms[this.state.currentRoom].interactableItems[position].end) {
+      const prizeEarned = [_rooms[this.state.currentRoom].interactableItems[position].item, _rooms[this.state.currentRoom].interactableItems[position].volume]
+      this.props.handleInventory(prizeEarned)
+    }
+    /* replace item with its prize */
+    _rooms[this.state.currentRoom].interactableItems[position].item = _rooms[this.state.currentRoom].interactableItems[position].prize ? _rooms[this.state.currentRoom].interactableItems[position].prize[0] : ''
+    /* save values of prize's volume to object */
+    _rooms[this.state.currentRoom].interactableItems[position].volume = _rooms[this.state.currentRoom].interactableItems[position].prize ? _rooms[this.state.currentRoom].interactableItems[position].prize[1] : ''
+    /* remove prize from object, since it is now in the item position */
+    _rooms[this.state.currentRoom].interactableItems[position].prize = ''
+    /* set item to 'end' state */
+    _rooms[this.state.currentRoom].interactableItems[position].end = true
   }
   selectItemOption(option, keyUsed, prizeEarned, itemPosition) {
     const _rooms = this.state.rooms
@@ -124,6 +142,7 @@ export default class Room extends Component {
                 room={this.state.currentRoom}
                 position="ceiling"
                 item={this.state.rooms[this.state.currentRoom].interactableItems}
+                handleItem={this.handleItem}
               />
             </div>
             <div className="walls" style={threeDoorsStyle}>
@@ -132,6 +151,7 @@ export default class Room extends Component {
                 room={this.state.currentRoom}
                 position="left-wall"
                 item={this.state.rooms[this.state.currentRoom].interactableItems}
+                handleItem={this.handleItem}
               />
               {/* <UniqueItem room={this.state.currentRoom} position="left-wall" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} inventory={this.props.inventory} handleWriting={this.handleWriting} /> */}
               <Door door={doors.forward} onDoorClick={this.handleDoorClick} />
@@ -139,6 +159,7 @@ export default class Room extends Component {
                 room={this.state.currentRoom}
                 position="right-wall"
                 item={this.state.rooms[this.state.currentRoom].interactableItems}
+                handleItem={this.handleItem}
               />
               {/* <UniqueItem room={this.state.currentRoom} position="right-wall" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} inventory={this.props.inventory} handleWriting={this.handleWriting} /> */}
               <Door door={doors.right} onDoorClick={this.handleDoorClick} />
@@ -153,11 +174,13 @@ export default class Room extends Component {
                 room={this.state.currentRoom}
                 position="left-floor"
                 item={this.state.rooms[this.state.currentRoom].interactableItems}
+                handleItem={this.handleItem}
               />
               <InteractableItem 
                 room={this.state.currentRoom}
                 position="right-floor"
                 item={this.state.rooms[this.state.currentRoom].interactableItems}
+                handleItem={this.handleItem}
               />
             </div>
             <Player />

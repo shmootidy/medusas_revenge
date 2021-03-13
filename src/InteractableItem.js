@@ -13,6 +13,10 @@ export default class InteractableItem extends Component {
     if (!this.state.opened) {
       this.setState({opened: true})
     }
+    // if the item has no message, remove the item and replace it with its prize (if applicable)
+    if (!this.props.item[this.props.position].content) {
+      this.props.handleItem(this.props.position)
+    }
   }
   render() {
     // does the room have an item in this position?

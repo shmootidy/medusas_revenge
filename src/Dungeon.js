@@ -2,7 +2,6 @@ import { Component } from 'react'
 import Room from './Room'
 import { Transition } from 'react-transition-group'
 import Inventory from './Inventory'
-// import background from './background.JPG'
 
 export default class Dungeon extends Component {
   constructor(props) {
@@ -11,7 +10,6 @@ export default class Dungeon extends Component {
       switchRoomState: true,
       inventory: {
         coins: 0,
-        // 'jar of bats': 1
       }
     }
     this.handleRoomSwitch = this.handleRoomSwitch.bind(this)
@@ -33,10 +31,7 @@ export default class Dungeon extends Component {
     this.setState({switchRoomState: !this.state.switchRoomState})
   }
   render() {
-    const defaultDungeonStyle = {
-      // textAlign: 'center',
-      // width: '500px'
-    }
+    const defaultDungeonStyle = {}
     const transitionStyles = {
       entering: { opacity: 0 },
       entered: { opacity: 1 },
@@ -48,13 +43,6 @@ export default class Dungeon extends Component {
       enter: 300,
       exit: 300
     }
-    // const backgroundImgStyle = {
-    //   position: 'absolute',
-    //   top: '0',
-    //   left: '0',
-    //   height: '100vh',
-    //   maxWidth: '80%'
-    // }
     return (
       <div style={{display: 'flex'}}>
         <Transition in={this.state.switchRoomState} timeout={duration} >
@@ -63,7 +51,6 @@ export default class Dungeon extends Component {
               ...defaultDungeonStyle,
               ...transitionStyles[state]
             }}>
-              {/* <img style={backgroundImgStyle} src={background} alt="background" /> */}
               <Room onRoomSwitch={this.handleRoomSwitch} handleInventory={this.handleInventory} useKey={this.useKey} inventory={this.state.inventory} />
             </div>
           )}

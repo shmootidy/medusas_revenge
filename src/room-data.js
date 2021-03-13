@@ -158,11 +158,11 @@ const rooms = {
           option2: {
             option: 'talk to spider',
             item: 'hungry spider',
-            message: '"I\'m hungry!"',
-            _options: {
-              _key: 'dead fly',
-              _prize: ['happy spider', 1],
-              _option1: {
+            content: '"I\'m hungry!"',
+            _key: 'dead fly',
+            options: {
+              prize: ['happy spider', 1],
+              option1: {
                 option: 'feed spider',
                 message: 'you made a new friend',
                 leftover: 'spider webs'

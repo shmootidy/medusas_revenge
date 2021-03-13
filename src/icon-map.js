@@ -13,6 +13,7 @@ import left_door from './assets/left_door.png'
 import fly from './assets/fly.png'
 import spider from './assets/spider.png'
 import empty_web from './assets/empty_web.png'
+import pile_o_bones from './assets/pile_o_bones.png'
 
 const icons = {
   'no door': null,
@@ -24,7 +25,7 @@ const icons = {
   'sign': sign,
   'skull': skull,
   'skull dust': '💀',
-  'chalky skull fragments': '🦴',
+  'chalky skull fragments': pile_o_bones,
   'dead fly': fly,
   spider,
   'spider webs': empty_web,

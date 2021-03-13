@@ -24,6 +24,7 @@ export default class Room extends Component {
     this.selectItemOption = this.selectItemOption.bind(this)
 
     this.handleItem = this.handleItem.bind(this)
+    this.handleOptionSelect = this.handleOptionSelect.bind(this)
   }
   handleItem(position) {
     const _rooms = this.state.rooms
@@ -40,6 +41,11 @@ export default class Room extends Component {
     _rooms[this.state.currentRoom].interactableItems[position].prize = ''
     /* set item to 'end' state */
     _rooms[this.state.currentRoom].interactableItems[position].end = true
+  }
+  handleOptionSelect(position, option) {
+    const _rooms = this.state.rooms
+    _rooms[this.state.currentRoom].interactableItems[position].item = _rooms[this.state.currentRoom].interactableItems[position].options[option].item 
+    console.log(_rooms[this.state.currentRoom].interactableItems[position].options[option])
   }
   selectItemOption(option, keyUsed, prizeEarned, itemPosition) {
     const _rooms = this.state.rooms
@@ -143,6 +149,7 @@ export default class Room extends Component {
                 position="ceiling"
                 item={this.state.rooms[this.state.currentRoom].interactableItems}
                 handleItem={this.handleItem}
+                handleOptionSelect={this.handleOptionSelect}
               />
             </div>
             <div className="walls" style={threeDoorsStyle}>
@@ -152,6 +159,7 @@ export default class Room extends Component {
                 position="left-wall"
                 item={this.state.rooms[this.state.currentRoom].interactableItems}
                 handleItem={this.handleItem}
+                handleOptionSelect={this.handleOptionSelect}
               />
               {/* <UniqueItem room={this.state.currentRoom} position="left-wall" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} inventory={this.props.inventory} handleWriting={this.handleWriting} /> */}
               <Door door={doors.forward} onDoorClick={this.handleDoorClick} />
@@ -160,6 +168,7 @@ export default class Room extends Component {
                 position="right-wall"
                 item={this.state.rooms[this.state.currentRoom].interactableItems}
                 handleItem={this.handleItem}
+                handleOptionSelect={this.handleOptionSelect}
               />
               {/* <UniqueItem room={this.state.currentRoom} position="right-wall" item={this.state.rooms[this.state.currentRoom].uniqueItems} onSelect={this.selectItemOption} inventory={this.props.inventory} handleWriting={this.handleWriting} /> */}
               <Door door={doors.right} onDoorClick={this.handleDoorClick} />
@@ -175,12 +184,14 @@ export default class Room extends Component {
                 position="left-floor"
                 item={this.state.rooms[this.state.currentRoom].interactableItems}
                 handleItem={this.handleItem}
+                handleOptionSelect={this.handleOptionSelect}
               />
               <InteractableItem 
                 room={this.state.currentRoom}
                 position="right-floor"
                 item={this.state.rooms[this.state.currentRoom].interactableItems}
                 handleItem={this.handleItem}
+                handleOptionSelect={this.handleOptionSelect}
               />
             </div>
             <Player />

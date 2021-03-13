@@ -26,9 +26,9 @@ export default class InteractableItem extends Component {
     this.setState({opened: false})
   }
   handleOptionSelect(option) {
-    // console.log(option)
-    // this.props.handleItem(this.props.position, option)
-    console.log(this.props.item[this.props.position])
+    // when user selects an option, close the window and make appropriate changes
+    this.setState({opened: false})
+    this.props.handleOptionSelect(this.props.position, option)
   }
   render() {
     let item

@@ -233,6 +233,14 @@ const rooms = {
         item: 'sign',
         content: 'Entering this dungeon will be the last meaningful decision you will make.',
       },
+      'left-floor': {
+        item: 'jar',
+        prize: ['key', 1]
+      },
+      'right-floor': {
+        item: 'jar',
+        prize: ['coins', 2]
+      }
     }
   },
   I: {

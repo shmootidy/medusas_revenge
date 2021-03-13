@@ -46,6 +46,6 @@
   align-items: center;
 }
 .UniqueItem img {
-  transform: rotate(180deg);
+  /* transform: rotate(180deg); */
   width: 100%;
 }

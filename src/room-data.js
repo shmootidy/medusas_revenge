@@ -150,9 +150,9 @@ const rooms = {
           option1: {
             option: 'kill spider',
             item: 'dead spider',
-            prize: ['dead spider', 1],
             message: 'the spider is dead',
             leftover: 'spider webs',
+            prize: ['dead spider', 1],
             end: true
           },
           option2: {
@@ -284,33 +284,12 @@ const rooms = {
       'left-floor': {
         item: 'fly',
         prize: ['dead fly', 1]
-      }
-    },
-    uniqueItems: {
-      'left-door': {
-        item: 'juicy red berries',
-        content: 'what do?',
-        options: {
-          option1: {
-            option: 'collect berries',
-            item: 'berry stains',
-            leftover: 'stains are left from the berries you took',
-            prize: ['juicy red berries', 10],
-          },
-          option2: {
-            option: 'squish berries',
-            item: 'squished berries',
-            message: 'the soft, ripe berries squish easily',
-            _options: {
-              _prize: ['berry goo', 5],
-              option1: {
-                option: 'collect berry goo',
-                leftover: 'stains are left from the berries you took',
-                message: 'you put the squished berries in your berry pouch'
-              }
-            }
-          }
-        }
+      },
+      'right-floor': {
+        prize: ['juicy red berries', 10],
+        // message: 'the berries leave a stain on the stone floor',
+        leftover: 'berry stains',
+        end: true
       }
     }
   },

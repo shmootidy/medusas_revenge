@@ -30,17 +30,15 @@ export default class Room extends Component {
     const _rooms = this.state.rooms
     /* if item is at end state, move item to inventory */
     if (_rooms[this.state.currentRoom].interactableItems[position].end) {
-      /* if prize volume is not yet set, find it in the prize object and set it */
-      let volume
-      if (_rooms[this.state.currentRoom].interactableItems[position].volume) {
-        volume = _rooms[this.state.currentRoom].interactableItems[position].volume
-      } else if (_rooms[this.state.currentRoom].interactableItems[position].prize) {
-        volume = _rooms[this.state.currentRoom].interactableItems[position].prize[1]
+      /* if prize volume or item are not yet set, find them in the prize object and set it */
+      const volume = _rooms[this.state.currentRoom].interactableItems[position].volume ? _rooms[this.state.currentRoom].interactableItems[position].volume : _rooms[this.state.currentRoom].interactableItems[position].prize ? _rooms[this.state.currentRoom].interactableItems[position].prize[1] : null
+      const item = _rooms[this.state.currentRoom].interactableItems[position].item ? _rooms[this.state.currentRoom].interactableItems[position].item : _rooms[this.state.currentRoom].interactableItems[position].prize ? _rooms[this.state.currentRoom].interactableItems[position].prize[0] : null 
+      if (!_rooms[this.state.currentRoom].interactableItems[position].item || !_rooms[this.state.currentRoom].interactableItems[position].volume) {
         /* remove prize from object, since it is now in the item position */
         _rooms[this.state.currentRoom].interactableItems[position].prize = ''
-        this.setState({rooms: _rooms})
+      this.setState({ rooms: _rooms })
       }
-      const prizeEarned = [_rooms[this.state.currentRoom].interactableItems[position].item, volume]
+      const prizeEarned = [item, volume]
       this.props.handleInventory(prizeEarned)
     }
     /* replace item with its prize */

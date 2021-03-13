@@ -34,6 +34,13 @@ export default class InteractableItem extends Component {
     // does the room have an item in this position?
     if (this.props.item[this.props.position]) {
       item = this.props.item[this.props.position].item
+      if (!this.props.item[this.props.position].item) {
+        if (this.props.item[this.props.position].prize) {
+          item = this.props.item[this.props.position].prize[0]
+        } else {
+          item = this.props.item[this.props.position].leftover
+        }
+      }
       // is there an icon for this item?
       if (icons[item]) {
         item = <img src={icons[item]} alt={item} />

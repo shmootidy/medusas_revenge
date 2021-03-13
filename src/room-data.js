@@ -286,7 +286,6 @@ const rooms = {
     interactableItems : {
       'left-floor': {
         item: 'fly',
-        content: 'you smack the fly dead',
         prize: ['dead fly', 1]
       }
     },

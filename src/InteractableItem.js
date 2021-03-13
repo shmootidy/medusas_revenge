@@ -1,5 +1,5 @@
 import { Component } from 'react'
-// import icons from './icon-map'
+import icons from './icon-map'
 
 export default class InteractableItem extends Component {
   constructor(props) {
@@ -13,6 +13,10 @@ export default class InteractableItem extends Component {
     let item
     if (this.props.item[this.props.position]) {
       item = this.props.item[this.props.position].item
+      // is there an icon for this item?
+      if (icons[item]) {
+        item = <img src={icons[item]} alt={item} />
+      }
     } else {
       item = ''
     }

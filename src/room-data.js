@@ -316,19 +316,8 @@ const rooms = {
         position: 'back'
       }
     },
-    interactableItems : {},
-    floorItems: {
-      left: {
-        item: null,
-        prize: null,
-        position: 'left'
-      },
-      right: {
-        item: null,
-        prize: null,
-        position: 'right'
-      },
-    }
+    interactableItems : {
+    },
   },
   H: {
     doors: {
@@ -354,18 +343,6 @@ const rooms = {
       }
     },
     interactableItems : {},
-    floorItems: {
-      left: {
-        item: null,
-        prize: null,
-        position: 'left'
-      },
-      right: {
-        item: null,
-        prize: null,
-        position: 'right'
-      },
-    }
   },
   S: {
     doors: {
@@ -392,18 +369,6 @@ const rooms = {
       }
     },
     interactableItems : {},
-    floorItems: {
-      left: {
-        item: null,
-        prize: null,
-        position: 'left'
-      },
-      right: {
-        item: null,
-        prize: null,
-        position: 'right'
-      },
-    }
   },
 }
 export default rooms

@@ -14,6 +14,7 @@ import fly from './assets/fly.png'
 import spider from './assets/spider.png'
 import empty_web from './assets/empty_web.png'
 import pile_o_bones from './assets/pile_o_bones.png'
+import crowbar_ledge from './assets/crowbar_ledge.png'
 
 const icons = {
   'no door': null,
@@ -32,7 +33,7 @@ const icons = {
   'happy spider': spider,
   'hungry spider': spider,
   'dead spider': '💀🕷',
-  'levelKey': '🗝',
+  'levelKey': crowbar_ledge,
   'levelLock': '🔒🚪🔒',
   'player': medusa,
   'wall writing': '📝',

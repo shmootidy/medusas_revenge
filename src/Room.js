@@ -164,6 +164,7 @@ export default class Room extends Component {
                 item={this.state.rooms[this.state.currentRoom].interactableItems}
                 handleItem={this.handleItem}
                 handleOptionSelect={this.handleOptionSelect}
+                inventory={this.props.inventory}
               />
             </div>
             <div className="walls" style={threeDoorsStyle}>
@@ -174,6 +175,7 @@ export default class Room extends Component {
                 item={this.state.rooms[this.state.currentRoom].interactableItems}
                 handleItem={this.handleItem}
                 handleOptionSelect={this.handleOptionSelect}
+                inventory={this.props.inventory}
               />
               <Door door={doors.forward} onDoorClick={this.handleDoorClick} />
               <InteractableItem 
@@ -182,6 +184,7 @@ export default class Room extends Component {
                 item={this.state.rooms[this.state.currentRoom].interactableItems}
                 handleItem={this.handleItem}
                 handleOptionSelect={this.handleOptionSelect}
+                inventory={this.props.inventory}
               />
               <Door door={doors.right} onDoorClick={this.handleDoorClick} />
             </div>
@@ -192,6 +195,7 @@ export default class Room extends Component {
                 item={this.state.rooms[this.state.currentRoom].interactableItems}
                 handleItem={this.handleItem}
                 handleOptionSelect={this.handleOptionSelect}
+                inventory={this.props.inventory}
               />
               <InteractableItem 
                 room={this.state.currentRoom}
@@ -199,6 +203,7 @@ export default class Room extends Component {
                 item={this.state.rooms[this.state.currentRoom].interactableItems}
                 handleItem={this.handleItem}
                 handleOptionSelect={this.handleOptionSelect}
+                inventory={this.props.inventory}
               />
             </div>
             <Player />

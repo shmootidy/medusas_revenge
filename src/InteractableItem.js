@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import icons from './icon-map'
+import UniqueItemContent from './UniqueItemContent'
 
 export default class InteractableItem extends Component {
   constructor(props) {
@@ -8,6 +9,7 @@ export default class InteractableItem extends Component {
       opened: false
     }
     this.handleClick = this.handleClick.bind(this)
+    this.handleClose = this.handleClose.bind(this)
   }
   handleClick() {
     if (!this.state.opened) {
@@ -18,9 +20,12 @@ export default class InteractableItem extends Component {
       this.props.handleItem(this.props.position)
     }
   }
+  handleClose() {
+    this.setState({opened: false})
+  }
   render() {
-    // does the room have an item in this position?
     let item
+    // does the room have an item in this position?
     if (this.props.item[this.props.position]) {
       item = this.props.item[this.props.position].item
       // is there an icon for this item?
@@ -30,9 +35,19 @@ export default class InteractableItem extends Component {
     } else {
       item = ''
     }
+    const uniqueItemHere = this.props.item && this.props.item[this.props.position]
+
     return (
       <div className="InteractableItem">
         <div onClick={this.handleClick}>{item}</div>
+        { this.state.opened && this.props.item[this.props.position].content ? 
+          <UniqueItemContent 
+            content={uniqueItemHere ? this.props.item[this.props.position].content : null} 
+            options={(uniqueItemHere && this.props.item[this.props.position].options) && (!this.props.item[this.props.position]._key || this.props.inventory[this.props.item[this.props.position]._key]) ? this.props.item[this.props.position].options : null} 
+            onClick={this.handleClose}
+            selectOption={this.handleOptionSelect}
+            handleWriting={this.handleWriting} /> 
+          : null }
       </div>
     )
   }

@@ -162,6 +162,7 @@ const rooms = {
             item: 'hungry spider',
             content: '"I\'m hungry!"',
             _key: 'dead fly',
+            plus: 'fly thought',
             options: {
               option1: {
                 option: 'feed spider',

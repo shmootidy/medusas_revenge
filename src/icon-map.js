@@ -16,6 +16,7 @@ import empty_web from './assets/empty_web.png'
 import pile_o_bones from './assets/pile_o_bones.png'
 import crowbar_ledge from './assets/crowbar_ledge.png'
 import dead_spider from './assets/dead_spider.png'
+import fly_thought from './assets/fly_thought.png'
 
 const icons = {
   'jar': jar,
@@ -42,6 +43,7 @@ const icons = {
   right_door,
   forward_door,
   left_door,
+  'fly thought': fly_thought
 }
 
 export default icons

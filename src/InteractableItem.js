@@ -7,6 +7,12 @@ export default class InteractableItem extends Component {
     this.state = {
       opened: false
     }
+    this.handleClick = this.handleClick.bind(this)
+  }
+  handleClick() {
+    if (!this.state.opened) {
+      this.setState({opened: true})
+    }
   }
   render() {
     // does the room have an item in this position?
@@ -21,7 +27,9 @@ export default class InteractableItem extends Component {
       item = ''
     }
     return (
-      <div>{item}</div>
+      <div className="InteractableItem">
+        <div onClick={this.handleClick}>{item}</div>
+      </div>
     )
   }
 }

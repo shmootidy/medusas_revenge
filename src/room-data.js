@@ -33,13 +33,14 @@ const rooms = {
       'ceiling': {
         item: 'levelKey',
         content: 'you can\'t reach it',
-        _key: 'happy spider',
+        _key: 'happy spider no web',
         options: {
           option1: {
             option: 'send spider',
             item: 'levelKey',
             message: 'as your spider settles into her new home, she knocks down a crowbar',
             leftover: 'happy spider',
+            plus: 'ledge',
             prize: ['levelKey', 1],
             end: true
           }
@@ -151,7 +152,7 @@ const rooms = {
                 item: 'happy spider',
                 message: 'you made a new friend',
                 leftover: 'spider webs',
-                prize: ['happy spider', 1],
+                prize: ['happy spider no web', 1],
                 end: true
               }
             }

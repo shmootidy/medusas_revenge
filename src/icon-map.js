@@ -22,6 +22,8 @@ import back_doorway from './assets/back_door.png'
 import bone_dust from './assets/bone_dust.png'
 import dead_fly from './assets/dead_fly.png'
 import happy_spider_web from './assets/happy_spider_web.png'
+import happy_spider_no_web from './assets/happy_spider_no_web.png'
+import ledge from './assets/ledge.png'
 
 const icons = {
   'jar': jar,
@@ -36,6 +38,7 @@ const icons = {
   spider,
   'spider webs': empty_web,
   'happy spider': happy_spider_web,
+  'happy spider no web': happy_spider_no_web,
   'hungry spider': spider,
   'dead spider': dead_spider,
   'levelKey': crowbar_ledge,
@@ -50,7 +53,8 @@ const icons = {
   forward_door,
   left_door,
   back_doorway,
-  'fly thought': fly_thought
+  'fly thought': fly_thought,
+  ledge
 }
 
 export default icons

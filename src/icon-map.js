@@ -18,6 +18,8 @@ import crowbar_ledge from './assets/crowbar_ledge.png'
 import dead_spider from './assets/dead_spider.png'
 import fly_thought from './assets/fly_thought.png'
 import oh_grate from './assets/oh_grate.png'
+import back_doorway from './assets/back_door.png'
+import bone_dust from './assets/bone_dust.png'
 
 const icons = {
   'jar': jar,
@@ -25,7 +27,7 @@ const icons = {
   'key': key,
   'sign': sign,
   'skull': skull,
-  'skull dust': '💀',
+  'skull dust': bone_dust,
   'chalky skull fragments': pile_o_bones,
   fly,
   'dead fly': fly,
@@ -45,6 +47,7 @@ const icons = {
   right_door,
   forward_door,
   left_door,
+  back_doorway,
   'fly thought': fly_thought
 }
 

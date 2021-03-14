@@ -69,14 +69,16 @@
 }
 .back-door {
   position: absolute;
+  height: 15%;
   bottom: 1%;
-  left: 10%;
+  left: 20%;
 }
 .back-door.door {
   cursor: pointer;
-  background: white;
-  padding: 5px;
-  border-radius: 5px;
+  height: 100%;
+}
+.back-door.door img {
+  height: 100%;
 }
 .floor > div:first-of-type {
   display: flex;
@@ -116,7 +118,6 @@
 }
 .ceiling .InteractableItem > div img.levelKey {
   height: 10%;
-  transform: rotate(180deg);
   top: 19.1%;
   left: 53%;
 }
@@ -131,7 +132,7 @@
 }
 img.locked-door {
   position: absolute;
-  height: 80%;
+  height: 85%;
 }
 .left-door img.locked-door {
   position: absolute;

@@ -13,17 +13,17 @@ export default class Door extends Component {
   render() {
     const door = this.props.door
     const doorStyle = { position: 'relative', zIndex: 0 }
-    if (door.position === 'forward') {
-      doorStyle.width = '27%'
+    if (door.position === 'left') {
+      doorStyle.width = '25.5%'
+      doorStyle.height = '152%'
+    } else if (door.position === 'forward') {
+      doorStyle.width = '33.9%'
       doorStyle.height = '104%'
       doorStyle.display = 'flex'
       doorStyle.alignItems = 'flex-end'
       doorStyle.justifyContent = 'center'
-    } else if (door.position === 'left') {
-      doorStyle.width = '28%'
-      doorStyle.height = '152%'
     } else if (door.position === 'right') {
-      doorStyle.width = '33%'
+      doorStyle.width = '30.6%'
       doorStyle.height = '160%'
     }
     let _className = door.position + '-door door'

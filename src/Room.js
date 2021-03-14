@@ -173,7 +173,7 @@ export default class Room extends Component {
     }
     const ceilingStyle = {
       backgroundColor: 'red',
-      height: '30%',
+      height: '26.5%',
       opacity: '0.2'
     }
     const floorStyle = {

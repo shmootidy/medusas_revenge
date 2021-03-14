@@ -22,7 +22,7 @@ export default class Room extends Component {
 
     this.handleItem = this.handleItem.bind(this)
     this.handleOptionSelect = this.handleOptionSelect.bind(this)
-    this.handleDoorMessageClose = this.handleDoorMessageClose.bind(this)
+    this.handleSpecialMessageClose = this.handleSpecialMessageClose.bind(this)
   }
   handleItem(position) {
     const _rooms = this.state.rooms
@@ -83,7 +83,7 @@ export default class Room extends Component {
     }
     /* if user kills spider, start death countdown */
     if (_rooms[this.state.currentRoom].interactableItems[position].deathCountDown) {
-      this.setState({deathCountDown: 5})
+      this.setState({deathCountDown: 10})
     }
   }
   handleWriting(content, position) {
@@ -105,6 +105,7 @@ export default class Room extends Component {
   }
   changeRooms(roomTo) {
     if (this.state.deathCountDown) this.setState({ deathCountDown: this.state.deathCountDown - 1 })
+    if (this.state.deathCountDown === 3) this.setState({})
     if (this.state.deathCountDown === 0) roomTo = 'death screen'
     this.setState({currentRoom: roomTo})
     this.props.onRoomSwitch()
@@ -121,18 +122,18 @@ export default class Room extends Component {
         this.setState({rooms: _rooms})
         this.props.useKey(keyNeeded)
       } else {
-        const doorMessage = door.levelLock ? door.message : 'You need a key for this door.'
+        const specialMessage = door.levelLock ? door.message : 'You need a key for this door.'
         this.setState({
-          showDoorMessage: true,
-          doorMessage
+          showSpecialMessage: true,
+          specialMessage
         })
       }
     } else {
       console.log('not yet handled')
     }
   }
-  handleDoorMessageClose() {
-    this.setState({showDoorMessage: false})
+  handleSpecialMessageClose() {
+    this.setState({showSpecialMessage: false})
   }
   componentDidUpdate() {
     // console.log(this.state.rooms[this.state.currentRoom].uniqueItems)
@@ -221,7 +222,7 @@ export default class Room extends Component {
               />
             </div>
             <Player />
-            { this.state.showDoorMessage ? <UniqueItemContent content={this.state.doorMessage} onClick={this.handleDoorMessageClose} /> : null }
+            { this.state.showSpecialMessage ? <UniqueItemContent content={this.state.specialMessage} onClick={this.handleSpecialMessageClose} /> : null }
             <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
               <Door door={doors.back} onDoorClick={this.handleDoorClick} />
             </div>

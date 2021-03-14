@@ -49,10 +49,6 @@
 .InteractableItem.zToggle {
   z-index: 0;
 }
-/* .InteractableItem.left-wall,
-.InteractableItem.left-floor {
-  z-index: 2;
-} */
 .InteractableItem > div {
   height: 100%;
   width: 100%;

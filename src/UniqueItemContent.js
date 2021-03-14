@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 export default function UniqueItemContent(props) {
-  const uniqueItemContentStyle = {
+  const uniqueItemContentStyleOuter = {
     position: 'absolute',
     top: '5%',
     left: '5%',
@@ -10,8 +10,30 @@ export default function UniqueItemContent(props) {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    background: 'white',
     zIndex: 10,
+    overflow: 'hidden'
+  }
+  const uniqueItemContentStyleInner = {
+    background: 'rgba(255, 255, 255, 0.9)',
+    maxHeight: '425px',
+    maxWidth: '425px',
+    height: '100%',
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: '25px'
+  }
+  const uniqueItemContentStyle = {
+    textAlign: 'center',
+    marginBottom: '30px'
+  }
+  const optionsStyle = {
+    marginBottom: '30px',
+    display: 'flex',
+    width: '100%',
+    justifyContent: 'space-evenly'
   }
   const [ input, setInput ] = useState('')
   function handleChange(event) {
@@ -21,14 +43,15 @@ export default function UniqueItemContent(props) {
     event.preventDefault()
     props.handleWriting(input)
   }
-  const options = props.options ? 
-    Object.keys(props.options).map((option, i) => {
-      if (props.options[option].option) {
-        return <button key={i} onClick={()=>props.selectOption(option)}>{props.options[option].option}</button>
-      } else { 
-        return false 
-      }
-    }) : null
+  const options = props.options ? (
+    <div style={optionsStyle}>
+      {Object.keys(props.options).map((option, i) => {
+        if (props.options[option].option) {
+          return <button key={i} onClick={()=>props.selectOption(option)}>{props.options[option].option}</button>
+        } else { 
+          return false 
+        }
+      })}</div>) : null
 
   const content = props.content ? props.content : (
     <div>
@@ -40,12 +63,12 @@ export default function UniqueItemContent(props) {
     </div>
   )
   return (
-    <div style={uniqueItemContentStyle}>
-      <div>{content}</div>
-      <div>
+    <div style={uniqueItemContentStyleOuter}>
+      <div style={uniqueItemContentStyleInner}>
+        <div style={uniqueItemContentStyle}>{content}</div>
         {options}
+        <button onClick={props.onClick}>Close</button>
       </div>
-      <button onClick={props.onClick}>Close</button>
     </div>
   )
 }

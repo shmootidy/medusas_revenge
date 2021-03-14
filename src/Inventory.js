@@ -22,6 +22,7 @@ export default class Inventory extends Component {
           <tbody>{inventory}</tbody>
         </table>
         <div>{key}</div>
+        <div onClick={this.props.restartGame}>RESTART GAME</div>
       </div>
     )
   }

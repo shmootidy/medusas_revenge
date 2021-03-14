@@ -65,8 +65,7 @@ export default class Dungeon extends Component {
             </div>
           )}
         </Transition>
-        <Inventory inventory={this.state.inventory} />
-        <div onClick={this.restartGame}>RESTART GAME</div>
+        <Inventory inventory={this.state.inventory} restartGame={this.restartGame} />
       </div>
     )
   }

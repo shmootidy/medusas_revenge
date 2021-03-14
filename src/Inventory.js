@@ -17,7 +17,7 @@ export default class Inventory extends Component {
     })
     const key = this.props.inventory.key ? <img src={icons.key} alt="key" /> : ''
     return (
-      <div className="Inventory" style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', textAlign: 'center'}}>
+      <div className="Inventory" style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', textAlign: 'center', color: '#616161'}}>
         <h3>Inventory</h3>
         <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
           <table>

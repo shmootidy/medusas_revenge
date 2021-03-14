@@ -10,7 +10,7 @@ export default class Dungeon extends Component {
       switchRoomState: true,
       inventory: {
         // coins: 0,
-        key: 1,
+        key: 2,
         'happy spider no web': 1
       }
     }

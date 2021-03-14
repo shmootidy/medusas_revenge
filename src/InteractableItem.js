@@ -64,7 +64,7 @@ export default class InteractableItem extends Component {
       /* does it have an add-on? */
       let plus = this.props.item[this.props.position].plus ? this.props.item[this.props.position].plus : ''
       if (plus && icons[plus]) {
-        plus = <img className="plus" src={icons[plus]} alt={plus} />
+        plus = <img className={plus + " plus"} src={icons[plus]} alt={plus} />
       }
       if (plus) {
         item = <div>{item}{plus}</div>

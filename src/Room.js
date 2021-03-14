@@ -68,6 +68,10 @@ export default class Room extends Component {
     /* update item with selected option, if applicable */
     _rooms[this.state.currentRoom].interactableItems[position] = _rooms[this.state.currentRoom].interactableItems[position].options[option]
     this.setState({rooms: _rooms})
+    /* if user talks to spider, enable fly catching ability */
+    if (_rooms[this.state.currentRoom].interactableItems[position].plus) {
+      this.setState({reasonToCatchFly: true})
+    }
   }
   handleWriting(content, position) {
     const _rooms = this.state.rooms

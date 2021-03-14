@@ -88,7 +88,7 @@ export default class Room extends Component {
   }
   handleWriting(content, position) {
     const _rooms = this.state.rooms
-    _rooms[this.state.currentRoom].uniqueItems[position] = {
+    _rooms[this.state.currentRoom].interactableItems[position] = {
       item: 'wall writing',
       content: 'there is writing scribbled here: "' + content + '"'
     }
@@ -208,6 +208,7 @@ export default class Room extends Component {
                 handleItem={this.handleItem}
                 handleOptionSelect={this.handleOptionSelect}
                 inventory={this.props.inventory}
+                handleWriting={this.handleWriting}
               />
               <Door door={doors.forward} onDoorClick={this.handleDoorClick} />
               <InteractableItem 
@@ -217,6 +218,7 @@ export default class Room extends Component {
                 handleItem={this.handleItem}
                 handleOptionSelect={this.handleOptionSelect}
                 inventory={this.props.inventory}
+                handleWriting={this.handleWriting}
               />
               <Door door={doors.right} onDoorClick={this.handleDoorClick} />
             </div>

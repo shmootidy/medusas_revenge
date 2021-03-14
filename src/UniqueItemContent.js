@@ -18,8 +18,8 @@ export default function UniqueItemContent(props) {
     setInput(event.target.value)
   }
   function handleSubmit(event) {
-    props.handleWriting(input)
     event.preventDefault()
+    props.handleWriting(input)
   }
   const options = props.options ? 
     Object.keys(props.options).map((option, i) => {
@@ -31,10 +31,13 @@ export default function UniqueItemContent(props) {
     }) : null
 
   const content = props.content ? props.content : (
-    <form onSubmit={handleSubmit}>
-      <input type="text" value={input} onChange={handleChange} />
-      <input type="submit" value="Enter" />
-    </form>
+    <div>
+      <div>You use one of the pieces of crushed skull to scribble a note on the wall.</div>
+      <form onSubmit={handleSubmit}>
+        <input type="text" value={input} onChange={handleChange} />
+        <input type="submit" value="Enter" />
+      </form>
+    </div>
   )
   return (
     <div style={uniqueItemContentStyle}>

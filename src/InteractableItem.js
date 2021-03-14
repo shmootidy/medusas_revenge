@@ -84,12 +84,3 @@ export default class InteractableItem extends Component {
     )
   }
 }
-
-// when user clicks 
-/// -- does the item have content? open content
-  /// --- does content have options? show options and message and close btn
-    /// does selected option have options? (and so on)
-  /// --- else? show message and close btn
-/// --- else? remove item
-  /// --- does item have prize? show prize -- prize becomes new item
-  /// --- else? show nothing

@@ -104,10 +104,8 @@ export default class Room extends Component {
     this.props.handleInventory(item)
   }
   changeRooms(roomTo) {
-    if (this.state.deathCountDown > 1) {
-      this.setState({ deathCountDown: this.state.deathCountDown - 1 })
-      console.log('deeaatthhhh')
-    } 
+    if (this.state.deathCountDown) this.setState({ deathCountDown: this.state.deathCountDown - 1 })
+    if (this.state.deathCountDown === 0) roomTo = 'death screen'
     this.setState({currentRoom: roomTo})
     this.props.onRoomSwitch()
   }

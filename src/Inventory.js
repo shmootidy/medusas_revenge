@@ -17,14 +17,15 @@ export default class Inventory extends Component {
     })
     const key = this.props.inventory.key ? <img src={icons.key} alt="key" /> : ''
     return (
-      <div className="Inventory" style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
+      <div className="Inventory" style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', textAlign: 'center'}}>
+        <h3>Inventory</h3>
         <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
           <table>
             <tbody>{inventory}</tbody>
           </table>
           <div>{key}</div>
         </div>
-        <div style={{textAlign: 'center'}} onClick={this.props.restartGame}>RESTART GAME</div>
+        <div style={{margin: '15px', border: '1px solid black', padding: '5px'}} onClick={this.props.restartGame}>RESTART GAME</div>
       </div>
     )
   }

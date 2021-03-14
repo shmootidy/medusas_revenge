@@ -54,7 +54,7 @@ export default class Room extends Component {
         /* if prize volume or item are not yet set, find them in the prize object and set it */
         const volume = _rooms[this.state.currentRoom].interactableItems[position].volume ? _rooms[this.state.currentRoom].interactableItems[position].volume : _rooms[this.state.currentRoom].interactableItems[position].prize ? _rooms[this.state.currentRoom].interactableItems[position].prize[1] : null
         let item = _rooms[this.state.currentRoom].interactableItems[position].item ? _rooms[this.state.currentRoom].interactableItems[position].item : _rooms[this.state.currentRoom].interactableItems[position].prize ? _rooms[this.state.currentRoom].interactableItems[position].prize[0] : null 
-        if (_rooms[this.state.currentRoom].interactableItems[position].prize[0] && _rooms[this.state.currentRoom].interactableItems[position].prize[0] !== item) {
+        if (_rooms[this.state.currentRoom].interactableItems[position].prize && _rooms[this.state.currentRoom].interactableItems[position].prize[0] && _rooms[this.state.currentRoom].interactableItems[position].prize[0] !== item) {
           item = _rooms[this.state.currentRoom].interactableItems[position].prize[0]
         }
         if (!_rooms[this.state.currentRoom].interactableItems[position].item || !_rooms[this.state.currentRoom].interactableItems[position].volume) {
@@ -81,6 +81,9 @@ export default class Room extends Component {
     /* use inventory key, if applicable */
     if (_rooms[this.state.currentRoom].interactableItems[position]._key) {
       this.props.useKey(_rooms[this.state.currentRoom].interactableItems[position]._key)
+    }
+    if (_rooms[this.state.currentRoom].interactableItems[position].unhide) {
+      _rooms[this.state.currentRoom].interactableItems[_rooms[this.state.currentRoom].interactableItems[position].unhide].hidden = false
     }
     /* update item with selected option, if applicable */
     _rooms[this.state.currentRoom].interactableItems[position] = _rooms[this.state.currentRoom].interactableItems[position].options[option]

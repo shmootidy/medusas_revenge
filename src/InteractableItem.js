@@ -47,7 +47,7 @@ export default class InteractableItem extends Component {
   render() {
     let item
     /* does the room have an item in this position? */
-    if (this.props.item[this.props.position]) {
+    if (this.props.item[this.props.position] && !this.props.item[this.props.position].hidden) {
       item = this.props.item[this.props.position].item
       /* is it an item, a prize, or a leftover? */
       if (!this.props.item[this.props.position].item) {

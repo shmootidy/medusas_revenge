@@ -27,7 +27,7 @@ const rooms = {
         item: 'jar'
       },
       'right-floor': {
-        item: 'crowbar',
+        prize: ['crowbar', 1],
         hidden: true,
       },
       'ceiling': {
@@ -41,8 +41,9 @@ const rooms = {
             message: 'as your spider settles into her new home, she knocks down a crowbar',
             leftover: 'happy spider',
             plus: 'ledge',
-            prize: ['crowbar', 1],
-            end: true
+            // prize: ['crowbar', 1],
+            end: true,
+            unhide: 'right-floor'
           }
         }
       }

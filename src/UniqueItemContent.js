@@ -27,7 +27,8 @@ export default function UniqueItemContent(props) {
   }
   const uniqueItemContentStyle = {
     textAlign: 'center',
-    marginBottom: '30px'
+    marginBottom: '30px',
+    fontSize: '25px'
   }
   const optionsStyle = {
     marginBottom: '30px',

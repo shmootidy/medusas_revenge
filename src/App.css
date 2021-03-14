@@ -56,7 +56,9 @@
   display: flex;
   justify-content: center;
 }
-.InteractableItem > div.item > * {
+.InteractableItem > div.item > *,
+.door img,
+button {
   cursor: pointer;
 }
 .walls .InteractableItem > div {
@@ -159,4 +161,10 @@ img.locked-door {
 }
 .walls .InteractableItem .item {
   height: 30%;
+}
+button {
+  border: 1px solid black;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 20px;
 }

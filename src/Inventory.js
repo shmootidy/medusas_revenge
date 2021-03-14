@@ -25,7 +25,7 @@ export default class Inventory extends Component {
           </table>
           <div>{key}</div>
         </div>
-        <div style={{margin: '15px', border: '1px solid black', padding: '5px'}} onClick={this.props.restartGame}>RESTART GAME</div>
+        <button style={{margin: '15px'}} onClick={this.props.restartGame}>RESTART GAME</button>
       </div>
     )
   }

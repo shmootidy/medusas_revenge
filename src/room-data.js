@@ -235,7 +235,7 @@ const rooms = {
             option: 'smash skull',
             item: 'chalky skull fragments',
             message: 'the old skull crumbles like chalk under your heel',
-            prize: ['chalky skull fragments', 5],
+            prize: ['chalky skull fragments', 2],
             // leftover: 'skull dust',
             end: true
           }

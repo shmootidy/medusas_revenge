@@ -73,6 +73,8 @@ export default class InteractableItem extends Component {
       if (plus) {
         item = <div>{item}{plus}</div>
       }
+    } else if(this.props.inventory['chalky skull fragments'] && (this.props.position === 'right-wall' || this.props.position === 'left-wall')) {
+      item = <div style={{height: '100%', width: '100%'}}></div>
     } else {
       item = '' 
     }

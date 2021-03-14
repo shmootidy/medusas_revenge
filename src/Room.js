@@ -25,9 +25,15 @@ export default class Room extends Component {
     this.handleSpecialMessageClose = this.handleSpecialMessageClose.bind(this)
     this.toggleZIndex = this.toggleZIndex.bind(this)
   }
-  toggleZIndex() {
-    if (!this.state.messageBoxOpen) this.setState({messageBoxOpen: true})
-    if (this.state.messageBoxOpen) this.setState({messageBoxOpen: false})
+  toggleZIndex(position) {
+    if (!this.state.messageBoxOpen) {
+      this.setState({
+        messageBoxOpen: true,
+        messageItemPosition: position
+      })
+    } else {
+      this.setState({messageBoxOpen: false})
+    }
   }
   handleItem(position) {
     const _rooms = this.state.rooms
@@ -87,7 +93,6 @@ export default class Room extends Component {
         _rooms[this.state.currentRoom].interactableItems[hiddenItem].hidden = false
       })
     }
-    console.log(_rooms[this.state.currentRoom].interactableItems[position])
     /* update item with selected option, if applicable */
     _rooms[this.state.currentRoom].interactableItems[position] = _rooms[this.state.currentRoom].interactableItems[position].options[option]
     this.setState({rooms: _rooms})

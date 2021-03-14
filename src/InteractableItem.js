@@ -14,28 +14,30 @@ export default class InteractableItem extends Component {
   handleClick() {
     /* if there is no item, but the item is a wall and the user has something writeable, open */
     if (!this.props.item[this.props.position] && (this.props.position === 'left-wall' || this.props.position === 'right-wall') && this.props.inventory['chalky skull fragments']) {
-      this.setState({opened: true})
-      this.props.toggleZIndex()
+      this.setState({opened: true}); console.log('butthold')
+      this.props.toggleZIndex(this.props.position)
     }
     if (!this.props.item[this.props.position]) return false
     /* if item has special moves, handleItem in parent component; do not open */
     if (this.props.item[this.props.position].moves) {
-      this.props.handleItem(this.props.position)
+      this.props.handleItem(this.props.position); console.log('butthold')
     } else {
       /* if item has no message, open contents */
-      if (!this.state.opened && !this.props.item[this.props.position].message) {
-        this.setState({opened: true})
-        this.props.toggleZIndex()
+      if (!this.state.opened && !this.props.item[this.props.position].message && this.props.item[this.props.position].content) {
+        this.setState({opened: true}); console.log('butthold')
+        this.props.toggleZIndex(this.props.position)
       }
       /* if the item has no content or does have a message, send to parent for handling and close message; close */
       if (!this.props.item[this.props.position].content || this.props.item[this.props.position].message) {
-        this.props.handleItem(this.props.position)
+        this.props.handleItem(this.props.position); //console.log('butthold')
         this.setState({opened: false})
+        // this.props.toggleZIndex(this.props.position)
       }
     }
   }
   handleClose() {
     this.setState({opened: false})
+    this.props.toggleZIndex(this.props.position)
   }
   handleOptionSelect(option) {
     // when user selects an option, send position and option to be handled by parent

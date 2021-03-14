@@ -9,7 +9,8 @@ export default class Player extends Component {
       height: '35%',
       width: 'auto',
       bottom: '0',
-      right: '29%'
+      right: '29%',
+      zIndex: 10
     }
     return (
       <div className="Player" style={playerStyle}>

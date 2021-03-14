@@ -81,6 +81,10 @@ export default class Room extends Component {
     if (_rooms[this.state.currentRoom].interactableItems[position].plus) {
       this.setState({reasonToCatchFly: true})
     }
+    /* if user kills spider, start death countdown */
+    if (_rooms[this.state.currentRoom].interactableItems[position].deathCountDown) {
+      this.setState({deathCountDown: 5})
+    }
   }
   handleWriting(content, position) {
     const _rooms = this.state.rooms
@@ -100,6 +104,10 @@ export default class Room extends Component {
     this.props.handleInventory(item)
   }
   changeRooms(roomTo) {
+    if (this.state.deathCountDown > 1) {
+      this.setState({ deathCountDown: this.state.deathCountDown - 1 })
+      console.log('deeaatthhhh')
+    } 
     this.setState({currentRoom: roomTo})
     this.props.onRoomSwitch()
   }

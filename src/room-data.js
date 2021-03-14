@@ -136,6 +136,7 @@ const rooms = {
             message: 'the spider is dead',
             leftover: 'spider webs',
             prize: ['dead spider', 1],
+            deathCountDown: true,
             end: true
           },
           option2: {

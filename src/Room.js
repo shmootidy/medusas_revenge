@@ -248,7 +248,7 @@ export default class Room extends Component {
               />
             </div>
             <Player />
-            { this.state.showSpecialMessage || this.props.restartGameWarning ? <UniqueItemContent content={specialMessageContent} onClick={this.handleSpecialMessageClose} /> : null }
+            { this.state.showSpecialMessage ? <UniqueItemContent content={specialMessageContent} onClick={this.handleSpecialMessageClose} /> : null }
             <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
               <Door door={doors.back} onDoorClick={this.handleDoorClick} />
             </div>

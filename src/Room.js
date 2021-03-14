@@ -23,6 +23,11 @@ export default class Room extends Component {
     this.handleItem = this.handleItem.bind(this)
     this.handleOptionSelect = this.handleOptionSelect.bind(this)
     this.handleSpecialMessageClose = this.handleSpecialMessageClose.bind(this)
+    this.toggleZIndex = this.toggleZIndex.bind(this)
+  }
+  toggleZIndex() {
+    if (!this.state.messageBoxOpen) this.setState({messageBoxOpen: true})
+    if (this.state.messageBoxOpen) this.setState({messageBoxOpen: false})
   }
   handleItem(position) {
     const _rooms = this.state.rooms
@@ -186,8 +191,9 @@ export default class Room extends Component {
     }
     if (this.state.rooms[this.state.currentRoom]) {
       const doors = this.state.rooms[this.state.currentRoom].doors
+      const roomClassName = this.state.messageBoxOpen ? 'Room box-open' : 'Room'
       return (
-        <div className="Room" style={roomStyle}>
+        <div className={roomClassName} style={roomStyle}>
           <img src={_background} alt="background" style={backgroundImgStyle} />
           <div style={roomItemsStyle}>
             <div className="ceiling" style={ceilingStyle}>
@@ -198,6 +204,7 @@ export default class Room extends Component {
                 handleItem={this.handleItem}
                 handleOptionSelect={this.handleOptionSelect}
                 inventory={this.props.inventory}
+                toggleZIndex={this.toggleZIndex}
               />
             </div>
             <div className="walls" style={threeDoorsStyle}>
@@ -209,6 +216,7 @@ export default class Room extends Component {
                 handleItem={this.handleItem}
                 handleOptionSelect={this.handleOptionSelect}
                 inventory={this.props.inventory}
+                toggleZIndex={this.toggleZIndex}
                 handleWriting={this.handleWriting}
               />
               <Door door={doors.forward} onDoorClick={this.handleDoorClick} />
@@ -219,6 +227,7 @@ export default class Room extends Component {
                 handleItem={this.handleItem}
                 handleOptionSelect={this.handleOptionSelect}
                 inventory={this.props.inventory}
+                toggleZIndex={this.toggleZIndex}
                 handleWriting={this.handleWriting}
               />
               <Door door={doors.right} onDoorClick={this.handleDoorClick} />
@@ -232,6 +241,7 @@ export default class Room extends Component {
                   handleItem={this.handleItem}
                   handleOptionSelect={this.handleOptionSelect}
                   inventory={this.props.inventory}
+                  toggleZIndex={this.toggleZIndex}
                 />
                 <InteractableItem 
                   room={this.state.currentRoom}
@@ -240,6 +250,7 @@ export default class Room extends Component {
                   handleItem={this.handleItem}
                   handleOptionSelect={this.handleOptionSelect}
                   inventory={this.props.inventory}
+                  toggleZIndex={this.toggleZIndex}
                 />
                 </div>
                 <div></div>

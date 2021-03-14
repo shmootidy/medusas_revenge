@@ -15,6 +15,7 @@ export default class InteractableItem extends Component {
     /* if there is no item, but the item is a wall and the user has something writeable, open */
     if (!this.props.item[this.props.position] && (this.props.position === 'left-wall' || this.props.position === 'right-wall') && this.props.inventory['chalky skull fragments']) {
       this.setState({opened: true})
+      this.props.toggleZIndex()
     }
     if (!this.props.item[this.props.position]) return false
     /* if item has special moves, handleItem in parent component; do not open */
@@ -24,6 +25,7 @@ export default class InteractableItem extends Component {
       /* if item has no message, open contents */
       if (!this.state.opened && !this.props.item[this.props.position].message) {
         this.setState({opened: true})
+        this.props.toggleZIndex()
       }
       /* if the item has no content or does have a message, send to parent for handling and close message; close */
       if (!this.props.item[this.props.position].content || this.props.item[this.props.position].message) {

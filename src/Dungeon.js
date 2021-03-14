@@ -11,7 +11,8 @@ export default class Dungeon extends Component {
       inventory: {
         // coins: 0,
         key: 2,
-        'happy spider no web': 1
+        'happy spider no web': 1,
+        crowbar: 1
       }
     }
     this.handleRoomSwitch = this.handleRoomSwitch.bind(this)

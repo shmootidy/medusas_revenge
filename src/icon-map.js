@@ -45,7 +45,7 @@ const icons = {
   'dead spider': dead_spider,
   'levelKey': crowbar_ledge,
   'levelLock': oh_grate,
-  'levelOpen': gaping_hole,
+  gaping_hole,
   'player': medusa,
   'wall writing': '📝',
   'glass jar': '',

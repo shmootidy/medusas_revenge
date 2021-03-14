@@ -75,7 +75,6 @@ const rooms = {
     interactableItems : {
       // 'right-floor': {
       //   prize: ['coins', 5],
-      //   position: 'right'
       // },
     }
   },

@@ -27,6 +27,7 @@ const icons = {
   'skull': skull,
   'skull dust': '💀',
   'chalky skull fragments': pile_o_bones,
+  fly,
   'dead fly': fly,
   spider,
   'spider webs': empty_web,

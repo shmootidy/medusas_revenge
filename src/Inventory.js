@@ -24,7 +24,7 @@ export default class Inventory extends Component {
           </table>
           <div>{key}</div>
         </div>
-        <div onClick={this.props.restartGame}>RESTART GAME</div>
+        <div style={{textAlign: 'center'}} onClick={this.props.restartGame}>RESTART GAME</div>
       </div>
     )
   }

@@ -70,6 +70,14 @@
 }
 .back-door {
   position: absolute;
+  bottom: 1%;
+  left: 10%;
+}
+.back-door.door {
+  cursor: pointer;
+  background: white;
+  padding: 5px;
+  border-radius: 5px;
 }
 .floor > div:first-of-type {
   display: flex;

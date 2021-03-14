@@ -107,6 +107,7 @@ export default class Room extends Component {
   }
   handleWriting(content, position) {
     const _rooms = this.state.rooms
+    if (!content) return false
     _rooms[this.state.currentRoom].interactableItems[position] = {
       item: 'wall writing',
       content: 'there is writing scribbled here: "' + content + '"'

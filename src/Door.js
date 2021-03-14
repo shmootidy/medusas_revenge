@@ -17,13 +17,13 @@ export default class Door extends Component {
       doorStyle.width = '25.5%'
       doorStyle.height = '152%'
     } else if (door.position === 'forward') {
-      doorStyle.width = '33.9%'
+      doorStyle.width = '30%'
       doorStyle.height = '104%'
       doorStyle.display = 'flex'
       doorStyle.alignItems = 'flex-end'
       doorStyle.justifyContent = 'center'
     } else if (door.position === 'right') {
-      doorStyle.width = '30.6%'
+      doorStyle.width = '30.5%'
       doorStyle.height = '160%'
     }
     let _className = door.position + '-door door'

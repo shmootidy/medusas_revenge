@@ -44,13 +44,14 @@
   width: 100%;
 }
 .walls .InteractableItem {
-  width: 5%;
+  width: 7%;
   background: yellow;
   z-index: 1;
 }
 .walls .InteractableItem.left-wall {
   z-index: 2;
 }
-.InteractableItem > div > img {
+.walls .InteractableItem > div > img {
   position: absolute;
+  height: 10%;
 }

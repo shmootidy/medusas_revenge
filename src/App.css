@@ -153,3 +153,6 @@ img.locked-door {
   width: 8%;
   top: 36%;
 }
+.walls .InteractableItem .item {
+  height: 30%;
+}

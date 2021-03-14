@@ -83,7 +83,7 @@ export default class Room extends Component {
     }
     /* if user kills spider, start death countdown */
     if (_rooms[this.state.currentRoom].interactableItems[position].deathCountDown) {
-      this.setState({deathCountDown: 10})
+      this.setState({deathCountDown: 9})
     }
   }
   handleWriting(content, position) {
@@ -105,7 +105,24 @@ export default class Room extends Component {
   }
   changeRooms(roomTo) {
     if (this.state.deathCountDown) this.setState({ deathCountDown: this.state.deathCountDown - 1 })
-    if (this.state.deathCountDown === 3) this.setState({})
+    if (this.state.deathCountDown === 6) {
+      this.setState({
+        specialMessage: 'You\'re starting to think killing that spider may have been a mistake.',
+        showSpecialMessage: true
+      })
+    }
+    if (this.state.deathCountDown === 3) {
+      this.setState({
+        specialMessage: 'This endless labyrinth is wearing you down.',
+        showSpecialMessage: true
+      })
+    }
+    if (this.state.deathCountDown === 1) {
+      this.setState({
+        specialMessage: 'You\'re too weary to carry on.',
+        showSpecialMessage: true
+      })
+    }
     if (this.state.deathCountDown === 0) roomTo = 'death screen'
     this.setState({currentRoom: roomTo})
     this.props.onRoomSwitch()

@@ -26,6 +26,7 @@ import happy_spider_no_web from './assets/happy_spider_no_web.png'
 import ledge from './assets/ledge.png'
 import crowbar from './assets/crowbar.png'
 import gaping_hole from './assets/level_door_open.png'
+import graf from './assets/grafitti.png'
 
 const icons = {
   'jar': jar,
@@ -58,7 +59,8 @@ const icons = {
   back_doorway,
   'fly thought': fly_thought,
   ledge,
-  crowbar
+  crowbar,
+  'wall writing': graf
 }
 
 export default icons

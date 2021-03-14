@@ -14,22 +14,22 @@ export default class InteractableItem extends Component {
   handleClick() {
     /* if there is no item, but the item is a wall and the user has something writeable, open */
     if (!this.props.item[this.props.position] && (this.props.position === 'left-wall' || this.props.position === 'right-wall') && this.props.inventory['chalky skull fragments']) {
-      this.setState({opened: true}); console.log('butthold')
+      this.setState({opened: true});
       this.props.toggleZIndex(this.props.position)
     }
     if (!this.props.item[this.props.position]) return false
     /* if item has special moves, handleItem in parent component; do not open */
     if (this.props.item[this.props.position].moves) {
-      this.props.handleItem(this.props.position); console.log('butthold')
+      this.props.handleItem(this.props.position);
     } else {
       /* if item has no message, open contents */
       if (!this.state.opened && !this.props.item[this.props.position].message && this.props.item[this.props.position].content) {
-        this.setState({opened: true}); console.log('butthold')
+        this.setState({opened: true});
         this.props.toggleZIndex(this.props.position)
       }
       /* if the item has no content or does have a message, send to parent for handling and close message; close */
       if (!this.props.item[this.props.position].content || this.props.item[this.props.position].message) {
-        this.props.handleItem(this.props.position); //console.log('butthold')
+        this.props.handleItem(this.props.position);
         this.setState({opened: false})
         // this.props.toggleZIndex(this.props.position)
       }
@@ -47,6 +47,8 @@ export default class InteractableItem extends Component {
     this.props.handleWriting(input, this.props.position)
   }
   render() {
+    console.log(this.props.messageOpen)
+    console.log(this.props.itemWithOpenMessage)
     let item
     /* does the room have an item in this position? */
     if (this.props.item[this.props.position] && !this.props.item[this.props.position].hidden) {
@@ -75,7 +77,8 @@ export default class InteractableItem extends Component {
       item = '' 
     }
     const uniqueItemHere = this.props.item && this.props.item[this.props.position]
-    const itemClassNames= 'InteractableItem ' + this.props.position
+    let itemClassNames = 'InteractableItem ' + this.props.position
+    if (this.props.messageOpen && this.props.itemWithOpenMessage !== this.props.position ) itemClassNames += ' zToggle'
     return (
       <div className={itemClassNames}>
         <div className="item" onClick={this.handleClick}>{item}</div>

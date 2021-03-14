@@ -205,7 +205,8 @@ export default class Room extends Component {
     }
     if (this.state.rooms[this.state.currentRoom]) {
       const doors = this.state.rooms[this.state.currentRoom].doors
-      const roomClassName = this.state.messageBoxOpen ? 'Room box-open' : 'Room'
+      const roomClassName = /*this.state.messageBoxOpen ? 'Room box-open' : */'Room'
+      const itemWithOpenMessage = this.state.messageBoxOpen ? this.state.messageItemPosition : null
       return (
         <div className={roomClassName} style={roomStyle}>
           <img src={_background} alt="background" style={backgroundImgStyle} />
@@ -219,6 +220,8 @@ export default class Room extends Component {
                 handleOptionSelect={this.handleOptionSelect}
                 inventory={this.props.inventory}
                 toggleZIndex={this.toggleZIndex}
+                messageOpen={this.state.messageBoxOpen}
+                itemWithOpenMessage={this.state.messageItemPosition}
               />
             </div>
             <div className="walls" style={threeDoorsStyle}>
@@ -232,6 +235,8 @@ export default class Room extends Component {
                 inventory={this.props.inventory}
                 toggleZIndex={this.toggleZIndex}
                 handleWriting={this.handleWriting}
+                messageOpen={this.state.messageBoxOpen}
+                itemWithOpenMessage={this.state.messageItemPosition}
               />
               <Door door={doors.forward} onDoorClick={this.handleDoorClick} />
               <InteractableItem 
@@ -243,6 +248,8 @@ export default class Room extends Component {
                 inventory={this.props.inventory}
                 toggleZIndex={this.toggleZIndex}
                 handleWriting={this.handleWriting}
+                messageOpen={this.state.messageBoxOpen}
+                itemWithOpenMessage={this.state.messageItemPosition}
               />
               <Door door={doors.right} onDoorClick={this.handleDoorClick} />
             </div>
@@ -256,6 +263,8 @@ export default class Room extends Component {
                   handleOptionSelect={this.handleOptionSelect}
                   inventory={this.props.inventory}
                   toggleZIndex={this.toggleZIndex}
+                  messageOpen={this.state.messageBoxOpen}
+                  itemWithOpenMessage={this.state.messageItemPosition}
                 />
                 <InteractableItem 
                   room={this.state.currentRoom}
@@ -265,6 +274,8 @@ export default class Room extends Component {
                   handleOptionSelect={this.handleOptionSelect}
                   inventory={this.props.inventory}
                   toggleZIndex={this.toggleZIndex}
+                  messageOpen={this.state.messageBoxOpen}
+                  itemWithOpenMessage={this.state.messageItemPosition}
                 />
                 </div>
                 <div></div>

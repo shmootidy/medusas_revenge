@@ -6,7 +6,7 @@ export default class Player extends Component {
     const playerStyle = {
       // backgroundColor: 'gray'
       position: 'absolute',
-      height: '40%',
+      height: '35%',
       width: 'auto',
       bottom: '0',
       right: '29%'

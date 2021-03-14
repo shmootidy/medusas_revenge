@@ -18,7 +18,7 @@ export default class Door extends Component {
       doorStyle.height = '152%'
     } else if (door.position === 'forward') {
       doorStyle.width = '30%'
-      doorStyle.height = '104%'
+      doorStyle.height = '100%'
       doorStyle.display = 'flex'
       doorStyle.alignItems = 'flex-end'
       doorStyle.justifyContent = 'center'

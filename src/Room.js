@@ -177,13 +177,11 @@ export default class Room extends Component {
       opacity: '0.2'
     }
     const floorStyle = {
-      // display: 'flex',
-      // justifyContent: 'space-around',
-      height: '30%',
+      height: '31%',
     }
     const threeDoorsStyle = {
       display: 'flex',
-      height: '48%'
+      height: '44.5%'
     }
     const roomStyle = {
       position: 'relative'
@@ -228,22 +226,25 @@ export default class Room extends Component {
               <Door door={doors.right} onDoorClick={this.handleDoorClick} />
             </div>
             <div className="floor" style={floorStyle}>
-              <InteractableItem 
-                room={this.state.currentRoom}
-                position="left-floor"
-                item={this.state.rooms[this.state.currentRoom].interactableItems}
-                handleItem={this.handleItem}
-                handleOptionSelect={this.handleOptionSelect}
-                inventory={this.props.inventory}
-              />
-              <InteractableItem 
-                room={this.state.currentRoom}
-                position="right-floor"
-                item={this.state.rooms[this.state.currentRoom].interactableItems}
-                handleItem={this.handleItem}
-                handleOptionSelect={this.handleOptionSelect}
-                inventory={this.props.inventory}
-              />
+                <div>
+                <InteractableItem 
+                  room={this.state.currentRoom}
+                  position="left-floor"
+                  item={this.state.rooms[this.state.currentRoom].interactableItems}
+                  handleItem={this.handleItem}
+                  handleOptionSelect={this.handleOptionSelect}
+                  inventory={this.props.inventory}
+                />
+                <InteractableItem 
+                  room={this.state.currentRoom}
+                  position="right-floor"
+                  item={this.state.rooms[this.state.currentRoom].interactableItems}
+                  handleItem={this.handleItem}
+                  handleOptionSelect={this.handleOptionSelect}
+                  inventory={this.props.inventory}
+                />
+                </div>
+                <div></div>
             </div>
             <Player />
             { this.state.showSpecialMessage ? <UniqueItemContent content={this.state.specialMessage} onClick={this.handleSpecialMessageClose} /> : null }

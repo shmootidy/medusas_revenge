@@ -87,11 +87,23 @@
   height: 100%;
   width: 100%;
 }
-.ceiling .InteractableItem > div {
+.ceiling .InteractableItem > div,
+.ceiling .InteractableItem > div.item div {
+  display: flex;
   align-items: flex-start;
   justify-content: center;
+  height: 100%;
+  width: 100%;
 }
-.ceiling .InteractableItem > div img {
+.ceiling .InteractableItem > div.item div {
+  position: absolute;
+}
+.ceiling .InteractableItem > div.item div img:last-of-type {
+  position: absolute;
+  left: 50%;
+}
+.ceiling .InteractableItem > div img,
+.ceiling .InteractableItem > div div img {
   height: 30%;
   margin-top: 5%;
 }

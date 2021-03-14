@@ -184,7 +184,7 @@ export default class Room extends Component {
     }
     if (this.state.rooms[this.state.currentRoom]) {
       const doors = this.state.rooms[this.state.currentRoom].doors
-  
+      let specialMessageContent = this.state.specialMessage ? this.state.specialMessage : null
       return (
         <div className="Room" style={roomStyle}>
           <img src={_background} alt="background" style={backgroundImgStyle} />
@@ -241,7 +241,7 @@ export default class Room extends Component {
               />
             </div>
             <Player />
-            { this.state.showSpecialMessage ? <UniqueItemContent content={this.state.specialMessage} onClick={this.handleSpecialMessageClose} /> : null }
+            { this.state.showSpecialMessage || this.props.restartGameWarning ? <UniqueItemContent content={specialMessageContent} onClick={this.handleSpecialMessageClose} /> : null }
             <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
               <Door door={doors.back} onDoorClick={this.handleDoorClick} />
             </div>

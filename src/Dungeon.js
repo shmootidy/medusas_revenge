@@ -15,6 +15,12 @@ export default class Dungeon extends Component {
     this.handleRoomSwitch = this.handleRoomSwitch.bind(this)
     this.handleInventory = this.handleInventory.bind(this)
     this.useKey = this.useKey.bind(this)
+    this.restartGame = this.restartGame.bind(this)
+  }
+  restartGame() {
+    if (window.confirm('Are you sure?')) {
+      window.location.replace(window.location.pathname + window.location.search + window.location.hash);
+    }
   }
   useKey(_key) {
     const key = _key ? _key : 'key'
@@ -51,11 +57,16 @@ export default class Dungeon extends Component {
               ...defaultDungeonStyle,
               ...transitionStyles[state]
             }}>
-              <Room onRoomSwitch={this.handleRoomSwitch} handleInventory={this.handleInventory} useKey={this.useKey} inventory={this.state.inventory} />
+              <Room 
+                onRoomSwitch={this.handleRoomSwitch} 
+                handleInventory={this.handleInventory} 
+                useKey={this.useKey} inventory={this.state.inventory} 
+              />
             </div>
           )}
         </Transition>
         <Inventory inventory={this.state.inventory} />
+        <div onClick={this.restartGame}>RESTART GAME</div>
       </div>
     )
   }

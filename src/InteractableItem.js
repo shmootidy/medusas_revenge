@@ -5,9 +5,7 @@ import UniqueItemContent from './UniqueItemContent'
 export default class InteractableItem extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      // opened: false,
-    }
+    this.state = { }
     this.handleClick = this.handleClick.bind(this)
     this.handleClose = this.handleClose.bind(this)
     this.handleOptionSelect = this.handleOptionSelect.bind(this)

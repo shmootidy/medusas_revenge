@@ -53,7 +53,7 @@ export default class Dungeon extends Component {
       exit: 300
     }
     return (
-      <div style={{display: 'flex'}}>
+      <div style={{display: 'flex', justifyContent: 'center'}}>
         <Transition in={this.state.switchRoomState} timeout={duration} >
           {state => (
             <div style={{

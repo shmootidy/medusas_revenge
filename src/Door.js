@@ -28,7 +28,7 @@ export default class Door extends Component {
     }
     let _className = door.position + '-door door'
     let _doorway = door.status === 'no door' || door.status === 'one-way' ? null : icons[door.position + '_doorway'] ? <img src={icons[door.position + '_doorway']} alt={door.position + '_doorway'} /> : door.position + ' doorway'
-    let _lockedDoor = door.status === 'locked' ? <img style={{position: 'absolute', height: '80%'}} src={icons[door.position + '_door']} alt={door.position + '_door' }/> : null
+    let _lockedDoor = door.status === 'locked' ? <img className="locked-door" src={icons[door.position + '_door']} alt={door.position + '_door' }/> : null
     if (door.levelLock) {
       _doorway = icons.levelLock ? <img src={icons.levelLock} alt="levelLock" /> : 'levelLock'
       _lockedDoor = null

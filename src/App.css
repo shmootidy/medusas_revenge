@@ -63,6 +63,9 @@
 }
 .InteractableItem > div > img {
   position: absolute;
+  height: 15%;
+}
+.InteractableItem > div > img.sign {
   height: 10%;
 }
 .back-door {
@@ -92,6 +95,25 @@
   height: 30%;
   margin-top: 5%;
 }
+.ceiling .InteractableItem > div img.levelKey {
+  height: 10%;
+  transform: rotate(180deg);
+  top: 19.1%;
+  left: 53%;
+}
 .InteractableItem > div > img.key {
   height: 5%;
+}
+
+.Inventory img {
+  width: 100%;
+}
+img.locked-door {
+  position: absolute;
+  height: 80%;
+}
+.left-door img.locked-door {
+  position: absolute;
+  height: 85%;
+  top: 5%;
 }

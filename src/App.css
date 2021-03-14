@@ -48,7 +48,8 @@
   background: yellow;
   z-index: 1;
 }
-.InteractableItem.left-wall {
+.InteractableItem.left-wall,
+.InteractableItem.left-floor {
   z-index: 2;
 }
 .InteractableItem > div {
@@ -65,4 +66,7 @@
 }
 .back-door {
   position: absolute;
+}
+.floor .InteractableItem {
+  /* display: inline-block; */
 }

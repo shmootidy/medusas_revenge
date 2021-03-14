@@ -13,15 +13,16 @@ export default class InteractableItem extends Component {
     this.handleOptionSelect = this.handleOptionSelect.bind(this)
   }
   handleClick() {
+    console.log('yes')
     /* if item has special moves, handleItem in parent component; do not open */
     if (this.props.item[this.props.position].moves) {
       this.props.handleItem(this.props.position)
     } else {
-      /* if item has a message, open contents */
+      /* if item has no message, open contents */
       if (!this.state.opened && !this.props.item[this.props.position].message) {
         this.setState({opened: true})
       }
-      /* if the item has no content (or an option), remove the item and replace it with its prize (if applicable) */
+      /* if the item has no content or does have a message, send to parent for handling  */
       if (!this.props.item[this.props.position].content || this.props.item[this.props.position].message) {
         this.props.handleItem(this.props.position)
         this.setState({opened: false})
@@ -66,7 +67,7 @@ export default class InteractableItem extends Component {
     const uniqueItemHere = this.props.item && this.props.item[this.props.position]
     return (
       <div className="InteractableItem">
-        <div onClick={this.handleClick}>{item}</div>
+        <div onClick={this.handleClick}>{item + 'beep'}</div>
         { uniqueItemHere && this.state.opened && this.props.item[this.props.position].content && !this.props.item[this.props.position].message ? 
           <UniqueItemContent 
             content={uniqueItemHere ? this.props.item[this.props.position].message ? this.props.item[this.props.position].message : this.props.item[this.props.position].content : null} 

@@ -46,25 +46,22 @@ export default class InteractableItem extends Component {
   }
   render() {
     let item
-    // does the room have an item in this position?
+    /* does the room have an item in this position? */
     if (this.props.item[this.props.position]) {
       item = this.props.item[this.props.position].item
-      // is it an item, a prize, or a leftover? 
+      /* is it an item, a prize, or a leftover? */
       if (!this.props.item[this.props.position].item) {
-        console.log('hi')
         if (this.props.item[this.props.position].prize) {
-        console.log('hii')
         item = this.props.item[this.props.position].prize[0]
         } else {
-        console.log('hiii')
         item = this.props.item[this.props.position].leftover
         }
       }
-      // is there an icon for this item?
+      /* is there an icon for this item? */
       if (icons[item]) {
         item = <img src={icons[item]} alt={item} className={item} />
       }
-      // does it have an add-on?
+      /* does it have an add-on? */
       let plus = this.props.item[this.props.position].plus ? this.props.item[this.props.position].plus : ''
       if (plus && icons[plus]) {
         plus = <img className="plus" src={icons[plus]} alt={plus} />

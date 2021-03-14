@@ -30,6 +30,10 @@ const rooms = {
         prize: ['crowbar', 1],
         hidden: true,
       },
+      'right-wall': {
+        // leftover: 'ledge',
+        // hidden: true
+      },
       'ceiling': {
         item: 'levelKey',
         content: 'you can\'t reach it',
@@ -43,7 +47,7 @@ const rooms = {
             plus: 'ledge',
             // prize: ['crowbar', 1],
             end: true,
-            unhide: 'right-floor'
+            unhide: ['right-floor']
           }
         }
       }

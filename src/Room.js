@@ -83,8 +83,9 @@ export default class Room extends Component {
       this.props.useKey(_rooms[this.state.currentRoom].interactableItems[position]._key)
     }
     if (_rooms[this.state.currentRoom].interactableItems[position].options[option].unhide) {
-      _rooms[this.state.currentRoom].interactableItems[_rooms[this.state.currentRoom].interactableItems[position].options[option].unhide].hidden = false
-      // console.log(_rooms[this.state.currentRoom].interactableItems[position].options[option].unhide)
+      _rooms[this.state.currentRoom].interactableItems[position].options[option].unhide.forEach(hiddenItem => {
+        _rooms[this.state.currentRoom].interactableItems[hiddenItem].hidden = false
+      })
     }
     console.log(_rooms[this.state.currentRoom].interactableItems[position])
     /* update item with selected option, if applicable */

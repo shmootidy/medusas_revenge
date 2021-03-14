@@ -1,13 +1,8 @@
 .App {
   background-color: #282c34;
   height: 100vh;
-  /* display: flex; */
   justify-content: center;
   align-items: center;
-}
-.Room {
-  /* background: url('background.JPG') center center no-repeat;
-  background-size: contain; */
 }
 .forward-door img {
   height: 80%;
@@ -46,7 +41,6 @@
   align-items: center;
 }
 .UniqueItem img {
-  /* transform: rotate(180deg); */
   width: 100%;
 }
 .InteractableItem {

@@ -156,6 +156,26 @@ export default class Room extends Component {
     // console.log(this.state.rooms[this.state.currentRoom].uniqueItems)
   }
   render() {
+    const backgroundImgStyle = {
+      maxHeight: '100vh',
+      maxWidth: '85vw'
+    }
+    const roomItemsStyle = {
+      position: 'absolute', 
+      top: '0', 
+      left: '0',
+      height: '100%',
+      width: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+      maxHeight: '100vh',
+      maxWidth: '100vw'
+    }
+    const ceilingStyle = {
+      backgroundColor: 'red',
+      height: '30%',
+      opacity: '0.2'
+    }
     const floorStyle = {
       display: 'flex',
       justifyContent: 'space-between',
@@ -167,20 +187,7 @@ export default class Room extends Component {
       height: '48%'
     }
     const roomStyle = {
-      height: '100vh',
       position: 'relative'
-    }
-    const backgroundImgStyle = {
-      maxHeight: '100vh',
-    }
-    const roomItemsStyle = {
-      position: 'absolute', 
-      top: '0', 
-      left: '0',
-      height: '100%',
-      width: '100%',
-      display: 'flex',
-      flexDirection: 'column',
     }
     if (this.state.rooms[this.state.currentRoom]) {
       const doors = this.state.rooms[this.state.currentRoom].doors
@@ -189,7 +196,7 @@ export default class Room extends Component {
         <div className="Room" style={roomStyle}>
           <img src={_background} alt="background" style={backgroundImgStyle} />
           <div style={roomItemsStyle}>
-            <div className="ceiling">
+            <div className="ceiling" style={ceilingStyle}>
               <InteractableItem 
                 room={this.state.currentRoom}
                 position="ceiling"

@@ -31,6 +31,15 @@ export default class Room extends Component {
       let thisItem = _rooms[this.state.currentRoom].interactableItems[position]
       let moves = thisItem.moves
       const nextPosition = moves.shift()
+      /* check if user can catch fly; if not, push the shifted position back onto the array */
+      if (!this.state.reasonToCatchFly) {
+        /* if the moves array does not include the starting position, put it in there */
+        if (position !== nextPosition && !moves.includes(position)) {
+          moves.push(position)
+        }
+        moves.push(nextPosition)
+      } else {
+      }
       /* remove item from its current position and place in another */
       _rooms[this.state.currentRoom].interactableItems[position] = null
       _rooms[this.state.currentRoom].interactableItems[nextPosition] = thisItem

@@ -49,3 +49,7 @@
   /* transform: rotate(180deg); */
   width: 100%;
 }
+.InteractableItem {
+  min-width: 25px;
+  background: yellow;
+}

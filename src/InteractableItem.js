@@ -13,8 +13,11 @@ export default class InteractableItem extends Component {
     this.handleOptionSelect = this.handleOptionSelect.bind(this)
   }
   handleClick() {
-    /* check for item's special moves before normal handling */
-    if (!this.props.item[this.props.position].moves) {
+    /* if item has special moves, handleItem in parent component; do not open */
+    if (this.props.item[this.props.position].moves) {
+      this.props.handleItem(this.props.position)
+    } else {
+      /* if item has a message, open contents */
       if (!this.state.opened && !this.props.item[this.props.position].message) {
         this.setState({opened: true})
       }
@@ -23,8 +26,6 @@ export default class InteractableItem extends Component {
         this.props.handleItem(this.props.position)
         this.setState({opened: false})
       }
-    } else {
-      this.props.handleItem(this.props.position)
     }
   }
   handleClose() {

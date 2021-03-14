@@ -222,20 +222,20 @@ const rooms = {
       }
     },
     interactableItems : {
-      // 'left-floor': {
-      //   item: 'skull',
-      //   content: 'a spooky old skull',
-      //   options: {
-      //     option1: {
-      //       option: 'smash skull',
-      //       item: 'chalky skull fragments',
-      //       message: 'the old skull crumbles like chalk under your heel',
-      //       prize: ['chalky skull fragments', 5],
-      //       leftover: 'skull dust',
-      //       end: true
-      //     }
-      //   }
-      // },
+      'left-floor': {
+        item: 'skull',
+        content: 'a spooky old skull',
+        options: {
+          option1: {
+            option: 'smash skull',
+            item: 'chalky skull fragments',
+            message: 'the old skull crumbles like chalk under your heel',
+            prize: ['chalky skull fragments', 5],
+            leftover: 'skull dust',
+            end: true
+          }
+        }
+      },
       'right-floor': {
         item: 'jar',
         prize: ['key', 1]

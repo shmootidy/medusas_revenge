@@ -43,10 +43,13 @@
 .UniqueItem img {
   width: 100%;
 }
-.InteractableItem {
+.walls .InteractableItem {
   width: 5%;
   background: yellow;
   z-index: 1;
+}
+.walls .InteractableItem.left-wall {
+  z-index: 2;
 }
 .InteractableItem > div > img {
   position: absolute;

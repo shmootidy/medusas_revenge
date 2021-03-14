@@ -71,8 +71,9 @@ export default class InteractableItem extends Component {
       item = '' 
     }
     const uniqueItemHere = this.props.item && this.props.item[this.props.position]
+    const itemClassNames= 'InteractableItem ' + this.props.position
     return (
-      <div className="InteractableItem">
+      <div className={itemClassNames}>
         <div style={{height: '100%', width: '100%'}} onClick={this.handleClick}>{item}</div>
         { uniqueItemHere && this.state.opened && this.props.item[this.props.position].content && !this.props.item[this.props.position].message ? 
           <UniqueItemContent 

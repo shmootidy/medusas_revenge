@@ -172,16 +172,14 @@ export default class Room extends Component {
       maxWidth: '100vw'
     }
     const ceilingStyle = {
-      backgroundColor: 'red',
-      height: '26.5%',
-      opacity: '0.2'
+      height: '34.5%',
     }
     const floorStyle = {
-      height: '31%',
+      height: '27%',
     }
     const threeDoorsStyle = {
       display: 'flex',
-      height: '44.5%'
+      height: '38.5%'
     }
     const roomStyle = {
       position: 'relative'

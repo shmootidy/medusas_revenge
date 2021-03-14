@@ -57,7 +57,7 @@ export default class InteractableItem extends Component {
       }
       // is there an icon for this item?
       if (icons[item]) {
-        item = <img src={icons[item]} alt={item} />
+        item = <img src={icons[item]} alt={item} className={item} />
       }
       // does it have an add-on?
       let plus = this.props.item[this.props.position].plus ? this.props.item[this.props.position].plus : ''

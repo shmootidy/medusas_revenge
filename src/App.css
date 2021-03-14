@@ -5,13 +5,13 @@
   align-items: center;
 }
 .forward-door img {
-  height: 80%;
+  height: 100%;
 }
 .left-door img {
   position: absolute;
   max-height: 100%;
   position: absolute;
-  top: 0;
+  top: -6%;
   left: 0;
 }
 .right-door img {
@@ -55,11 +55,11 @@
   height: 100%;
   width: 100%;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
 }
-.walls .InteractableItem > div > img {
-  margin-bottom: 10%;
+.walls .InteractableItem > div {
+  justify-content: unset;
 }
 .InteractableItem > div > img {
   position: absolute;
@@ -79,4 +79,19 @@
 }
 .floor .InteractableItem > div > img {
   margin-bottom: 5%;
+}
+.InteractableItem.ceiling {
+  height: 100%;
+  width: 100%;
+}
+.ceiling .InteractableItem > div {
+  align-items: flex-start;
+  justify-content: center;
+}
+.ceiling .InteractableItem > div img {
+  height: 30%;
+  margin-top: 5%;
+}
+.InteractableItem > div > img.key {
+  height: 5%;
 }

@@ -15,7 +15,7 @@ export default class Door extends Component {
     const doorStyle = { position: 'relative', zIndex: 0 }
     if (door.position === 'left') {
       doorStyle.width = '25.5%'
-      doorStyle.height = '152%'
+      doorStyle.height = '169%'
     } else if (door.position === 'forward') {
       doorStyle.width = '30%'
       doorStyle.height = '100%'
@@ -24,11 +24,11 @@ export default class Door extends Component {
       doorStyle.justifyContent = 'center'
     } else if (door.position === 'right') {
       doorStyle.width = '30.5%'
-      doorStyle.height = '160%'
+      doorStyle.height = '168.3%'
     }
     let _className = door.position + '-door door'
     let _doorway = door.status === 'no door' || door.status === 'one-way' ? null : icons[door.position + '_doorway'] ? <img src={icons[door.position + '_doorway']} alt={door.position + '_doorway'} /> : door.position + ' doorway'
-    let _lockedDoor = door.status === 'locked' ? <img style={{position: 'absolute', height: '64%'}} src={icons[door.position + '_door']} alt={door.position + '_door' }/> : null
+    let _lockedDoor = door.status === 'locked' ? <img style={{position: 'absolute', height: '80%'}} src={icons[door.position + '_door']} alt={door.position + '_door' }/> : null
     if (door.levelLock) {
       _doorway = icons.levelLock ? <img src={icons.levelLock} alt="levelLock" /> : 'levelLock'
       _lockedDoor = null

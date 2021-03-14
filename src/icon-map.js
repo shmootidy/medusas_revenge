@@ -20,6 +20,8 @@ import fly_thought from './assets/fly_thought.png'
 import oh_grate from './assets/oh_grate.png'
 import back_doorway from './assets/back_door.png'
 import bone_dust from './assets/bone_dust.png'
+import dead_fly from './assets/dead_fly.png'
+import happy_spider_web from './assets/happy_spider_web.png'
 
 const icons = {
   'jar': jar,
@@ -30,10 +32,10 @@ const icons = {
   'skull dust': bone_dust,
   'chalky skull fragments': pile_o_bones,
   fly,
-  'dead fly': fly,
+  'dead fly': dead_fly,
   spider,
   'spider webs': empty_web,
-  'happy spider': spider,
+  'happy spider': happy_spider_web,
   'hungry spider': spider,
   'dead spider': dead_spider,
   'levelKey': crowbar_ledge,

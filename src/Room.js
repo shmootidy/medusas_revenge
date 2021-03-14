@@ -38,7 +38,7 @@ export default class Room extends Component {
         moves.push(nextPosition)
       } else {
         /* if user can catch fly, reduce moves to 1 last move */
-        console.log(moves.splice(0, moves.length))
+        moves.splice(0, moves.length)
       }
       /* remove item from its current position and place in another */
       _rooms[this.state.currentRoom].interactableItems[position] = null

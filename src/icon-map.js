@@ -25,6 +25,7 @@ import happy_spider_web from './assets/happy_spider_web.png'
 import happy_spider_no_web from './assets/happy_spider_no_web.png'
 import ledge from './assets/ledge.png'
 import crowbar from './assets/crowbar.png'
+import gaping_hole from './assets/level_door_open.png'
 
 const icons = {
   'jar': jar,
@@ -44,6 +45,7 @@ const icons = {
   'dead spider': dead_spider,
   'levelKey': crowbar_ledge,
   'levelLock': oh_grate,
+  'levelOpen': gaping_hole,
   'player': medusa,
   'wall writing': '📝',
   'glass jar': '',

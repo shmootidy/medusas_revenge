@@ -148,6 +148,5 @@ img.locked-door {
   top: 5%;
 }
 .level-lock img {
-  transform: rotate(90deg);
   height: 80%;
 }

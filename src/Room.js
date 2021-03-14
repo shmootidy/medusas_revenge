@@ -146,7 +146,7 @@ export default class Room extends Component {
     if (doorStatus === 'open') {
       this.changeRooms(door.roomTo)
     } else if (doorStatus === 'locked') {
-      const keyNeeded = door.levelLock ? 'levelKey' : 'key'
+      const keyNeeded = door.levelLock ? 'crowbar' : 'key'
       if (this.props.inventory[keyNeeded]) {
         const _rooms = this.state.rooms
         _rooms[this.state.currentRoom].doors[door.position].status = 'open'

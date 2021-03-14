@@ -47,8 +47,6 @@ export default class InteractableItem extends Component {
     this.props.handleWriting(input, this.props.position)
   }
   render() {
-    console.log(this.props.messageOpen)
-    console.log(this.props.itemWithOpenMessage)
     let item
     /* does the room have an item in this position? */
     if (this.props.item[this.props.position] && !this.props.item[this.props.position].hidden) {
@@ -78,12 +76,15 @@ export default class InteractableItem extends Component {
     } else {
       item = '' 
     }
+    let itemClassNamesInner = 'item'
+    if (this.props.item[this.props.position] && this.props.item[this.props.position].end && this.props.item[this.props.position].leftover) itemClassNamesInner += ' no-cursor'
     const uniqueItemHere = this.props.item && this.props.item[this.props.position]
     let itemClassNames = 'InteractableItem ' + this.props.position
+    /* if an Item has a message box open, give all other Items a special class to reduce their z-index */
     if (this.props.messageOpen && this.props.itemWithOpenMessage !== this.props.position ) itemClassNames += ' zToggle'
     return (
       <div className={itemClassNames}>
-        <div className="item" onClick={this.handleClick}>{item}</div>
+        <div className={itemClassNamesInner} onClick={this.handleClick}>{item}</div>
         { uniqueItemHere && this.state.opened && this.props.item[this.props.position].content && !this.props.item[this.props.position].message ? 
           <UniqueItemContent 
             content={uniqueItemHere ? this.props.item[this.props.position].message ? this.props.item[this.props.position].message : this.props.item[this.props.position].content : null} 

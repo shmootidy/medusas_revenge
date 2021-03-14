@@ -26,27 +26,37 @@ export default class Room extends Component {
   }
   handleItem(position) {
     const _rooms = this.state.rooms
-    /* if item is at end state, move item to inventory */
-    if (_rooms[this.state.currentRoom].interactableItems[position].end) {
-      /* if prize volume or item are not yet set, find them in the prize object and set it */
-      const volume = _rooms[this.state.currentRoom].interactableItems[position].volume ? _rooms[this.state.currentRoom].interactableItems[position].volume : _rooms[this.state.currentRoom].interactableItems[position].prize ? _rooms[this.state.currentRoom].interactableItems[position].prize[1] : null
-      const item = _rooms[this.state.currentRoom].interactableItems[position].item ? _rooms[this.state.currentRoom].interactableItems[position].item : _rooms[this.state.currentRoom].interactableItems[position].prize ? _rooms[this.state.currentRoom].interactableItems[position].prize[0] : null 
-      if (!_rooms[this.state.currentRoom].interactableItems[position].item || !_rooms[this.state.currentRoom].interactableItems[position].volume) {
-        /* remove prize from object, since it is now in the item position */
-        _rooms[this.state.currentRoom].interactableItems[position].prize = ''
-      this.setState({ rooms: _rooms })
+    /* if item has special moves, move item and pop moves until there are no more moves */
+    if (_rooms[this.state.currentRoom].interactableItems[position].moves && _rooms[this.state.currentRoom].interactableItems[position].moves.length) {
+      let thisItem = _rooms[this.state.currentRoom].interactableItems[position]
+      let moves = thisItem.moves
+      const nextPosition = moves.shift()
+      /* remove item from its current position and place in another */
+      _rooms[this.state.currentRoom].interactableItems[position] = null
+      _rooms[this.state.currentRoom].interactableItems[nextPosition] = thisItem
+    } else {
+      /* if item is at end state, move item to inventory */
+      if (_rooms[this.state.currentRoom].interactableItems[position].end) {
+        /* if prize volume or item are not yet set, find them in the prize object and set it */
+        const volume = _rooms[this.state.currentRoom].interactableItems[position].volume ? _rooms[this.state.currentRoom].interactableItems[position].volume : _rooms[this.state.currentRoom].interactableItems[position].prize ? _rooms[this.state.currentRoom].interactableItems[position].prize[1] : null
+        const item = _rooms[this.state.currentRoom].interactableItems[position].item ? _rooms[this.state.currentRoom].interactableItems[position].item : _rooms[this.state.currentRoom].interactableItems[position].prize ? _rooms[this.state.currentRoom].interactableItems[position].prize[0] : null 
+        if (!_rooms[this.state.currentRoom].interactableItems[position].item || !_rooms[this.state.currentRoom].interactableItems[position].volume) {
+          /* remove prize from object, since it is now in the item position */
+          _rooms[this.state.currentRoom].interactableItems[position].prize = ''
+        this.setState({ rooms: _rooms })
+        }
+        const prizeEarned = [item, volume]
+        this.props.handleInventory(prizeEarned)
       }
-      const prizeEarned = [item, volume]
-      this.props.handleInventory(prizeEarned)
+      /* replace item with its prize */
+      _rooms[this.state.currentRoom].interactableItems[position].item = _rooms[this.state.currentRoom].interactableItems[position].prize ? _rooms[this.state.currentRoom].interactableItems[position].prize[0] : ''
+      /* set value of prize's volume to object */
+      _rooms[this.state.currentRoom].interactableItems[position].volume = _rooms[this.state.currentRoom].interactableItems[position].prize ? _rooms[this.state.currentRoom].interactableItems[position].prize[1] : ''
+      /* remove prize from object, since it is now in the item position */
+      _rooms[this.state.currentRoom].interactableItems[position].prize = ''
+      /* set item to 'end' state */
+      _rooms[this.state.currentRoom].interactableItems[position].end = true
     }
-    /* replace item with its prize */
-    _rooms[this.state.currentRoom].interactableItems[position].item = _rooms[this.state.currentRoom].interactableItems[position].prize ? _rooms[this.state.currentRoom].interactableItems[position].prize[0] : ''
-    /* set value of prize's volume to object */
-    _rooms[this.state.currentRoom].interactableItems[position].volume = _rooms[this.state.currentRoom].interactableItems[position].prize ? _rooms[this.state.currentRoom].interactableItems[position].prize[1] : ''
-    /* remove prize from object, since it is now in the item position */
-    _rooms[this.state.currentRoom].interactableItems[position].prize = ''
-    /* set item to 'end' state */
-    _rooms[this.state.currentRoom].interactableItems[position].end = true
     this.setState({rooms: _rooms})
   }
   handleOptionSelect(position, option) {

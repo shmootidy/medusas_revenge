@@ -267,7 +267,8 @@ const rooms = {
     interactableItems : {
       'left-floor': {
         item: 'fly',
-        prize: ['dead fly', 1]
+        prize: ['dead fly', 1],
+        moves: ['right-wall', 'left-wall']
       },
       // 'right-floor': {
       //   prize: ['juicy red berries', 10],

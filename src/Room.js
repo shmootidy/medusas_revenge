@@ -55,8 +55,6 @@ export default class Room extends Component {
         const volume = _rooms[this.state.currentRoom].interactableItems[position].volume ? _rooms[this.state.currentRoom].interactableItems[position].volume : _rooms[this.state.currentRoom].interactableItems[position].prize ? _rooms[this.state.currentRoom].interactableItems[position].prize[1] : null
         let item = _rooms[this.state.currentRoom].interactableItems[position].item ? _rooms[this.state.currentRoom].interactableItems[position].item : _rooms[this.state.currentRoom].interactableItems[position].prize ? _rooms[this.state.currentRoom].interactableItems[position].prize[0] : null 
         if (_rooms[this.state.currentRoom].interactableItems[position].prize[0] && _rooms[this.state.currentRoom].interactableItems[position].prize[0] !== item) {
-          // console.log(_rooms[this.state.currentRoom].interactableItems[position].prize[0])
-          // console.log(item)
           item = _rooms[this.state.currentRoom].interactableItems[position].prize[0]
         }
         if (!_rooms[this.state.currentRoom].interactableItems[position].item || !_rooms[this.state.currentRoom].interactableItems[position].volume) {

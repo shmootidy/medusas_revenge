@@ -24,6 +24,7 @@ import dead_fly from './assets/dead_fly.png'
 import happy_spider_web from './assets/happy_spider_web.png'
 import happy_spider_no_web from './assets/happy_spider_no_web.png'
 import ledge from './assets/ledge.png'
+import crowbar from './assets/crowbar.png'
 
 const icons = {
   'jar': jar,
@@ -54,7 +55,8 @@ const icons = {
   left_door,
   back_doorway,
   'fly thought': fly_thought,
-  ledge
+  ledge,
+  crowbar
 }
 
 export default icons

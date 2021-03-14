@@ -51,10 +51,13 @@ export default class InteractableItem extends Component {
       item = this.props.item[this.props.position].item
       // is it an item, a prize, or a leftover? 
       if (!this.props.item[this.props.position].item) {
+        console.log('hi')
         if (this.props.item[this.props.position].prize) {
-          item = this.props.item[this.props.position].prize[0]
+        console.log('hii')
+        item = this.props.item[this.props.position].prize[0]
         } else {
-          item = this.props.item[this.props.position].leftover
+        console.log('hiii')
+        item = this.props.item[this.props.position].leftover
         }
       }
       // is there an icon for this item?

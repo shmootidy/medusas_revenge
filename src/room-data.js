@@ -27,8 +27,8 @@ const rooms = {
         item: 'jar'
       },
       'right-floor': {
-        item: 'jar',
-        // prize: ['coins', 3]
+        item: 'crowbar',
+        hidden: true,
       },
       'ceiling': {
         item: 'levelKey',
@@ -37,11 +37,11 @@ const rooms = {
         options: {
           option1: {
             option: 'send spider',
-            item: 'levelKey',
+            item: 'happy spider',
             message: 'as your spider settles into her new home, she knocks down a crowbar',
             leftover: 'happy spider',
             plus: 'ledge',
-            prize: ['levelKey', 1],
+            prize: ['crowbar', 1],
             end: true
           }
         }

@@ -184,7 +184,7 @@ const rooms = {
       },
       back: {
         status: 'open',
-        roomTo: 'outside',
+        roomTo: 'start',
         position: 'back'
       }
     },
@@ -349,7 +349,7 @@ const rooms = {
       },
       right: {
         status: 'no door',
-        roomTo: 'outside',
+        roomTo: 'end',
         position: 'right'
       },
       back: {
@@ -360,5 +360,14 @@ const rooms = {
     },
     interactableItems : {},
   },
+  'start': {
+    specialRoom: 'You left the dungeon. Probably a good idea.',
+  },
+  'end': {
+    specialRoom: 'You made it out!'
+  },
+  'death': {
+    specialRoom: 'You died.'
+  }
 }
 export default rooms

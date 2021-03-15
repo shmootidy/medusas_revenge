@@ -143,7 +143,7 @@ export default class Room extends Component {
         showSpecialMessage: true
       })
     }
-    if (this.state.deathCountDown === 0) roomTo = 'death screen'
+    if (this.state.deathCountDown === 0) roomTo = 'death'
     this.setState({currentRoom: roomTo})
     this.props.onRoomSwitch()
   }
@@ -204,7 +204,7 @@ export default class Room extends Component {
     const roomStyle = {
       position: 'relative'
     }
-    if (this.state.rooms[this.state.currentRoom]) {
+    if (this.state.rooms[this.state.currentRoom] && !this.state.rooms[this.state.currentRoom].specialRoom) {
       const doors = this.state.rooms[this.state.currentRoom].doors
       const roomClassName = /*this.state.messageBoxOpen ? 'Room box-open' : */'Room'
       const itemWithOpenMessage = this.state.messageBoxOpen ? this.state.messageItemPosition : null
@@ -289,8 +289,14 @@ export default class Room extends Component {
           </div>
         </div>
       )
+    } else if (this.state.rooms[this.state.currentRoom] && this.state.rooms[this.state.currentRoom].specialRoom) {
+      return (
+        <div style={{minHeight: '200px', minWidth: '200px', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#696969', fontSize: '24px'}}>
+          {this.state.rooms[this.state.currentRoom].specialRoom}
+        </div>
+      )
     } else {
-      return <div>you made it outside</div>
+      return <div>something has gone terrible wrong</div>
     }
   }
 }

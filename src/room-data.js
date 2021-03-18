@@ -191,7 +191,7 @@ const rooms = {
     interactableItems: {
       'left-wall': {
         item: 'sign',
-        content: 'This will be the last meaningful decision you make. Adventurer beware.'
+        content: 'There is no way out beyond this point. Adventurer beware! Go back!'
       },
       'left-floor': {
         item: 'jar',

@@ -13,7 +13,7 @@ export default class InteractableItem extends Component {
   }
   handleClick(e) {
     /* if the item is hidden, make it unclickable */
-    if (this.props.item[this.props.position].hidden) {
+    if (this.props.item[this.props.position] && this.props.item[this.props.position].hidden) {
       e.preventDefault()
       return false
     }

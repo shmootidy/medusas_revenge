@@ -10,6 +10,8 @@ Will you find the monster?
 
 (No. No, you will not. I haven't gotten that far in building the game yet.)
 
+[Click to launch the game!](https://shmootidy.github.io/medusas_revenge/)
+
 ## About this project
 This game took me 2 weeks to build, with a few straggly days tacked on the end to handle some of the loose pieces.
 

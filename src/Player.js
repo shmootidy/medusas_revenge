@@ -10,7 +10,8 @@ export default class Player extends Component {
       width: 'auto',
       bottom: '0',
       right: '29%',
-      zIndex: 10
+      zIndex: 10,
+      pointerEvents: 'none'
     }
     return (
       <div className="Player" style={playerStyle}>

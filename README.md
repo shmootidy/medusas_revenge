@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+# Medusa's Revenge – Part I
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a project I started at the beginning of year 2 of the pandemic – something to keep me sane (or perhaps tip me closer to the brink of madness, depending on your perspective) and just for fun.
 
-## Available Scripts
+In it, you play Medusa, the much-maligned Gorgon of Greek Mythology, as she navigates Minos's labyrinth in search of the Minotaur, in whom she recognizes another mistreated soul of Classical world, and with whom she plans on breaking free and taking vengeance against the gods and men who have wronged them both.
 
-In the project directory, you can run:
+Navigate through near-identical rooms, finding keys and other treasures to help find your way through.
 
-### `yarn start`
+Will you find the monster?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+(No. No, you will not. I haven't gotten that far in building the game yet.)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## About this project
+This game took me 2 weeks to build, with a few straggly days tacked on the end to handle some of the loose pieces.
 
-### `yarn test`
+This is what I learned: 
+* Hand-painting assets is fun, but uploading them and turning them into digital assest is not. I shan't be doing that again!
+* Getting all the images to be responsive and sit properly in any screen size was an exercise in CSS. But a successful one!
+* Feature-creep is a problem I learned to bat down successfully in this project. My original design for this game had several more room-types and interactions, and during development I came up with several more. As I began to apply the assets, I realized I was building a mammoth set of tasks for myself and I quickly began culling all but the most important features.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## More to do
+Aside from building two other levels to the game so that you can actually meet and liberate the Minotaur, I'd like to fix a little glitch in there that requires the user to click on some items twice before they are added to the inventory. In the interest of The Other Things One Must Do In Life, I'm calling this my MVP and getting it up and out there.
 
-### `yarn build`
+## Feedback requested
+What do you think of the game? Is there anything you'd like to see changed? Is there anything that doesn't make sense or is more frustrating than fun?
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Let me know what you think!
+[Email me!](mailto:shmooritchie@gmail.com?subject=Medusa's %20Revenge)

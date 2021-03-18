@@ -296,7 +296,7 @@ export default class Room extends Component {
         </div>
       )
     } else {
-      return <div>something has gone terrible wrong</div>
+      return <div>something has gone terribly wrong</div>
     }
   }
 }

@@ -11,7 +11,12 @@ export default class InteractableItem extends Component {
     this.handleOptionSelect = this.handleOptionSelect.bind(this)
     this.handleWriting = this.handleWriting.bind(this)
   }
-  handleClick() {
+  handleClick(e) {
+    /* if the item is hidden, make it unclickable */
+    if (this.props.item[this.props.position].hidden) {
+      e.preventDefault()
+      return false
+    }
     /* if there is no item, but the item is a wall and the user has something writeable, open */
     if (!this.props.item[this.props.position] && (this.props.position === 'left-wall' || this.props.position === 'right-wall') && this.props.inventory['chalky skull fragments']) {
       this.setState({opened: true});

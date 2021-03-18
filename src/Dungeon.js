@@ -15,10 +15,15 @@ export default class Dungeon extends Component {
     this.handleInventory = this.handleInventory.bind(this)
     this.useKey = this.useKey.bind(this)
     this.restartGame = this.restartGame.bind(this)
+    this.startGame = this.startGame.bind(this)
+  }
+  startGame() {
+    this.setState({start: true})
   }
   restartGame() {
     if (window.confirm('Are you sure?')) {
       window.location.replace(window.location.pathname + window.location.search + window.location.hash);
+      this.setState({start: false})
     }
   }
   useKey(_key) {
@@ -60,11 +65,12 @@ export default class Dungeon extends Component {
                 onRoomSwitch={this.handleRoomSwitch} 
                 handleInventory={this.handleInventory} 
                 useKey={this.useKey} inventory={this.state.inventory} 
+                startGame={this.startGame}
               />
             </div>
           )}
         </Transition>
-        <Inventory inventory={this.state.inventory} restartGame={this.restartGame} />
+        {this.state.start ? <Inventory inventory={this.state.inventory} restartGame={this.restartGame} /> : null }
       </div>
     )
   }

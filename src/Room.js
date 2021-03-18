@@ -168,6 +168,7 @@ export default class Room extends Component {
       }
     } else if (this.state.currentRoom === 'start') {
       this.changeRooms('R')
+      this.props.startGame()
     } else {
       console.log('not yet handled')
     }

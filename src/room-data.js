@@ -367,7 +367,7 @@ const rooms = {
   },
   'OUT': {
     specialRoom: true,
-    message: 'Congrats! You made it out of the labyrinth.'
+    message: 'Congrats! You made it through the first level of Medusa\'s Revenge!',
   },
   'death': {
     specialRoom: true,

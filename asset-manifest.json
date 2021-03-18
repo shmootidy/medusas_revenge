@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/medusas_revenge/static/css/main.4c6c62fb.chunk.css",
-    "main.js": "/medusas_revenge/static/js/main.38f79e73.chunk.js",
-    "main.js.map": "/medusas_revenge/static/js/main.38f79e73.chunk.js.map",
+    "main.js": "/medusas_revenge/static/js/main.1a2c9e25.chunk.js",
+    "main.js.map": "/medusas_revenge/static/js/main.1a2c9e25.chunk.js.map",
     "runtime-main.js": "/medusas_revenge/static/js/runtime-main.64914316.js",
     "runtime-main.js.map": "/medusas_revenge/static/js/runtime-main.64914316.js.map",
     "static/js/2.7bc7d0f9.chunk.js": "/medusas_revenge/static/js/2.7bc7d0f9.chunk.js",
@@ -47,6 +47,6 @@
     "static/js/runtime-main.64914316.js",
     "static/js/2.7bc7d0f9.chunk.js",
     "static/css/main.4c6c62fb.chunk.css",
-    "static/js/main.38f79e73.chunk.js"
+    "static/js/main.1a2c9e25.chunk.js"
   ]
 }

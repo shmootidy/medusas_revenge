@@ -298,13 +298,14 @@ export default class Room extends Component {
         return (
           <div style={{position: 'relative'}}>
             <img style={{maxHeight:'100vh', maxWidth: '100vw'}} src={start_scene} alt="start scene" />
-            <div style={{position: 'absolute', top: '64%', left: '43%', height: '11%', width: '11%'}} onClick={this.handleDoorClick} className="start_door"></div>
+            <div style={{cursor: 'pointer', position: 'absolute', top: '64%', left: '43%', height: '11%', width: '11%'}} onClick={this.handleDoorClick} className="start_door"></div>
           </div>
         )
       } else {
         return (
-          <div style={{minHeight: '200px', minWidth: '200px', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#696969', fontSize: '24px', textAlign: 'center'}}>
+          <div style={{minHeight: '200px', minWidth: '200px', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', color: '#696969', fontSize: '24px', textAlign: 'center'}}>
             {this.state.rooms[this.state.currentRoom].message}
+            <a href="mailto:shmooritchie@gmail.com?subject=Medusa's Revenge">Tell me what you think!</a>
           </div>
         )
       }

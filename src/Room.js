@@ -4,6 +4,7 @@ import Player from './Player'
 import InteractableItem from './InteractableItem'
 
 import _background from './assets/dungeon_background.png'
+import start_scene from './assets/start_scene.png'
 import rooms from './room-data'
 import UniqueItemContent from './UniqueItemContent'
 
@@ -11,7 +12,7 @@ export default class Room extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentRoom: 'R',
+      currentRoom: 'start',
       prevRoom: '',
       rooms: rooms,
     }
@@ -165,6 +166,8 @@ export default class Room extends Component {
           specialMessage
         })
       }
+    } else if (this.state.currentRoom === 'start') {
+      this.changeRooms('R')
     } else {
       console.log('not yet handled')
     }
@@ -207,7 +210,7 @@ export default class Room extends Component {
     if (this.state.rooms[this.state.currentRoom] && !this.state.rooms[this.state.currentRoom].specialRoom) {
       const doors = this.state.rooms[this.state.currentRoom].doors
       const roomClassName = /*this.state.messageBoxOpen ? 'Room box-open' : */'Room'
-      const itemWithOpenMessage = this.state.messageBoxOpen ? this.state.messageItemPosition : null
+      // const itemWithOpenMessage = this.state.messageBoxOpen ? this.state.messageItemPosition : null
       return (
         <div className={roomClassName} style={roomStyle}>
           <img src={_background} alt="background" style={backgroundImgStyle} />
@@ -290,11 +293,20 @@ export default class Room extends Component {
         </div>
       )
     } else if (this.state.rooms[this.state.currentRoom] && this.state.rooms[this.state.currentRoom].specialRoom) {
-      return (
-        <div style={{minHeight: '200px', minWidth: '200px', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#696969', fontSize: '24px'}}>
-          {this.state.rooms[this.state.currentRoom].specialRoom}
-        </div>
-      )
+      if (this.state.currentRoom === 'start') {
+        return (
+          <div style={{position: 'relative'}}>
+            <img style={{maxHeight:'100vh', maxWidth: '100vw'}} src={start_scene} alt="start scene" />
+            <div style={{position: 'absolute', top: '64%', left: '43%', height: '11%', width: '11%'}} onClick={this.handleDoorClick} className="start_door"></div>
+          </div>
+        )
+      } else {
+        return (
+          <div style={{minHeight: '200px', minWidth: '200px', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#696969', fontSize: '24px', textAlign: 'center'}}>
+            {this.state.rooms[this.state.currentRoom].specialRoom}
+          </div>
+        )
+      }
     } else {
       return <div>something has gone terribly wrong</div>
     }

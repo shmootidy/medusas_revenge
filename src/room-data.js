@@ -361,13 +361,17 @@ const rooms = {
     interactableItems : {},
   },
   'start': {
-    specialRoom: 'You left the dungeon. Probably a good idea.',
+    specialRoom: true, 
+    message: 'You left the dungeon. Probably a good idea.',
+    img: 'start_scene.png'
   },
-  'end': {
-    specialRoom: 'You made it out!'
+  'OUT': {
+    specialRoom: true,
+    message: 'You made it out!'
   },
   'death': {
-    specialRoom: 'You died.'
+    specialRoom: true,
+    message: 'You died.'
   }
 }
 export default rooms

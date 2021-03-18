@@ -367,7 +367,7 @@ const rooms = {
   },
   'OUT': {
     specialRoom: true,
-    message: 'You made it out!'
+    message: 'Congrats! You made it out of the labyrinth.'
   },
   'death': {
     specialRoom: true,

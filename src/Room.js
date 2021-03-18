@@ -303,7 +303,7 @@ export default class Room extends Component {
       } else {
         return (
           <div style={{minHeight: '200px', minWidth: '200px', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#696969', fontSize: '24px', textAlign: 'center'}}>
-            {this.state.rooms[this.state.currentRoom].specialRoom}
+            {this.state.rooms[this.state.currentRoom].message}
           </div>
         )
       }

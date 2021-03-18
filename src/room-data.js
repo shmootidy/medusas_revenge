@@ -133,7 +133,7 @@ const rooms = {
     interactableItems : {
       'ceiling': {
         item: 'spider',
-        content: 'what doo?',
+        content: 'what do you want to do?',
         options: {
           option1: {
             option: 'kill spider',

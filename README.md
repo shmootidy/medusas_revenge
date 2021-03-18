@@ -25,4 +25,4 @@ Aside from building two other levels to the game so that you can actually meet a
 What do you think of the game? Is there anything you'd like to see changed? Is there anything that doesn't make sense or is more frustrating than fun?
 
 Let me know what you think!
-[Email me!](mailto:shmooritchie@gmail.com?subject=Medusa's %20Revenge)
+[Email me!](mailto:shmooritchie@gmail.com?subject=Medusa's%20Revenge)

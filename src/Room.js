@@ -298,7 +298,7 @@ export default class Room extends Component {
         return (
           <div style={{position: 'relative'}}>
             <img style={{maxHeight:'100vh', maxWidth: '100vw'}} src={start_scene} alt="start scene" />
-            <div style={{cursor: 'pointer', position: 'absolute', top: '64%', left: '43%', height: '11%', width: '11%'}} onClick={this.handleDoorClick} className="start_door"></div>
+            <div style={{cursor: 'pointer', position: 'absolute', top: '64%', left: '43%', height: '11%', width: '10%', display: 'flex', textAlign: 'center', alignItems: 'center', justifyContent: 'center'}} onClick={this.handleDoorClick} className="start_door">Start</div>
           </div>
         )
       } else {

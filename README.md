@@ -16,7 +16,7 @@ Will you find the monster?
 This game took me 2 weeks to build, with a few straggly days tacked on the end to handle some of the loose pieces.
 
 This is what I learned: 
-* Hand-painting assets is fun, but uploading them and turning them into digital assest is not. I shan't be doing that again!
+* Hand-painting assets is fun, but uploading them and turning them into digital assets is not. I shan't be doing that again!
 * Getting all the images to be responsive and sit properly in any screen size was an exercise in CSS. But a successful one!
 * Feature-creep is a problem I learned to bat down successfully in this project. My original design for this game had several more room-types and interactions, and during development I came up with several more. As I began to apply the assets, I realized I was building a mammoth set of tasks for myself and I quickly began culling all but the most important features.
 
